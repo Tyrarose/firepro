@@ -1,0 +1,21 @@
+* {
+	/* border: 1px green dotted; */
+}
+
+.nav-link {
+	color: black !important;
+	font-weight: bold;
+	padding-left: 5rem;
+	padding-right: 5rem;
+	/* border: 1px green dotted !important; */
+}
+
+.nav-item:hover {
+	background-color: rgba(0, 0, 0, 0.2); /* Add hover effect */
+}
+
+.nav-item {
+	margin-top: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}

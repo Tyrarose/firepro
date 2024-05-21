@@ -1,38 +1,128 @@
+* {
+	/* border: 1px red dotted; */
+}
+
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* 
+ /////////////////
+ */
+
+.firebg {
+	width: 100%;
+	height: 100%;
+	background: url("./images/firebg3.png");
+	background-repeat: no-repeat;
+	background-position: center 10% bottom; /* Center horizontally, move up by 10% from top */
+	background-size: cover;
+	opacity: 1;
+	position: absolute;
+	overflow: hidden;
+	top: 0; /* Position at the top */
+	left: 0; /* Position at the left */
+	z-index: -10; /* Set a lower z-index to place it behind other content */
+	opacity: 1;
+}
+
+.col-md-8 {
+	text-align: left; /* Align the content inside this div to the left */
+}
+
+.fireproshield {
+	/* border: 1px blue dotted; */
+	width: 100%;
+	height: 31%;
+	padding-bottom: 1%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.fireproshield img {
+	/* border: 1px red dotted; */
+	max-width: 200%;
+	max-height: 170%;
+	margin-top: 7%;
+	object-fit: contain;
+}
+
+.title {
+	color: rgba(0, 0, 0, 1);
+	font-family: Poppins;
+	font-weight: Bold;
+	font-size: 2rem;
+	opacity: 1;
+	text-align: left;
+	margin-top: 30px;
+}
+.subtitle {
+	color: rgba(0, 0, 0, 1);
+	font-family: Poppins;
+	font-weight: Regular;
+	font-size: 1rem;
+	opacity: 1;
+	text-align: left;
+	margin-top: 30px;
+}
+.featuredpic {
+	width: 100%; /* Set the width */
+	height: 500px; /* Set the height */
+	background: url("./images/featured.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; /* This ensures the image covers the entire container */
+	opacity: 1;
+	overflow: hidden;
+}
+
+.mainbutton {
+	margin-top: 30px;
+}
+
+.viewext {
+	background: rgba(193, 48, 27, 1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	color: rgba(255, 255, 255, 1);
+	padding: 8px 65px 8px 65px;
 }
