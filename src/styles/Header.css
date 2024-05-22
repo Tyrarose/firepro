@@ -5,17 +5,19 @@
 .nav-link {
 	color: black !important;
 	font-weight: bold;
-	padding-left: 5rem;
-	padding-right: 5rem;
 	/* border: 1px green dotted !important; */
 }
 
 .nav-item:hover {
-	background-color: rgba(0, 0, 0, 0.2); /* Add hover effect */
+	background-color: #c1301b;
+}
+.nav-link:hover {
+	color: white !important;
 }
 
 .nav-item {
 	margin-top: 1rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	/* border: 1px red dotted !important; */
 }

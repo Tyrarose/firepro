@@ -30,17 +30,20 @@ export default function App() {
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink href="storelocation" className="nav-link">
-							Testimonies Facts
+						<NavLink
+							href="testimoniesandfacts"
+							className="nav-link"
+						>
+							Testimonies and Facts
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink href="storelocation" className="nav-link">
+						<NavLink href="contactus" className="nav-link">
 							Contact Us
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink href="storelocation" className="nav-link">
+						<NavLink href="aboutus" className="nav-link">
 							About Us
 						</NavLink>
 					</NavItem>
