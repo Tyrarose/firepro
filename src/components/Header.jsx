@@ -25,7 +25,7 @@ export default function App() {
 	return (
 		<Router>
 			<>
-				{["lg"].map((expand) => (
+				{["md"].map((expand) => (
 					<Navbar key={expand} expand={expand}>
 						<Container fluid>
 							{/* <Navbar.Brand href="#">Firepro</Navbar.Brand> */}
