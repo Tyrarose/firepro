@@ -1,20 +1,11 @@
+/* General styles */
 * {
-	/* border: 1px red dotted; */
+	/* border: 1px green dotted; */
 }
 
+/* Layout and Alignment */
 .App {
 	text-align: center;
-}
-
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
 }
 
 .App-header {
@@ -32,6 +23,7 @@
 	color: #61dafb;
 }
 
+/* Keyframes */
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -41,110 +33,91 @@
 	}
 }
 
-/* 
- /////////////////
- */
+/*///////////*/
 
+/* Specific styles */
+/* Backgrounds and Images */
 .firebg {
 	width: 100%;
 	height: 800px;
-	background: url("./images/firebg3.png");
-	background-repeat: no-repeat;
+	background: url("./images/firebg3.png") no-repeat;
 	background-size: cover;
-	opacity: 1;
+	background-position: bottom right;
+	opacity: 0.6;
 	position: absolute;
-	overflow: visible;
-	top: 0; /* Position at the top */
-	left: 0; /* Position at the left */
-	z-index: -10; /* Set a lower z-index to place it behind other content */
-	opacity: 1;
-}
-
-.col-md-8 {
-	text-align: left;
+	top: 0;
+	left: 0;
+	z-index: -10;
 }
 
 .frame_one {
-	height: 720px;
+	display: flex;
+	flex-direction: row;
+	height: 650px;
+	position: relative;
+}
+
+.featuredpic {
+	width: 100%;
+	height: 550px;
+	background: url("./images/featured.png") no-repeat center -90px;
+	background-size: 30rem;
+	background-position: center -90px;
+	margin-bottom: 1rem; /* Add margin for spacing */
 }
 
 .fireproshield {
-	width: 100%;
-	height: 28%;
-	padding-bottom: 3%;
 	display: flex;
 	align-items: center;
 	overflow: hidden;
 }
 
+/* Add styles for mobile */
+.featuredpic-mobile {
+	height: 150px;
+	background: url("./images/featured.png") no-repeat center;
+	background-size: contain;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
 .fireproshield img {
-	max-width: 200%;
-	max-height: 170%;
-	margin-top: 7%;
-	margin-left: -5%;
-	object-fit: contain;
+	width: 100%;
+	max-width: 70%;
+	height: auto;
+	object-fit: cover;
+	margin: -35px;
 }
 
 .title {
-	color: rgba(0, 0, 0, 1);
-	font-family: Poppins;
-	font-weight: Bold;
-	font-size: 2rem;
-	opacity: 1;
-	text-align: left;
-	margin-top: 3%;
-}
-.subtitle {
-	color: rgba(0, 0, 0, 1);
-	font-family: Poppins;
-	font-weight: Regular;
+	font-weight: bold;
 	font-size: 1rem;
-	opacity: 1;
-	text-align: left;
+}
+
+.subtitle {
+	font-weight: normal;
+	font-size: 1rem;
 	margin-top: 2%;
 }
-.featuredpic {
-	width: 100%; /* Set the width */
-	height: 700px; /* Set the height */
-	background: url("./images/featured.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	margin-top: -90px;
-	background-size: cover;
-	opacity: 1;
-	overflow: hidden;
+
+.title,
+.subtitle {
+	color: rgba(0, 0, 0, 1);
+	text-align: center;
+	font-family: Poppins;
 }
+
 .mainbutton {
-	margin-top: 3%;
+	margin-top: auto;
+	display: flex;
+	justify-content: flex-start;
 }
 
 .viewext {
 	background: rgba(193, 48, 27, 1);
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+	border-radius: 10px;
 	color: rgba(255, 255, 255, 1);
-	padding: 8px 65px 8px 65px;
-}
-
-.social-icons {
-	bottom: 20px;
-	left: 20px;
-	display: flex;
-	gap: 4px;
-	margin-top: auto;
-}
-
-.social-icons a {
-	display: flex;
-	align-items: flex-end;
-}
-.social-icons img {
-	color: #000;
-	font-size: 24px;
-	transition: color 0.3s;
-	height: 60%;
+	padding: 8px 65px;
 }
 
 .social-icons a:hover {
@@ -152,24 +125,66 @@
 }
 
 .flamout_logo {
-	width: 250px; /* Make the logo take up the full width of the parent div */
-	height: 150px; /* Make the logo take up the full height of the parent div */
-	background: url("./images/flamoutlogo.png");
-	background-repeat: no-repeat;
-	background-position: center -35px;
+	width: 150px;
+	height: 90px;
+	background: url("./images/flamoutlogo.png") no-repeat center -25px;
 	background-size: cover;
-	overflow: hidden;
 }
 
 .frame_two {
 	height: 100%;
 	width: 100%;
+	visibility: hidden;
 }
 
-.red_border {
-	margin: 85px 0px 85px 0px;
+@media only screen and (min-width: 768px) {
+	.featuredpic-mobile {
+		display: none; /* Hide on desktop */
+	}
+	.title {
+		text-align: left;
+		font-size: 2rem;
+	}
+	.subtitle {
+		text-align: left;
+		font-size: 1rem;
+	}
 }
 
-.introduction {
-	margin-bottom: 50px;
+@media only screen and (max-width: 768px) {
+	/* Adjust margins and padding for mobile */
+	* {
+	}
+
+	.featuredpic {
+		display: none;
+	}
+
+	.featuredpic-mobile {
+		/* border: 1px blue dotted; */
+		height: 280px;
+		margin-top: -50px;
+		margin-bottom: -10px;
+		display: block;
+	}
+
+	.fireproshield img {
+		width: 100%; /* Increase the width by 20% */
+		max-width: none; /* Allow the image to exceed its original maximum width */
+		height: auto; /* Maintain the aspect ratio */
+		margin: -35px auto; /* Adjust margin as needed */
+		display: block;
+	}
+
+	.title {
+		font-size: 1.2rem;
+	}
+	.subtitle {
+		text-align: center;
+		padding: 0 15px;
+	}
+	.mainbutton {
+		justify-content: center;
+		width: 100%; /* Make sure it takes the full width for centering */
+	}
 }

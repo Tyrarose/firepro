@@ -2,10 +2,13 @@
 	/* border: 1px green dotted; */
 }
 
+.navbar-toggler-icon {
+	/* border-color: red; Change the background color to red */
+}
+
 .nav-link {
 	color: black !important;
 	font-weight: bold;
-	/* border: 1px green dotted !important; */
 }
 
 .nav-item:hover {
@@ -19,5 +22,4 @@
 	margin-top: 1rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
-	/* border: 1px red dotted !important; */
 }
