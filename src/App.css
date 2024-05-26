@@ -119,22 +119,42 @@
 	color: rgba(255, 255, 255, 1);
 	padding: 8px 65px;
 }
-
-.social-icons a:hover {
-	color: red;
+/* Footer */
+.foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
 }
 
-.flamout_logo {
-	width: 150px;
-	height: 90px;
-	background: url("./images/flamoutlogo.png") no-repeat center -25px;
-	background-size: cover;
+/* Social Icons */
+.social-icons {
+	display: flex;
+	gap: 10px;
+}
+
+.social-icons a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #000;
+	transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-icons img {
+	height: 24px;
+}
+
+.flameout_logo img {
+	width: 250px;
+	height: auto;
+	margin: -200px;
 }
 
 .frame_two {
 	height: 100%;
 	width: 100%;
-	visibility: hidden;
+	margin-top: 250px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -186,5 +206,16 @@
 	.mainbutton {
 		justify-content: center;
 		width: 100%; /* Make sure it takes the full width for centering */
+	}
+
+	.foot {
+		margin-top: 15px;
+	}
+	.flameout_logo {
+		width: 100px;
+	}
+	.flameout_logo img {
+		width: 100px;
+		height: auto;
 	}
 }
