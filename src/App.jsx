@@ -38,9 +38,7 @@ function App() {
 							<img src={fireproshieldImage} alt="Fireproshield" />
 						</div>
 
-						<div className="title my-3">
-							The next generation in fire fighting
-						</div>
+						<div className="title my-3">1gerome</div>
 
 						<div className="subtitle my-3">
 							Approximately 80% of fire attacks with extinguishers
