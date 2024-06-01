@@ -1,0 +1,222 @@
+/* General styles */
+* {
+	/* border: 1px green dotted; */
+}
+
+/* Layout and Alignment */
+.App {
+	text-align: center;
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+/* Keyframes */
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Specific styles */
+/* Backgrounds and Images */
+.firebg {
+	width: 100%;
+	height: 800px;
+	background: url("../images/firebg3.png") no-repeat;
+	background-size: cover;
+	background-position: bottom right;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10;
+}
+
+.frame_one {
+	display: flex;
+	flex-direction: row;
+	height: 650px;
+	position: relative;
+}
+
+.featuredpic {
+	width: 100%;
+	height: 550px;
+	background: url("../images/featured.png") no-repeat center -90px;
+	background-size: 30rem;
+	margin-bottom: 1rem;
+}
+
+.fireproshield {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.featuredpic-mobile {
+	height: 150px;
+	background: url("../images/featured.png") no-repeat center;
+	background-size: contain;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.fireproshield img {
+	width: 100%;
+	max-width: 70%;
+	height: auto;
+	object-fit: cover;
+	margin: -35px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.subtitle {
+	font-weight: normal;
+	font-size: 1rem;
+	margin-top: 2%;
+}
+
+.title,
+.subtitle {
+	color: rgba(0, 0, 0, 1);
+	text-align: center;
+	font-family: Poppins;
+}
+
+.mainbutton {
+	margin-top: auto;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.viewext {
+	background: rgba(193, 48, 27, 1);
+	border-radius: 10px;
+	color: rgba(255, 255, 255, 1);
+	padding: 8px 65px;
+}
+
+/* Footer */
+.foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+/* Social Icons */
+.social-icons {
+	display: flex;
+	gap: 10px;
+}
+
+.social-icons a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #000;
+	transition: color 0.3s;
+}
+
+.social-icons img {
+	height: 24px;
+}
+
+.flameout_logo img {
+	width: 150px;
+	height: auto;
+	margin: -80px;
+}
+
+.frame_two {
+	height: 100%;
+	width: 100%;
+	margin-top: 20%;
+}
+
+.introduction {
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+/* Responsive styles */
+@media only screen and (min-width: 768px) {
+	.featuredpic-mobile {
+		display: none;
+	}
+	.title {
+		text-align: left;
+		font-size: 2rem;
+	}
+	.subtitle {
+		text-align: left;
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.firebg {
+		height: 107vh;
+	}
+	.featuredpic {
+		display: none;
+	}
+
+	.featuredpic-mobile {
+		height: 280px;
+		margin-top: -50px;
+		margin-bottom: -10px;
+		display: block;
+	}
+
+	.fireproshield img {
+		width: 100%;
+		max-width: none;
+		height: auto;
+		margin: -35px auto;
+		display: block;
+	}
+
+	.title {
+		font-size: 1.2rem;
+	}
+	.subtitle {
+		text-align: center;
+		padding: 0 15px;
+	}
+	.mainbutton {
+		justify-content: center;
+		width: 100%;
+	}
+
+	.foot {
+		margin-top: 15px;
+	}
+
+	.flameout_logo {
+	}
+	.flameout_logo img {
+		width: 100px;
+		height: auto;
+	}
+}

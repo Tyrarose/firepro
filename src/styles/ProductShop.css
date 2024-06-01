@@ -1,0 +1,57 @@
+* {
+	/* border: 1px green dotted; */
+}
+
+.introduction {
+	margin-top: 5%;
+	margin-bottom: 0px;
+}
+
+.introduction > h4 {
+	margin-top: 2%;
+}
+
+.images_combo {
+	margin-top: 5%;
+}
+
+.product_card {
+	margin-top: 6%;
+}
+
+.picture > img {
+	height: 430px;
+}
+.prices > * {
+	font-family: "Alfa Slab One", serif;
+	font-size: 20px;
+}
+
+p {
+	text-align: left;
+}
+
+.buy_now {
+	background-color: #c1301b;
+	color: #ffffff;
+	width: 140px;
+}
+
+.bottomers {
+	margin-top: 7%;
+}
+
+.buy_now:hover {
+	background-color: #ffffff;
+	border-color: #c1301b;
+	border-width: 2px;
+}
+
+.productdeets > h1 {
+	font-weight: bold;
+	margin-bottom: 5%;
+}
+
+.foot {
+	margin-top: 7%;
+}
