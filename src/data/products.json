@@ -1,0 +1,55 @@
+[
+	{
+		"id": 1,
+		"name": "Aerosol Can",
+		"imageUrl": "images/productsImage/product1.png",
+		"description": "Compact yet powerful, this aerosol can is your instant defense against small fires, delivering quick and effective extinguishing action.",
+		"feature": "13.5 fl oz",
+		"price": 200
+	},
+	{
+		"id": 2,
+		"name": "1L Fire Extinguisher",
+		"imageUrl": "images/productsImage/product2.png",
+		"description": "Swift and precise, our 1-liter extinguisher reaches far and acts fast, ensuring rapid suppression when every second counts.",
+		"feature": "Discharge Length: 25 feet.",
+		"feature2": "Discharge time: 15 seconds",
+		"price": 200
+	},
+	{
+		"id": 3,
+		"name": "2L Fire Extinguisher",
+		"imageUrl": "images/productsImage/product3.png",
+		"description": "Extended reach, extended safety. Our 2-liter extinguisher provides a reliable shield with increased discharge time for thorough fire control.",
+		"feature": "Discharge Length: 25 feet.",
+		"feature2": "Discharge time: 27 seconds",
+		"price": 200
+	},
+	{
+		"id": 4,
+		"name": "3L Fire Extinguisher",
+		"imageUrl": "images/productsImage/product4.png",
+		"description": "Vigorous and efficient, the 3-liter extinguisher covers a wide area with a quick response, making it an essential tool in fire emergencies.",
+		"feature": "Discharge Length: 40 feet.",
+		"feature2": " Discharge time: 19 seconds",
+		"price": 200
+	},
+	{
+		"id": 5,
+		"name": "4L Fire Extinguisher",
+		"imageUrl": "images/productsImage/product5.png",
+		"description": "Robust and effective, our 4-liter extinguisher delivers a sustained burst of suppression power, conquering flames swiftly and decisively.",
+		"feature": "Discharge Length: 40 feet.",
+		"feature2": " Discharge time: 29 seconds",
+		"price": 200
+	},
+	{
+		"id": 6,
+		"name": "5L Fire Extinguisher",
+		"imageUrl": "images/productsImage/product6.png",
+		"description": "Unmatched capacity, unmatched performance. The 2.5-gallon extinguisher offers extended duration for comprehensive fire control, ensuring safety in complex situations.",
+		"feature": "Discharge Length: 40 feet.",
+		"feature2": " Discharge time: 88 seconds (1 min 8s)",
+		"price": 200
+	}
+]

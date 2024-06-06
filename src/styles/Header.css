@@ -3,7 +3,7 @@
 }
 
 .navbar-toggler-icon {
-	/* border-color: red; Change the background color to red */
+	color: red;
 }
 
 .nav-link {
@@ -13,7 +13,7 @@
 .nav-item:hover {
 	background-color: #c1301b;
 }
-.nav-link:hover {
+.nav-item:hover .nav-link {
 	color: white !important;
 }
 
@@ -24,8 +24,18 @@
 }
 
 .brand-image {
-	height: 50px;
+	/* border: 1px blue solid; */
+	height: 30px;
 	scale: 2;
-	margin-left: 30px;
-	margin-top: 10px;
+	margin-left: 40px;
+	margin-top: 0px;
+	position: absolute;
+}
+
+/* Media query for phones (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+	.brand-image {
+		margin-top: 10px;
+		margin-left: 30px;
+	}
 }

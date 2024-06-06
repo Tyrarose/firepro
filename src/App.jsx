@@ -5,11 +5,12 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import ProductShop from "./pages/ProductShop";
 import StoreLocation from "./pages/StoreLocation";
-import TestimoniesAndFacts from "./pages/TestimoniesAndFacts";
+import TestimoniesAndFacts from "./pages/TestimoniesFacts";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 
@@ -28,6 +29,7 @@ function App() {
 				<Route path="/contactus" element={<ContactUs />} />
 				<Route path="/aboutus" element={<AboutUs />} />
 			</Routes>
+			<Footer />
 		</Router>
 	);
 }

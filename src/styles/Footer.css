@@ -1,0 +1,70 @@
+* {
+	/* border: 1px red dotted; */
+}
+
+.feet {
+	margin: 0px 20px 10px 20px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.socials {
+	flex: 1;
+}
+
+.social-icons {
+	display: flex;
+	gap: 10px;
+}
+
+.social-icons a {
+	display: flex;
+	align-items: flex-end;
+	text-decoration: none;
+	color: #000;
+	transition: color 0.3s;
+}
+
+.social-icons img {
+	height: 24px;
+}
+
+.flameout_logo_container {
+	overflow: hidden;
+	display: flex;
+	align-items: flex-end;
+	justify-content: end;
+}
+
+.flameout_logo img {
+	width: 120px;
+	height: auto;
+	object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+	footer {
+		padding: 0px;
+	}
+
+	.feet {
+		margin-top: 15px;
+		flex-direction: row;
+		display: flex;
+	}
+
+	.social-icons img {
+		height: 24px;
+	}
+
+	.flameout_logo_container {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.flameout_logo img {
+		width: 80px;
+		height: auto;
+		object-fit: contain;
+	}
+}

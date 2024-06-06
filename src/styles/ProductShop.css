@@ -3,24 +3,25 @@
 }
 
 .introduction {
-	margin-top: 5%;
-	margin-bottom: 0px;
-}
-
-.introduction > h4 {
-	margin-top: 2%;
-}
-
-.images_combo {
-	margin-top: 5%;
+	margin-top: 3%;
+	margin-bottom: 5%;
 }
 
 .product_card {
-	margin-top: 6%;
+	margin-bottom: 100px;
+}
+
+h1 {
+	color: #ff701f;
+	text-align: center;
 }
 
 .picture > img {
 	height: 430px;
+}
+
+.prices {
+	text-align: end;
 }
 .prices > * {
 	font-family: "Alfa Slab One", serif;
@@ -35,6 +36,10 @@ p {
 	background-color: #c1301b;
 	color: #ffffff;
 	width: 140px;
+}
+
+.buy_now_container {
+	text-align: left;
 }
 
 .bottomers {
@@ -53,5 +58,60 @@ p {
 }
 
 .foot {
-	margin-top: 7%;
+	margin-top: 15%;
+}
+
+/* Hide the second button on desktop (min-width: 768px) */
+@media only screen and (min-width: 768px) {
+	.col-md-6.buy_now_container:last-child {
+		display: none;
+	}
+	.mobile_even {
+		display: none;
+	}
+}
+
+/* Media query for phones (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+	.introduction {
+		margin-top: 3%;
+		margin-bottom: -35%;
+	}
+	.picture > img {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.productdeets {
+		margin-top: 0px;
+	}
+
+	.productdeets > p {
+		text-align: center;
+	}
+
+	.bottomers {
+		margin-top: 0px;
+	}
+
+	.col-md-6.buy_now_container:first-child {
+		display: none;
+	}
+
+	.buy_now_container {
+		text-align: center;
+	}
+
+	.prices {
+		text-align: center;
+	}
+
+	.desktop_even {
+		display: none;
+	}
+
+	.mobile_even {
+		visibility: visible;
+		width: 100%;
+	}
 }

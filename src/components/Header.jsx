@@ -13,6 +13,8 @@ export default function Header() {
 
 	const isHomePage = location.pathname === "/";
 
+	const handleClose = () => setExpanded(false);
+
 	return (
 		<>
 			{["md"].map((expand) => (
@@ -28,11 +30,16 @@ export default function Header() {
 						<Navbar.Toggle
 							aria-controls={`offcanvasNavbar-expand-${expand}`}
 							className="ms-auto"
+							onClick={() =>
+								setExpanded((prevExpanded) => !prevExpanded)
+							}
 						/>
 						<Navbar.Offcanvas
 							id={`offcanvasNavbar-expand-${expand}`}
 							aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
 							placement="end"
+							show={expanded}
+							onHide={handleClose}
 						>
 							<Offcanvas.Header closeButton>
 								<Offcanvas.Title
@@ -44,11 +51,7 @@ export default function Header() {
 							<Offcanvas.Body>
 								<Nav className="justify-content-center flex-grow-1">
 									<NavItem>
-										<NavLink
-											to="/"
-											className="nav-link"
-											activeClassName="active"
-										>
+										<NavLink to="/" className="nav-link">
 											Home
 										</NavLink>
 									</NavItem>
@@ -56,7 +59,6 @@ export default function Header() {
 										<NavLink
 											to="/productshop"
 											className="nav-link"
-											activeClassName="active"
 										>
 											Product Shop
 										</NavLink>
@@ -65,7 +67,6 @@ export default function Header() {
 										<NavLink
 											to="/storelocation"
 											className="nav-link"
-											activeClassName="active"
 										>
 											Store Location
 										</NavLink>
@@ -74,16 +75,14 @@ export default function Header() {
 										<NavLink
 											to="/testimoniesandfacts"
 											className="nav-link"
-											activeClassName="active"
 										>
-											Testimonies and Facts
+											Testimonies Facts
 										</NavLink>
 									</NavItem>
 									<NavItem>
 										<NavLink
 											to="/contactus"
 											className="nav-link"
-											activeClassName="active"
 										>
 											Contact Us
 										</NavLink>
@@ -92,7 +91,6 @@ export default function Header() {
 										<NavLink
 											to="/aboutus"
 											className="nav-link"
-											activeClassName="active"
 										>
 											About Us
 										</NavLink>
