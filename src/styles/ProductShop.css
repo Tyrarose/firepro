@@ -17,7 +17,7 @@ h1 {
 }
 
 .picture > img {
-	height: 430px;
+	height: 60vh;
 }
 
 .prices {
@@ -74,28 +74,36 @@ p {
 /* Media query for phones (max-width: 767px) */
 @media only screen and (max-width: 767px) {
 	.introduction {
-		margin-top: 3%;
-		margin-bottom: -35%;
+		margin-top: 5%;
 	}
+
+	.introduction h6 {
+		padding: 0px 10px;
+	}
+
+	.product_card {
+		margin-bottom: 50px;
+	}
+
 	.picture > img {
 		width: 100%;
-		margin-bottom: 10px;
+		height: 100%;
 	}
 
 	.productdeets {
-		margin-top: 0px;
+		margin-top: 10px;
 	}
 
 	.productdeets > p {
 		text-align: center;
 	}
 
-	.bottomers {
-		margin-top: 0px;
+	.productdeets p:last-child {
+		display: none;
 	}
 
-	.col-md-6.buy_now_container:first-child {
-		display: none;
+	.bottomers {
+		margin-top: 0px;
 	}
 
 	.buy_now_container {
@@ -113,5 +121,29 @@ p {
 	.mobile_even {
 		visibility: visible;
 		width: 100%;
+	}
+
+	.row.even-product {
+		flex-direction: column-reverse;
+	}
+
+	.bottomers {
+		flex-direction: column-reverse;
+	}
+
+	.col-md-6.picture {
+		text-align: center;
+	}
+
+	.col-md-6.picture img {
+		max-width: 100%;
+	}
+
+	.quote {
+		padding-bottom: 30px;
+	}
+
+	.quote h5 {
+		font-size: 1rem;
 	}
 }

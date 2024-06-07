@@ -28,36 +28,38 @@ function StoreLocation() {
 	};
 
 	return (
-		<div className="container">
-			<div className="row text-center">
-				<div className="my-3">
-					<h3>
-						<strong>Our Store Locations</strong>
-					</h3>
-					<h6>Discover Our Convenient Store Locations</h6>
+		<div className="page-container">
+			<div className="container">
+				<div className="row text-center">
+					<div className="my-3">
+						<h3>
+							<strong>Our Store Locations</strong>
+						</h3>
+						<h6>Discover Our Convenient Store Locations</h6>
+					</div>
 				</div>
-			</div>
-			<div className="row text-center">
-				<div className="col-12">
-					<div
-						className={`my-3 zoomable-image ${zoomed ? "zoomed" : ""}`}
-						onClick={handleZoomClick}
-						onTouchMove={handleTouchMove}
-						style={{
-							overflow: "hidden",
-							cursor: zoomed ? "zoom-out" : "zoom-in",
-						}}
-					>
-						<img
-							src={map}
-							alt=""
-							className="img-fluid"
-							ref={imageRef}
+				<div className="row text-center">
+					<div className="col-12">
+						<div
+							className={`my-3 zoomable-image ${zoomed ? "zoomed" : ""}`}
+							onClick={handleZoomClick}
+							onTouchMove={handleTouchMove}
 							style={{
-								transform: `scale(${zoomLevel})`,
-								transition: "transform 0.3s ease-in-out",
+								overflow: "hidden",
+								cursor: zoomed ? "zoom-out" : "zoom-in",
 							}}
-						/>
+						>
+							<img
+								src={map}
+								alt=""
+								className="img-fluid"
+								ref={imageRef}
+								style={{
+									transform: `scale(${zoomLevel})`,
+									transition: "transform 0.3s ease-in-out",
+								}}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
