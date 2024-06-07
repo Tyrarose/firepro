@@ -1,0 +1,24 @@
+.zoomable-image {
+	overflow: hidden;
+	position: relative;
+}
+
+.zoomable-image img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.zoomed {
+	transform-origin: center center;
+}
+
+.zoomed img {
+	cursor: zoom-out;
+}
+
+@media only screen and (max-width: 768px) {
+	.zoomable-image {
+		height: 68vh;
+	}
+}

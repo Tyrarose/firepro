@@ -1,15 +1,13 @@
-* {
-	/* border: 1px red dotted; */
+footer {
+	position: relative;
+	width: 100%;
+	margin-top: auto;
 }
 
 .feet {
 	margin: 0px 20px 10px 20px;
 	display: flex;
 	align-items: flex-end;
-}
-
-.socials {
-	flex: 1;
 }
 
 .social-icons {
@@ -27,6 +25,10 @@
 
 .social-icons img {
 	height: 24px;
+}
+
+.copyright {
+	margin-bottom: 0;
 }
 
 .flameout_logo_container {
@@ -54,7 +56,11 @@
 	}
 
 	.social-icons img {
-		height: 24px;
+		height: 20px;
+	}
+
+	.copyright {
+		font-size: 10px;
 	}
 
 	.flameout_logo_container {
@@ -63,7 +69,7 @@
 	}
 
 	.flameout_logo img {
-		width: 80px;
+		width: 65px;
 		height: auto;
 		object-fit: contain;
 	}

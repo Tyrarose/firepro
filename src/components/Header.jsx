@@ -51,7 +51,11 @@ export default function Header() {
 							<Offcanvas.Body>
 								<Nav className="justify-content-center flex-grow-1">
 									<NavItem>
-										<NavLink to="/" className="nav-link">
+										<NavLink
+											to="/"
+											className="nav-link"
+											onClick={handleClose}
+										>
 											Home
 										</NavLink>
 									</NavItem>
@@ -59,6 +63,7 @@ export default function Header() {
 										<NavLink
 											to="/productshop"
 											className="nav-link"
+											onClick={handleClose}
 										>
 											Product Shop
 										</NavLink>
@@ -67,6 +72,7 @@ export default function Header() {
 										<NavLink
 											to="/storelocation"
 											className="nav-link"
+											onClick={handleClose}
 										>
 											Store Location
 										</NavLink>
@@ -75,6 +81,7 @@ export default function Header() {
 										<NavLink
 											to="/testimoniesandfacts"
 											className="nav-link"
+											onClick={handleClose}
 										>
 											Testimonies Facts
 										</NavLink>
@@ -83,6 +90,7 @@ export default function Header() {
 										<NavLink
 											to="/contactus"
 											className="nav-link"
+											onClick={handleClose}
 										>
 											Contact Us
 										</NavLink>
@@ -91,6 +99,7 @@ export default function Header() {
 										<NavLink
 											to="/aboutus"
 											className="nav-link"
+											onClick={handleClose}
 										>
 											About Us
 										</NavLink>

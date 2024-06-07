@@ -115,12 +115,10 @@ function ProductShop() {
 
 			<hr />
 			<div className="col-12 text-center">
-				<div className="introduction">
-					<h5>
-						Equip yourself with "Our Extinguishers" for proactive
-						fire safety and peace of mind in any environment.
-					</h5>
-				</div>
+				<h5>
+					Equip yourself with "Our Extinguishers" for proactive fire
+					safety and peace of mind in any environment.
+				</h5>
 			</div>
 			<hr />
 		</div>
