@@ -18,7 +18,11 @@ export default function Header() {
 	return (
 		<>
 			{["md"].map((expand) => (
-				<Navbar key={expand} expand={expand}>
+				<Navbar
+					key={expand}
+					expand={expand}
+					className={isHomePage ? "home-page" : ""}
+				>
 					<Container fluid>
 						{isHomePage ? null : (
 							<img

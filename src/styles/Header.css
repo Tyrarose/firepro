@@ -42,4 +42,9 @@
 		padding: 0%;
 		margin-left: 2%;
 	}
+
+	/* Remove margin-bottom for Home page */
+	.home-page {
+		margin-bottom: 0;
+	}
 }
