@@ -7,7 +7,6 @@ function StoreLocation() {
 	const imageRef = useRef(null);
 	const [zoomed, setZoomed] = useState(false);
 	const [zoomLevel, setZoomLevel] = useState(1);
-	const [lastTouch, setLastTouch] = useState({ x: 0, y: 0 });
 
 	const handleZoomClick = () => {
 		setZoomed(!zoomed);
@@ -22,13 +21,12 @@ function StoreLocation() {
 			const offsetY = touch.clientY - rect.top;
 			const xPercent = (offsetX / rect.width) * 100;
 			const yPercent = (offsetY / rect.height) * 100;
-			setLastTouch({ x: xPercent, y: yPercent });
 			imageRef.current.style.transformOrigin = `${xPercent}% ${yPercent}%`;
 		}
 	};
 
 	return (
-		<div className="page-container">
+		<div className="page-container transition-fade">
 			<div className="container">
 				<div className="row text-center">
 					<div className="my-3">

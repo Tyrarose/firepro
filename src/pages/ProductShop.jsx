@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/ProductShop.css";
 
 import productsData from "../data/products.json";
 
 function ProductShop() {
+	const [showScrollButton, setShowScrollButton] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 100) {
+				setShowScrollButton(true);
+			} else {
+				setShowScrollButton(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
-		<div className="page-container">
+		<div className="page-container transition-fade">
 			<div className="container">
 				<div className="col-12 text-center">
 					<div className="introduction">
 						<h2>
 							<strong>Our Extinguishers</strong>
 						</h2>
-						<h6>
+						<h6 className="my-4">
 							Empowering Safety: Where Efficiency Meets Fire
 							Protection
 						</h6>
@@ -69,7 +92,6 @@ function ProductShop() {
 										</div>
 									</div>
 									<div className="col-md-6 picture text-end col-sm-12">
-										{/* Dynamically import images */}
 										<img
 											key={product.id}
 											src={`${process.env.PUBLIC_URL}/${product.imageUrl}`}
@@ -142,6 +164,11 @@ function ProductShop() {
 					<hr />
 				</div>
 			</div>
+			{showScrollButton && (
+				<button className="scroll-to-top-btn" onClick={scrollToTop}>
+					<ArrowUpwardIcon />
+				</button>
+			)}
 		</div>
 	);
 }

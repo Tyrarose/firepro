@@ -2,6 +2,10 @@
 	/* border: 1px green dotted; */
 }
 
+.navbar {
+	margin-top: 1%;
+}
+
 .nav-link {
 	color: black !important;
 }
@@ -20,18 +24,22 @@
 }
 
 .brand-image {
-	/* border: 1px blue solid; */
-	height: 30px;
-	scale: 2;
-	margin-left: 40px;
-	margin-top: 0px;
+	width: auto;
+	height: 90px;
 	position: absolute;
+	padding-top: 0.5rem;
+	padding-left: 0.5rem;
 }
 
 /* Media query for phones (max-width: 767px) */
 @media only screen and (max-width: 767px) {
+	.navbar {
+		margin-top: 7%;
+		margin-bottom: 15%;
+	}
 	.brand-image {
-		margin-top: 10px;
-		margin-left: 30px;
+		height: 95px;
+		padding: 0%;
+		margin-left: 2%;
 	}
 }

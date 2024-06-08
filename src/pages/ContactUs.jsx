@@ -1,6 +1,6 @@
 export default function ContactUs() {
 	return (
-		<div className="page-container">
+		<div className="page-container transition-fade">
 			<h1 className="my-5">Contact Us</h1>
 		</div>
 	);

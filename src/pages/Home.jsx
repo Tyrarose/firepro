@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import fireproshieldImage from "../images/fireproshield.png";
 import featuredpic from "../images/featured.png";
@@ -8,12 +8,13 @@ import "../styles/Home.css";
 function Home() {
 	const navigate = useNavigate();
 
-	const handleScrollToExtinguishers = () => {
+	const handleMoveToExtinguishers = () => {
 		navigate("/productshop");
+		window.scrollTo(0, 0);
 	};
 
 	return (
-		<div className="page-container">
+		<div className="page-container transition-fade">
 			<div className="container">
 				<div className="firebg"></div>
 
@@ -54,7 +55,7 @@ function Home() {
 							<div className="mainbutton">
 								<button
 									className="btn viewext"
-									onClick={handleScrollToExtinguishers}
+									onClick={handleMoveToExtinguishers}
 								>
 									View extinguishers
 								</button>
