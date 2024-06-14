@@ -25,11 +25,13 @@ export default function Header() {
 				>
 					<Container fluid>
 						{isHomePage ? null : (
-							<img
-								src={fireproshieldImage}
-								alt=""
-								className="brand-image"
-							/>
+							<NavLink to="/">
+								<img
+									src={fireproshieldImage}
+									alt=""
+									className="brand-image"
+								/>
+							</NavLink>
 						)}
 						<Navbar.Toggle
 							aria-controls={`offcanvasNavbar-expand-${expand}`}

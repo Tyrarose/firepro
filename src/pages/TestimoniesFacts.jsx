@@ -1,7 +1,34 @@
-export default function TestimoniesFacts() {
+import React, { useState, useEffect } from "react";
+import Preloader from "../components/preloader";
+
+const TestimoniesFacts = () => {
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		let mounted = true;
+
+		if (mounted) {
+			setTimeout(() => {
+				setLoading(false);
+			}, 0);
+		}
+
+		return () => {
+			mounted = false;
+		};
+	}, []);
+
 	return (
-		<div className="page-container transition-fade">
-			<h1 className="my-5">Testimonies Facts</h1>
+		<div>
+			{loading ? (
+				<Preloader />
+			) : (
+				<div>
+					<h1>Testimonies Facts</h1>
+				</div>
+			)}
 		</div>
 	);
-}
+};
+
+export default TestimoniesFacts;

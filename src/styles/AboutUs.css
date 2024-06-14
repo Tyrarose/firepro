@@ -99,7 +99,6 @@
 	transition: background-color 0.3s ease;
 }
 
-/* Custom carousel indicators */
 .custom-carousel-indicators {
 	display: flex;
 	justify-content: center;
@@ -116,9 +115,8 @@
 	transition: background-color 0.3s ease;
 }
 
-/* Active indicator */
 .carousel-indicator.active {
-	background-color: #ca0000; /* Color for active indicator */
+	background-color: #ca0000;
 }
 
 @media only screen and (max-width: 768px) {
@@ -147,6 +145,7 @@
 .carousel-item {
 	padding: 10px;
 	margin-bottom: 20px;
+	min-height: 425px;
 }
 
 .carousel-item > p {

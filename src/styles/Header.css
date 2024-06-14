@@ -26,9 +26,8 @@
 .brand-image {
 	width: auto;
 	height: 90px;
-	position: absolute;
-	padding-top: 0.5rem;
-	padding-left: 0.5rem;
+	position: fixed;
+	top: 1%;
 }
 
 .active-link {

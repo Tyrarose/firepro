@@ -25,6 +25,7 @@ h1 {
 
 .picture > img {
 	height: 100%;
+	max-width: 100%;
 }
 
 .prices {
