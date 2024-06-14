@@ -1,3 +1,120 @@
+* {
+	/* border: 1px red dotted; */
+}
+
 .transition-fade {
 	transition: opacity 0.3s ease-in-out;
+}
+
+.Ellipse1,
+.Ellipse2 {
+	width: 100vw;
+	height: 100vw;
+	max-width: 833px;
+	max-height: 833px;
+	background: rgba(217, 217, 217, 0.6);
+	border-radius: 50%;
+	position: fixed;
+	z-index: -99;
+}
+
+.Ellipse1 {
+	top: -50vh;
+	right: calc(50vw - 70%);
+}
+
+.Ellipse2 {
+	bottom: -40vh;
+	left: calc(50vw - 70%);
+}
+
+@media only screen and (max-width: 768px) {
+	.Ellipse1,
+	.Ellipse2 {
+		width: 60vh;
+		height: 60vh;
+	}
+	.Ellipse1 {
+		top: -40vh;
+		right: calc(0vh - 70%);
+	}
+
+	.Ellipse2 {
+		bottom: -30vh;
+		left: calc(-35vh - 0vh);
+	}
+}
+
+.heading {
+	background-color: #ca0000;
+	border: 1px #ff0000 solid;
+	border-radius: 10px;
+	color: white;
+	padding: 5px 10px;
+	display: inline-block;
+}
+.cards {
+	position: relative;
+	padding: 0 20px;
+}
+
+.cards:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.imagesCards {
+	height: 240px;
+}
+.title {
+	font-style: normal;
+	font-weight: 900;
+	font-size: 40px;
+	line-height: 51px;
+	text-align: center;
+	letter-spacing: 0.2em;
+	color: #ca0000;
+	margin-top: 35px;
+}
+
+.description {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.history {
+	margin-bottom: 50px;
+}
+
+.history > p {
+	font-size: 18px;
+	margin-top: 25px;
+}
+
+.italic {
+	font-style: italic;
+}
+
+/**** CAROUSEL ****/
+
+.carousel-item > * {
+	margin-top: 15px;
+}
+.carousel-item {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.carousel-item > p {
+	text-align: center;
+	font-size: 11px;
+}
+
+.carousel-item > img {
+	width: 24vh;
 }

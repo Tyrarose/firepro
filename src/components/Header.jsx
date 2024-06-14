@@ -59,6 +59,7 @@ export default function Header() {
 											to="/"
 											className="nav-link"
 											onClick={handleClose}
+											activeClassName="active-link"
 										>
 											Home
 										</NavLink>
@@ -68,6 +69,7 @@ export default function Header() {
 											to="/productshop"
 											className="nav-link"
 											onClick={handleClose}
+											activeClassName="active-link"
 										>
 											Product Shop
 										</NavLink>
@@ -77,6 +79,7 @@ export default function Header() {
 											to="/storelocation"
 											className="nav-link"
 											onClick={handleClose}
+											activeClassName="active-link"
 										>
 											Store Location
 										</NavLink>
@@ -86,6 +89,7 @@ export default function Header() {
 											to="/testimoniesandfacts"
 											className="nav-link"
 											onClick={handleClose}
+											activeClassName="active-link"
 										>
 											Testimonies Facts
 										</NavLink>
@@ -95,6 +99,7 @@ export default function Header() {
 											to="/contactus"
 											className="nav-link"
 											onClick={handleClose}
+											activeClassName="active-link"
 										>
 											Contact Us
 										</NavLink>
@@ -104,6 +109,7 @@ export default function Header() {
 											to="/aboutus"
 											className="nav-link"
 											onClick={handleClose}
+											activeClassName="active-link"
 										>
 											About Us
 										</NavLink>

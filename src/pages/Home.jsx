@@ -1,5 +1,6 @@
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import $ from "jquery";
 
 import fireproshieldImage from "../images/fireproshield.png";
 import featuredpic from "../images/featured.png";
@@ -13,8 +14,36 @@ function Home() {
 		window.scrollTo(0, 0);
 	};
 
+	const location = useLocation();
+
+	useEffect(() => {
+		const $winW = () => $(window).width();
+		const $winH = () => $(window).height();
+		const $screensize = (element) =>
+			$(element).width($winW()).height($winH());
+
+		const screencheck = (mediasize) => {
+			if (typeof window.matchMedia !== "undefined") {
+				const screensize = window.matchMedia(
+					`(max-width:${mediasize}px)`
+				);
+				return screensize.matches;
+			} else {
+				return $winW() <= mediasize;
+			}
+		};
+	}, []);
+
 	return (
 		<div className="page-container transition-fade">
+			{/* <div className="preloader">
+				<div className="preloader-bounce">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div> */}
+
 			<div className="container">
 				<div className="firebg"></div>
 

@@ -31,6 +31,10 @@
 	padding-left: 0.5rem;
 }
 
+.active-link {
+	background-color: red;
+}
+
 /* Media query for phones (max-width: 767px) */
 @media only screen and (max-width: 767px) {
 	.navbar {

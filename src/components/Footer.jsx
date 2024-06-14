@@ -45,7 +45,7 @@ const Footer = () => {
 					</div>
 					<div className="col-4">
 						<p className="text-center copyright">
-							&copy; Firepro {currentYear}{" "}
+							&copy; Firepro {currentYear}
 						</p>
 					</div>
 					<div className="col-4 flameout_logo_container">
