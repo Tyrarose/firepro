@@ -100,20 +100,20 @@
 	margin: 0px;
 }
 
-.title,
-.subtitle {
+.home-title,
+.subhome-title {
 	color: rgba(0, 0, 0, 1);
 	text-align: left;
 	font-family: Poppins;
 }
 
-.title {
+.home-title {
 	font-size: 1.8rem;
 	margin-top: 3%;
 	margin-bottom: 3%;
 }
 
-.subtitle {
+.subhome-title {
 	font-size: 1.1rem;
 	padding-right: 25%;
 }
@@ -179,14 +179,14 @@
 		margin: 0px;
 	}
 
-	.title {
+	.home-title {
 		font-size: 1.1rem;
 		text-align: center;
 		margin: 0px;
 		padding: 40px 0px 10px 0px;
 	}
 
-	.subtitle {
+	.subhome-title {
 		text-align: center;
 		font-size: 1rem;
 		padding: 5px;

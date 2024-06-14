@@ -65,7 +65,7 @@ function Home() {
 								/>
 							</div>
 
-							<div className="title">
+							<div className="home-title">
 								<strong>
 									The next generation in fire fighting
 								</strong>

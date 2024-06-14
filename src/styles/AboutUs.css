@@ -71,7 +71,7 @@
 .imagesCards {
 	height: 240px;
 }
-.title {
+.carousel-title {
 	font-style: normal;
 	font-weight: 900;
 	font-size: 40px;
@@ -80,6 +80,54 @@
 	letter-spacing: 0.2em;
 	color: #ca0000;
 	margin-top: 35px;
+}
+
+/* Custom carousel indicators */
+.custom-carousel-indicators {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.carousel-indicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Custom carousel indicators */
+.custom-carousel-indicators {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.carousel-indicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #d9d9d9;
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Active indicator */
+.carousel-indicator.active {
+	background-color: #ca0000; /* Color for active indicator */
+}
+
+@media only screen and (max-width: 768px) {
+	.heading {
+		font-size: 15px;
+	}
+	.carousel-title {
+		font-size: 30px;
+	}
 }
 
 .description {

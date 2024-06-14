@@ -7,6 +7,12 @@ import aboutUsData from "../data/aboutUs.json";
 import historyData from "../data/history.json";
 
 export default function AboutUs() {
+	const [activeIndex, setActiveIndex] = useState(0);
+
+	const handleSelect = (selectedIndex, e) => {
+		setActiveIndex(selectedIndex);
+	};
+
 	return (
 		<div className="page-container transition-fade">
 			<div className="Ellipse1" />
@@ -16,15 +22,23 @@ export default function AboutUs() {
 					MISSION, VISION & VALUE STATEMENT
 				</h1>
 				<div className="d-md-none">
-					<Carousel className="custom-carousel">
-						{aboutUsData.map((item) => (
-							<Carousel.Item className="carousel-item text-center">
+					<Carousel
+						activeIndex={activeIndex}
+						onSelect={handleSelect}
+						className="custom-carousel"
+						indicators={false}
+					>
+						{aboutUsData.map((item, index) => (
+							<Carousel.Item
+								key={index}
+								className="carousel-item text-center"
+							>
 								<img
 									className="d-block mx-auto"
 									src={item.icon}
 									alt={`${item.title} Icon`}
 								/>
-								<h3 className="title">{item.title}</h3>
+								<h3 className="carousel-title">{item.title}</h3>
 								<p
 									className="description"
 									dangerouslySetInnerHTML={{
@@ -34,6 +48,19 @@ export default function AboutUs() {
 							</Carousel.Item>
 						))}
 					</Carousel>
+					<div className="custom-carousel-indicators">
+						{aboutUsData.map((_, index) => (
+							<span
+								key={index}
+								className={
+									index === activeIndex
+										? "carousel-indicator active"
+										: "carousel-indicator"
+								}
+								onClick={() => handleSelect(index)}
+							></span>
+						))}
+					</div>
 				</div>
 				<div className="row d-none d-md-flex">
 					{aboutUsData.map((item, index) => (
@@ -41,9 +68,9 @@ export default function AboutUs() {
 							<img
 								className="imagesCards"
 								src={item.icon}
-								alt={`${item.title}Icon`}
+								alt={`${item.title} Icon`}
 							/>
-							<h3 className="title">{item.title}</h3>
+							<h3 className="carousel-title">{item.title}</h3>
 							<p
 								className="description"
 								dangerouslySetInnerHTML={{
@@ -59,9 +86,17 @@ export default function AboutUs() {
 				<h1 className="my-5 heading">BEHIND THE PRODUCT</h1>
 
 				<div className="d-md-none">
-					<Carousel className="custom-carousel">
-						{historyData.map((item) => (
-							<Carousel.Item className="carousel-item text-center">
+					<Carousel
+						activeIndex={activeIndex}
+						onSelect={handleSelect}
+						className="custom-carousel"
+						indicators={false}
+					>
+						{historyData.map((item, index) => (
+							<Carousel.Item
+								key={index}
+								className="carousel-item text-center"
+							>
 								<p
 									className="description mx-3"
 									dangerouslySetInnerHTML={{
@@ -71,6 +106,19 @@ export default function AboutUs() {
 							</Carousel.Item>
 						))}
 					</Carousel>
+					<div className="custom-carousel-indicators">
+						{historyData.map((_, index) => (
+							<span
+								key={index}
+								className={
+									index === activeIndex
+										? "carousel-indicator active"
+										: "carousel-indicator"
+								}
+								onClick={() => handleSelect(index)}
+							></span>
+						))}
+					</div>
 				</div>
 				<div className="row d-none d-md-flex">
 					<div className="col-12 text-center">
