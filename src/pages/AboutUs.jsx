@@ -17,8 +17,8 @@ export default function AboutUs() {
 		<div className="page-container transition-fade">
 			<div className="Ellipse1" />
 			<div className="Ellipse2" />
-			<div className="container text-center">
-				<h1 className="my-5 heading">
+			<div className="container text-center my-4">
+				<h1 className="my-4 heading">
 					MISSION, VISION & VALUE STATEMENT
 				</h1>
 				<div className="d-md-none">
@@ -62,7 +62,7 @@ export default function AboutUs() {
 						))}
 					</div>
 				</div>
-				<div className="row d-none d-md-flex">
+				<div className="row d-none d-md-flex my-3">
 					{aboutUsData.map((item, index) => (
 						<div className="col-4 cards text-center" key={index}>
 							<img
@@ -82,8 +82,8 @@ export default function AboutUs() {
 				</div>
 			</div>
 
-			<div className="container text-center">
-				<h1 className="my-5 heading">BEHIND THE PRODUCT</h1>
+			<div className="container text-center my-4">
+				<h1 className="my-4 heading">BEHIND THE PRODUCT</h1>
 
 				<div className="d-md-none">
 					<Carousel
