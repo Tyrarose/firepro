@@ -26,7 +26,7 @@
 .brand-image {
 	width: auto;
 	height: 90px;
-	position: fixed;
+	position: absolute;
 	top: 1%;
 }
 
@@ -34,19 +34,18 @@
 	background-color: red;
 }
 
-/* Media query for phones (max-width: 767px) */
+/* Media query for phones */
 @media only screen and (max-width: 767px) {
 	.navbar {
 		margin-top: 7%;
-		margin-bottom: 15%;
+		margin-bottom: 9%;
 	}
 	.brand-image {
-		height: 95px;
+		height: 80px;
 		padding: 0%;
 		margin-left: 2%;
 	}
 
-	/* Remove margin-bottom for Home page */
 	.home-page {
 		margin-bottom: 0;
 	}

@@ -61,10 +61,12 @@ function ProductShop() {
 								>
 									{product.id % 2 === 0 ? (
 										<>
-											<div className="col-md-6 col-sm-12">
-												<div className="productdeets">
-													<h1>{product.name}</h1>
-													<p className="text-center">
+											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+												<div className="productdeets ">
+													<h1 className="product-name">
+														{product.name}
+													</h1>
+													<p className="text-center product-info">
 														<strong>
 															{product.feature}
 														</strong>
@@ -73,31 +75,34 @@ function ProductShop() {
 															{product.feature2}
 														</strong>
 													</p>
-													<p>{product.description}</p>
-												</div>
-												<div className="row bottomers">
-													<div className="col-md-6 col-sm-12 buy_now_container">
-														<button className="btn buy_now">
-															Buy now
-														</button>
-													</div>
-													<div className="col-md-6 col-sm-12">
-														<p className="prices">
-															<span
-																style={{
-																	color: "black",
-																}}
-															>
-																Price
-															</span>{" "}
-															<span
-																style={{
-																	color: "#C1301B",
-																}}
-															>
-																${product.price}
-															</span>
-														</p>
+													<p className="product-description">
+														{product.description}
+													</p>
+													<div className="row bottomers">
+														<div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
+															<p className="prices mb-0">
+																<span
+																	style={{
+																		color: "black",
+																	}}
+																>
+																	Price
+																</span>{" "}
+																<span
+																	style={{
+																		color: "#C1301B",
+																	}}
+																>
+																	$
+																	{
+																		product.price
+																	}
+																</span>
+															</p>
+															<button className="btn buy_now mt-md-0">
+																Buy now
+															</button>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -120,10 +125,12 @@ function ProductShop() {
 													loading="lazy"
 												/>
 											</div>
-											<div className="col-md-6 col-sm-12">
+											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
 												<div className="productdeets">
-													<h1>{product.name}</h1>
-													<p className="text-center">
+													<h1 className="product-name">
+														{product.name}
+													</h1>
+													<p className="text-center product-info">
 														<strong>
 															{product.feature}
 														</strong>
@@ -132,31 +139,34 @@ function ProductShop() {
 															{product.feature2}
 														</strong>
 													</p>
-													<p>{product.description}</p>
-												</div>
-												<div className="row bottomers">
-													<div className="col-md-6 col-sm-12 buy_now_container">
-														<button className="btn buy_now">
-															Buy now
-														</button>
-													</div>
-													<div className="col-md-6 col-sm-12">
-														<p className="prices">
-															<span
-																style={{
-																	color: "black",
-																}}
-															>
-																Price
-															</span>{" "}
-															<span
-																style={{
-																	color: "#C1301B",
-																}}
-															>
-																${product.price}
-															</span>
-														</p>
+													<p className="product-description">
+														{product.description}
+													</p>
+													<div className="row bottomers">
+														<div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
+															<p className="prices mb-0">
+																<span
+																	style={{
+																		color: "black",
+																	}}
+																>
+																	Price
+																</span>{" "}
+																<span
+																	style={{
+																		color: "#C1301B",
+																	}}
+																>
+																	$
+																	{
+																		product.price
+																	}
+																</span>
+															</p>
+															<button className="btn buy_now mt-md-0">
+																Buy now
+															</button>
+														</div>
 													</div>
 												</div>
 											</div>

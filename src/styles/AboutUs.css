@@ -1,5 +1,5 @@
 * {
-	/* border: 1px red dotted; */
+	/* border: 1px pink dotted; */
 }
 
 .transition-fade {
@@ -53,6 +53,10 @@
 	padding: 5px 10px;
 	display: inline-block;
 }
+
+.heading2 {
+	color: #ca0000;
+}
 .cards {
 	position: relative;
 	padding: 0 20px;
@@ -68,8 +72,32 @@
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+section {
+	margin-bottom: 30px;
+}
+
+.first-section,
+.second-section,
+.third-section {
+	margin: 10px 0px;
+	background-color: rgba(184, 184, 184, 0.12);
+	padding: 50px 30px;
+	border-radius: 50px;
+	backdrop-filter: blur(4px);
+	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+.third-section:hover {
+	background-color: white;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
 .imagesCards {
-	height: 240px;
+	height: 200px;
+	margin-bottom: 15px;
+	padding: 20px;
 }
 .carousel-title {
 	font-style: normal;
@@ -80,6 +108,10 @@
 	letter-spacing: 0.2em;
 	color: #ca0000;
 	margin-top: 35px;
+}
+
+.history-content {
+	padding: 0px 40px;
 }
 
 /* Custom carousel indicators */
@@ -122,6 +154,7 @@
 @media only screen and (max-width: 768px) {
 	.heading {
 		font-size: 15px;
+		margin: 0px;
 	}
 	.carousel-title {
 		font-size: 30px;
@@ -154,5 +187,48 @@
 }
 
 .carousel-item > img {
-	width: 24vh;
+	width: 20vh;
+	padding: 20px;
+}
+
+/*==============================================
+06. SERVICES BLOCK CSS
+================================================*/
+.item-card {
+	border: 1px gray solid;
+	border-radius: 10px;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	margin: 15px 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-card:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.service-icon {
+	display: block;
+	margin: 0 auto;
+	height: 80px;
+}
+
+.service-box {
+	font-size: 15px;
+	padding: 15px 25px;
+	height: 100%;
+}
+
+.service-box > * {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.service-box img {
+	margin-bottom: 50px;
+}
+
+.item-card:hover {
+	background-color: #fff;
+	color: #1e1e1e;
 }

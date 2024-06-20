@@ -16,27 +16,9 @@ function Home() {
 		window.scrollTo(0, 0);
 	};
 
-	const location = useLocation();
-
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const $winW = () => $(window).width();
-		const $winH = () => $(window).height();
-		const $screensize = (element) =>
-			$(element).width($winW()).height($winH());
-
-		const screencheck = (mediasize) => {
-			if (typeof window.matchMedia !== "undefined") {
-				const screensize = window.matchMedia(
-					`(max-width:${mediasize}px)`
-				);
-				return screensize.matches;
-			} else {
-				return $winW() <= mediasize;
-			}
-		};
-
 		setTimeout(() => {
 			setLoading(false);
 		}, 200);
@@ -47,12 +29,12 @@ function Home() {
 			{loading ? (
 				<Preloader />
 			) : (
-				<div className="page-container transition-fade">
+				<div className="">
 					<div className="container">
 						<div className="firebg"></div>
 
 						<div className="row">
-							<div className="col-md-4">
+							<div className="col-md-5">
 								<div className="well">
 									<div className="featuredpic_container">
 										<img
@@ -63,7 +45,7 @@ function Home() {
 								</div>
 							</div>
 
-							<div className="col-md-8">
+							<div className="col-md-7">
 								<div className="well">
 									<div className="fireproshield">
 										<img
@@ -78,7 +60,7 @@ function Home() {
 										</strong>
 									</div>
 
-									<div className="subtitle">
+									<div className="home-subtitle">
 										Approximately 80% of fire attacks with
 										extinguishers are successfully defeated.
 										Fire extinguishers save!

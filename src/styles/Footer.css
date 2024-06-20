@@ -1,30 +1,51 @@
-footer {
-	position: relative;
-	width: 100%;
-	margin-top: auto;
+* {
+	/* border: 1px red dotted; */
+}
+
+.footer-container {
+	padding: 0px;
+	margin-bottom: 20px;
 }
 
 .feet {
-	margin: 0px 20px 10px 20px;
 	display: flex;
-	align-items: flex-end;
 }
 
 .social-icons {
 	display: flex;
-	gap: 10px;
+	gap: 8px;
 }
 
 .social-icons a {
-	display: flex;
-	align-items: flex-end;
-	text-decoration: none;
 	color: #000;
 	transition: color 0.3s;
+	text-decoration: none;
+	border: 1px black solid;
+	border-radius: 10px;
+	padding: 4px 8px;
 }
 
-.social-icons img {
-	height: 24px;
+.social-icons i {
+	margin-right: 3px;
+}
+
+.social-icons a:hover {
+	color: black;
+	background-color: white;
+	border: 1px white solid;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.social-icons a:hover i.fa-facebook-f {
+	color: #3b5998;
+}
+
+.social-icons a:hover i.fa-twitter {
+	color: #1da1f2;
+}
+
+.social-icons a:hover i.fa-instagram {
+	color: #e4405f;
 }
 
 .copyright {
@@ -44,28 +65,56 @@ footer {
 	object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) {
-	footer {
-		padding: 0px;
-	}
+.copyright-link,
+.flameout_logo_link {
+	text-decoration: none;
+	color: inherit;
+}
 
+.copyright-link:hover,
+.flameout_logo_link:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+.socials-container {
+	justify-content: start;
+}
+
+.copyright-container {
+	justify-content: center;
+}
+
+.flameout_logo-container {
+	justify-content: end;
+}
+
+@media only screen and (min-width: 768px) {
 	.feet {
-		margin-top: 15px;
-		flex-direction: row;
-		display: flex;
+		align-items: end;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.feet {
+		/* flex-direction: column; */
+		align-items: center;
+		margin-top: 30px;
 	}
 
-	.social-icons img {
-		height: 20px;
+	.feet > * {
+		margin: 10px;
+	}
+
+	.social-icons a {
+		font-size: 0;
+	}
+	.social-icons a i {
+		font-size: 1.5rem;
 	}
 
 	.copyright {
 		font-size: 10px;
-	}
-
-	.flameout_logo_container {
-		display: flex;
-		align-items: flex-end;
 	}
 
 	.flameout_logo img {
