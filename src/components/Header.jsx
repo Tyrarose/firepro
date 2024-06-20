@@ -5,8 +5,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import "../styles/Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import fireproshieldImage from "../images/fireproshield.png";
-
 export default function Header() {
 	const [expanded, setExpanded] = useState(false);
 	const location = useLocation();
@@ -27,8 +25,11 @@ export default function Header() {
 						{isHomePage ? null : (
 							<NavLink to="/">
 								<img
-									src={fireproshieldImage}
-									alt=""
+									src={
+										process.env.PUBLIC_URL +
+										"/images/mainImages/fireproshield.png"
+									}
+									alt="fireproshield"
 									className="brand-image"
 								/>
 							</NavLink>

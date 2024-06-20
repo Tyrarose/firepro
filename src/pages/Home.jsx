@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import $ from "jquery";
 
-import fireproshieldImage from "../images/fireproshield.png";
-import featuredpic from "../images/featured.png";
 import "../styles/Home.css";
 
 import Preloader from "../components/preloader";
@@ -21,7 +19,7 @@ function Home() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 200);
+		}, 50);
 	}, []);
 
 	return (
@@ -29,8 +27,8 @@ function Home() {
 			{loading ? (
 				<Preloader />
 			) : (
-				<div className="">
-					<div className="container">
+				<div className="container">
+					<div className="Home-contents">
 						<div className="firebg"></div>
 
 						<div className="row">
@@ -38,8 +36,11 @@ function Home() {
 								<div className="well">
 									<div className="featuredpic_container">
 										<img
-											src={featuredpic}
-											alt="featuredpic"
+											src={
+												process.env.PUBLIC_URL +
+												"/images/mainImages/featured.png"
+											}
+											alt="Featured"
 										/>
 									</div>
 								</div>
@@ -49,8 +50,11 @@ function Home() {
 								<div className="well">
 									<div className="fireproshield">
 										<img
-											src={fireproshieldImage}
-											alt="Fireproshield"
+											src={
+												process.env.PUBLIC_URL +
+												"/images/mainImages/fireproshield.png"
+											}
+											alt="fireproshield"
 										/>
 									</div>
 

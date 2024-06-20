@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/StoreLocation.css";
-import map from "../images/Map1.svg";
+
 import Preloader from "../components/preloader";
 
 function StoreLocation() {
@@ -30,7 +30,7 @@ function StoreLocation() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 200);
+		}, 0);
 	}, []);
 
 	return (
@@ -60,7 +60,10 @@ function StoreLocation() {
 									}}
 								>
 									<img
-										src={map}
+										src={
+											process.env.PUBLIC_URL +
+											"/images/mainImages/Map1.svg"
+										}
 										alt=""
 										className="img-fluid"
 										ref={imageRef}
