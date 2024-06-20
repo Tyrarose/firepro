@@ -14,7 +14,7 @@ const Footer = () => {
 			<div className="container footer-container text-center">
 				<div className="feet align-items-center">
 					{/* Social Icons */}
-					<div className="socials-container col-md-4 col-sm-12 d-flex mb-3 ">
+					<div className="socials-container col-md-5 col-sm-12 d-flex mb-3 ">
 						<div className="social-icons">
 							<a
 								href="https://www.facebook.com"
@@ -43,7 +43,7 @@ const Footer = () => {
 						</div>
 					</div>
 					{/* Copyright */}
-					<div className="copyright-container col-md-4 col-sm-12">
+					<div className="copyright-container col-md-3 col-sm-12">
 						<a href="/" className="text-center copyright-link">
 							<p className="text-center copyright">
 								&copy; Firepro {currentYear}

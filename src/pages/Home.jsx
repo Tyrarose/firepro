@@ -33,7 +33,7 @@ function Home() {
 
 						<div className="row">
 							<div className="col-md-5">
-								<div className="well">
+								<div className="well text-center">
 									<div className="featuredpic_container">
 										<img
 											src={
@@ -46,7 +46,7 @@ function Home() {
 								</div>
 							</div>
 
-							<div className="col-md-7">
+							<div className="col-md-7 home-side d-flex justify-content-between">
 								<div className="well">
 									<div className="fireproshield">
 										<img
@@ -57,23 +57,30 @@ function Home() {
 											alt="fireproshield"
 										/>
 									</div>
-
+								</div>
+								<div className="well">
 									<div className="home-title">
 										<strong>
 											The next generation in fire fighting
 										</strong>
 									</div>
+								</div>
 
+								<div className="well">
 									<div className="home-subtitle">
 										Approximately 80% of fire attacks with
 										extinguishers are successfully defeated.
 										Fire extinguishers save!
 									</div>
+								</div>
 
+								<dic className="well">
 									<div className="d-md-none">
 										<div className="featuredpic-mobile"></div>
 									</div>
+								</dic>
 
+								<div className="well">
 									<div className="mainbutton">
 										<button
 											className="btn viewext"
