@@ -52,9 +52,6 @@
 
 .flameout_logo_container {
 	overflow: hidden;
-	display: flex;
-	align-items: flex-end;
-	justify-content: end;
 }
 
 .flameout_logo img {
@@ -93,21 +90,10 @@
 	justify-content: end;
 }
 
-@media only screen and (min-width: 768px) {
-	.feet {
-		align-items: end;
-	}
-}
-
 @media only screen and (max-width: 768px) {
 	.feet {
-		/* flex-direction: column; */
-		align-items: center;
 		margin-top: 30px;
-	}
-
-	.feet > * {
-		margin: 10px;
+		justify-content: space-around;
 	}
 
 	.social-icons a {

@@ -12,7 +12,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className="container footer-container text-center">
-				<div className="feet align-items-center">
+				<div className="feet align-items-center col-12">
 					{/* Social Icons */}
 					<div className="socials-container col-md-5 col-sm-12 d-flex mb-3 ">
 						<div className="social-icons">
