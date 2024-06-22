@@ -30,10 +30,8 @@
 }
 
 .social-icons a:hover {
-	color: black;
-	background-color: white;
-	border: 1px white solid;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	border: 1px black solid;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .social-icons a:hover i.fa-facebook-f {
@@ -63,6 +61,12 @@
 	width: 120px;
 	height: auto;
 	object-fit: contain;
+	transition: transform 0.3s ease;
+}
+
+.flameout_logo img:hover {
+	transform: scale(1.1);
+	overflow: hidden;
 }
 
 .copyright-link,

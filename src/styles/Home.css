@@ -6,13 +6,11 @@
 	margin-top: 10px;
 	margin-bottom: 35px;
 	height: 68vh;
-	display: flex;
-	justify-content: center;
-	align-items: top;
 }
 
 .home-side {
 	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .transition-fade {
@@ -47,12 +45,11 @@
 }
 
 .home-title {
-	font-size: 2rem;
+	font-size: clamp(18px, 3vw, 28px);
 }
 
 .home-subtitle {
-	font-size: 1.3rem;
-	padding-right: 25%;
+	font-size: clamp(14px, 2vw, 24px);
 }
 
 .mainbutton {
@@ -64,6 +61,13 @@
 	border-radius: 10px;
 	color: rgba(255, 255, 255, 1);
 	padding: 8px 65px;
+}
+
+.viewext:hover {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0 0 0 1px rgba(193, 48, 27, 1);
+	color: rgba(193, 48, 27, 1);
+	font-weight: 600;
 }
 
 /* Responsive styles */
@@ -118,7 +122,6 @@
 	}
 
 	.home-title {
-		font-size: 1.1rem;
 		text-align: center;
 		margin: 0px;
 		padding: 40px 0px 10px 0px;
@@ -126,7 +129,6 @@
 
 	.home-subtitle {
 		text-align: center;
-		font-size: 1rem;
 		padding: 5px;
 		margin: 0px;
 	}

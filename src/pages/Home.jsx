@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import $ from "jquery";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/Home.css";
 
@@ -8,6 +7,7 @@ import Preloader from "../components/preloader";
 
 function Home() {
 	const navigate = useNavigate();
+	const viewButtonRef = useRef(null);
 
 	const handleMoveToExtinguishers = () => {
 		navigate("/productshop");
@@ -19,8 +19,29 @@ function Home() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 50);
+		}, 10);
 	}, []);
+
+	useEffect(() => {
+		const viewButton = viewButtonRef.current;
+		if (viewButton) {
+			const handleMouseOver = () => {
+				viewButton.textContent = "View extinguishers >>>";
+			};
+
+			const handleMouseOut = () => {
+				viewButton.textContent = "View extinguishers";
+			};
+
+			viewButton.addEventListener("mouseover", handleMouseOver);
+			viewButton.addEventListener("mouseout", handleMouseOut);
+
+			return () => {
+				viewButton.removeEventListener("mouseover", handleMouseOver);
+				viewButton.removeEventListener("mouseout", handleMouseOut);
+			};
+		}
+	}, [loading]);
 
 	return (
 		<div>
@@ -46,7 +67,7 @@ function Home() {
 								</div>
 							</div>
 
-							<div className="col-md-7 home-side d-flex justify-content-between">
+							<div className="col-md-7 home-side d-flex">
 								<div className="well">
 									<div className="fireproshield">
 										<img
@@ -74,15 +95,17 @@ function Home() {
 									</div>
 								</div>
 
-								<dic className="well">
+								<div className="well">
 									<div className="d-md-none">
 										<div className="featuredpic-mobile"></div>
 									</div>
-								</dic>
+								</div>
 
 								<div className="well">
 									<div className="mainbutton">
 										<button
+											id="viewButton"
+											ref={viewButtonRef}
 											className="btn viewext"
 											onClick={handleMoveToExtinguishers}
 										>

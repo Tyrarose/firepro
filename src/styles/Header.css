@@ -2,12 +2,13 @@
 	/* border: 1px green dotted; */
 }
 
-.navbar {
+nav {
 	margin-top: 1%;
 }
 
 .nav-link {
 	color: black !important;
+	font-size: clamp(14px, 2vw, 16px);
 }
 
 .nav-item:hover {

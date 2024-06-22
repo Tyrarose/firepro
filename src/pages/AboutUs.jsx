@@ -19,7 +19,7 @@ export default function AboutUs() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 100);
+		}, 50);
 	}, []);
 
 	return (
@@ -31,95 +31,10 @@ export default function AboutUs() {
 					<div className="Ellipse1" />
 					<div className="Ellipse2" />
 
-					<section className="container text-center">
-						<div className="first-section">
-							<h1 className="heading">
-								MISSION, VISION & VALUE STATEMENT
-							</h1>
-							{/* 
-						
-						FIRST CAROUSEL MISSION VISSION CORE 
-						
-						*/}
-							<div className="d-md-none">
-								<Carousel
-									activeIndex={activeIndex}
-									onSelect={handleSelect}
-									className="custom-carousel"
-									indicators={false}
-									interval={3000}
-								>
-									{aboutUsData.map((item, index) => (
-										<Carousel.Item
-											key={index}
-											className="carousel-item text-center"
-										>
-											<img
-												className="d-block mx-auto"
-												src={item.icon}
-												alt={`${item.title} Icon`}
-											/>
-											<h3 className="carousel-title">
-												{item.title}
-											</h3>
-											<p
-												className="description"
-												dangerouslySetInnerHTML={{
-													__html: item.description,
-												}}
-											/>
-										</Carousel.Item>
-									))}
-								</Carousel>
-								<div className="custom-carousel-indicators">
-									{aboutUsData.map((_, index) => (
-										<span
-											key={index}
-											className={
-												index === activeIndex
-													? "carousel-indicator active"
-													: "carousel-indicator"
-											}
-											onClick={() => handleSelect(index)}
-										></span>
-									))}
-								</div>
-							</div>
-							{/* 
-						
-						NOT FIRST CAROUSEL MISSION VISSION CORE 
-						
-						*/}
-							<div className="row d-none d-md-flex my-3">
-								{aboutUsData.map((item, index) => (
-									<div
-										className="col-4 cards text-center"
-										key={index}
-									>
-										<img
-											className="imagesCards"
-											src={item.icon}
-											alt={`${item.title} Icon`}
-										/>
-										<h3 className="carousel-title">
-											{item.title}
-										</h3>
-										<p
-											className="description"
-											dangerouslySetInnerHTML={{
-												__html: item.description,
-											}}
-										/>
-									</div>
-								))}
-							</div>
-						</div>
-					</section>
-
 					<section className="container text-center ">
 						<div className="second-section">
 							<h1 className="heading2">
-								MISSION, VISION & VALUE STATEMENT
+								MISSION, VISION & CORE VALUES
 							</h1>
 							{/* 
 						
@@ -130,7 +45,7 @@ export default function AboutUs() {
 								{aboutUsData.map((item, index) => (
 									<div
 										key={index}
-										className={`item-card ${index < 2 ? "col-4" : "col-9"}`}
+										className={`item-card ${index < 2 ? "col-4" : "col-8"}`}
 									>
 										<div className="service-box">
 											<img

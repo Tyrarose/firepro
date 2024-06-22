@@ -2,6 +2,10 @@
 	/* border: 1px pink dotted; */
 }
 
+.page-container {
+	transition: opacity 0.3s ease-in-out;
+}
+
 .transition-fade {
 	transition: opacity 0.3s ease-in-out;
 }
@@ -80,15 +84,22 @@ section {
 .second-section,
 .third-section {
 	margin: 10px 0px;
-	background-color: rgba(184, 184, 184, 0.12);
+	/* background-color: rgba(243, 189, 189, 0.09); */
 	padding: 50px 30px;
 	border-radius: 50px;
-	backdrop-filter: blur(4px);
-	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+	/* backdrop-filter: blur(4px); */
+	/* box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1); */
 }
 
+.third-section {
+	border-radius: 10px;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	margin: 5px 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
 .third-section:hover {
-	background-color: white;
+	background-color: rgb(253, 253, 254);
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
@@ -194,13 +205,15 @@ section {
 /*==============================================
 06. SERVICES BLOCK CSS
 ================================================*/
+.services-list {
+	margin-top: 30px;
+}
 .item-card {
-	border: 1px gray solid;
 	border-radius: 10px;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	margin: 15px 15px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 5px 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .item-card:hover {
@@ -209,7 +222,7 @@ section {
 
 .service-icon {
 	display: block;
-	margin: 0 auto;
+	margin: 25px auto 0px auto;
 	height: 80px;
 }
 

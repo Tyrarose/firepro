@@ -15,7 +15,7 @@ function ProductShop() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 100);
+		}, 30);
 
 		const handleScroll = () => {
 			if (window.scrollY > 100) {
