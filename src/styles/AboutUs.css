@@ -61,6 +61,7 @@
 .heading2 {
 	color: #ca0000;
 }
+
 .cards {
 	position: relative;
 	padding: 0 20px;
@@ -113,7 +114,6 @@ section {
 .carousel-title {
 	font-style: normal;
 	font-weight: 900;
-	font-size: 40px;
 	line-height: 51px;
 	text-align: center;
 	letter-spacing: 0.2em;
@@ -125,50 +125,18 @@ section {
 	padding: 0px 40px;
 }
 
-/* Custom carousel indicators */
-.custom-carousel-indicators {
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
-}
-
-.carousel-indicator {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.5);
-	margin: 0 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.custom-carousel-indicators {
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
-}
-
-.carousel-indicator {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: #d9d9d9;
-	margin: 0 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.carousel-indicator.active {
-	background-color: #ca0000;
-}
-
 @media only screen and (max-width: 768px) {
-	.heading {
-		font-size: 15px;
-		margin: 0px;
+	.second-section {
+		margin: 50px 5px 5px 5px;
+		padding: 0px;
 	}
-	.carousel-title {
-		font-size: 30px;
+
+	.aboutus-title {
+		font-size: clamp(24px, 2vw, 24px);
+	}
+
+	.aboutus-description {
+		font-size: clamp(14px, 2vw, 16px);
 	}
 }
 
@@ -194,7 +162,6 @@ section {
 
 .carousel-item > p {
 	text-align: center;
-	font-size: 11px;
 }
 
 .carousel-item > img {
@@ -227,7 +194,6 @@ section {
 }
 
 .service-box {
-	font-size: 15px;
 	padding: 15px 25px;
 	height: 100%;
 }
@@ -244,4 +210,36 @@ section {
 .item-card:hover {
 	background-color: #fff;
 	color: #1e1e1e;
+}
+
+/* Custom carousel indicators */
+.custom-carousel-indicators-1,
+.custom-carousel-indicators-2 {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.carousel-indicator {
+	width: 10px;
+	height: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.carousel-indicator.active {
+	background-color: #ca0000;
+}
+
+.carousel-indicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #d9d9d9;
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
