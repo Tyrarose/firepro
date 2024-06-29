@@ -195,23 +195,26 @@ p {
 }
 
 .minis {
-	width: 70px;
+	position: relative;
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
 }
 
-.minified {
+.minified1,
+.minified2,
+.minified3 {
 	width: 50px;
-	margin: 10px;
 	opacity: 0.6;
+	transition: all 0.3s ease;
+	cursor: pointer;
 }
 
-.minis .minified.active {
-	width: 100px;
+.enlarged1,
+.enlarged2,
+.enlarged3 {
+	display: none;
+	width: 300px;
 	height: auto;
-	object-fit: contain;
-	opacity: 1;
-	z-index: 999;
-}
-
-.active {
-	z-index: 50;
+	margin: 20px;
 }

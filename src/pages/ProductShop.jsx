@@ -30,6 +30,16 @@ function ProductShop() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
+	const [magnifiedImage, setMagnifiedImage] = useState(null);
+
+	const handleMouseOver = (imageId) => {
+		setMagnifiedImage(imageId);
+	};
+
+	const handleMouseLeave = () => {
+		setMagnifiedImage(null); // Reset magnifiedImage state when mouse leaves
+	};
+
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
@@ -107,6 +117,59 @@ function ProductShop() {
 												</div>
 											</div>
 											<div className="col-md-6 picture text-end col-sm-12">
+												<div className="minis">
+													{product.mini1 && (
+														<img
+															className="minified1"
+															key={`${product.id}-mini1`}
+															src={`${process.env.PUBLIC_URL}/${product.mini1}`}
+															alt={product.name}
+															loading="lazy"
+															onMouseOver={() =>
+																handleMouseOver(
+																	`${product.id}-enlarged1`
+																)
+															}
+															onMouseLeave={
+																handleMouseLeave
+															} // Reset magnifiedImage when mouse leaves minified1
+														/>
+													)}
+													{product.mini2 && (
+														<img
+															className="minified2"
+															key={`${product.id}-mini2`}
+															src={`${process.env.PUBLIC_URL}/${product.mini2}`}
+															alt={product.name}
+															loading="lazy"
+															onMouseOver={() =>
+																handleMouseOver(
+																	`${product.id}-enlarged2`
+																)
+															}
+															onMouseLeave={
+																handleMouseLeave
+															} // Reset magnifiedImage when mouse leaves minified2
+														/>
+													)}
+													{product.mini3 && (
+														<img
+															className="minified3"
+															key={`${product.id}-mini3`}
+															src={`${process.env.PUBLIC_URL}/${product.mini3}`}
+															alt={product.name}
+															loading="lazy"
+															onMouseOver={() =>
+																handleMouseOver(
+																	`${product.id}-enlarged3`
+																)
+															}
+															onMouseLeave={
+																handleMouseLeave
+															} // Reset magnifiedImage when mouse leaves minified3
+														/>
+													)}
+												</div>
 												<img
 													key={product.id}
 													src={`${process.env.PUBLIC_URL}/${product.imageUrl}`}
@@ -116,176 +179,115 @@ function ProductShop() {
 														(product.mini1 ||
 															product.mini2 ||
 															product.mini3) &&
-														"active"
+														"active magnified"
 													}
+													style={{
+														display: !magnifiedImage
+															? "block"
+															: "none",
+													}} // Hide main image when magnifiedImage is not set
 												/>
-												{(product.mini1 ||
-													product.mini2 ||
-													product.mini3) && (
-													<div className="minis">
-														{product.mini1 && (
-															<img
-																className="minified"
-																key={product.id}
-																src={`${process.env.PUBLIC_URL}/${product.mini1}`}
-																alt={
-																	product.name
-																}
-																loading="lazy"
-																onMouseEnter={(
-																	e
-																) => {
-																	e.target.classList.add(
-																		"active"
-																	);
-																}}
-																onMouseLeave={(
-																	e
-																) => {
-																	e.target.classList.remove(
-																		"active"
-																	);
-																}}
-															/>
-														)}
-														{product.mini2 && (
-															<img
-																className="minified"
-																key={product.id}
-																src={`${process.env.PUBLIC_URL}/${product.mini2}`}
-																alt={
-																	product.name
-																}
-																loading="lazy"
-																onMouseEnter={(
-																	e
-																) => {
-																	e.target.classList.add(
-																		"active"
-																	);
-																}}
-																onMouseLeave={(
-																	e
-																) => {
-																	e.target.classList.remove(
-																		"active"
-																	);
-																}}
-															/>
-														)}
-														{product.mini3 && (
-															<img
-																className="minified"
-																key={product.id}
-																src={`${process.env.PUBLIC_URL}/${product.mini3}`}
-																alt={
-																	product.name
-																}
-																loading="lazy"
-																onMouseEnter={(
-																	e
-																) => {
-																	e.target.classList.add(
-																		"active"
-																	);
-																}}
-																onMouseLeave={(
-																	e
-																) => {
-																	e.target.classList.remove(
-																		"active"
-																	);
-																}}
-															/>
-														)}
-													</div>
-												)}
+
+												<img
+													className="enlarged1"
+													key={`${product.id}-enlarged1`}
+													src={`${process.env.PUBLIC_URL}/${product.mini1}`}
+													alt={product.name}
+													loading="lazy"
+													style={{
+														display:
+															magnifiedImage ===
+															`${product.id}-enlarged1`
+																? "block"
+																: "none",
+													}}
+												/>
+												<img
+													className="enlarged2"
+													key={`${product.id}-enlarged2`}
+													src={`${process.env.PUBLIC_URL}/${product.mini2}`}
+													alt={product.name}
+													loading="lazy"
+													style={{
+														display:
+															magnifiedImage ===
+															`${product.id}-enlarged2`
+																? "block"
+																: "none",
+													}}
+												/>
+												<img
+													className="enlarged3"
+													key={`${product.id}-enlarged3`}
+													src={`${process.env.PUBLIC_URL}/${product.mini3}`}
+													alt={product.name}
+													loading="lazy"
+													style={{
+														display:
+															magnifiedImage ===
+															`${product.id}-enlarged3`
+																? "block"
+																: "none",
+													}}
+												/>
 											</div>
 										</>
 									) : (
 										<>
 											<div className="col-md-6 picture text-end col-sm-12">
-												{(product.mini1 ||
-													product.mini2 ||
-													product.mini3) && (
-													<div className="minis">
-														{product.mini1 && (
-															<img
-																className="minified"
-																key={product.id}
-																src={`${process.env.PUBLIC_URL}/${product.mini1}`}
-																alt={
-																	product.name
-																}
-																loading="lazy"
-																onMouseEnter={(
-																	e
-																) => {
-																	e.target.classList.add(
-																		"active"
-																	);
-																}}
-																onMouseLeave={(
-																	e
-																) => {
-																	e.target.classList.remove(
-																		"active"
-																	);
-																}}
-															/>
-														)}
-														{product.mini2 && (
-															<img
-																className="minified"
-																key={product.id}
-																src={`${process.env.PUBLIC_URL}/${product.mini2}`}
-																alt={
-																	product.name
-																}
-																loading="lazy"
-																onMouseEnter={(
-																	e
-																) => {
-																	e.target.classList.add(
-																		"active"
-																	);
-																}}
-																onMouseLeave={(
-																	e
-																) => {
-																	e.target.classList.remove(
-																		"active"
-																	);
-																}}
-															/>
-														)}
-														{product.mini3 && (
-															<img
-																className="minified"
-																key={product.id}
-																src={`${process.env.PUBLIC_URL}/${product.mini3}`}
-																alt={
-																	product.name
-																}
-																loading="lazy"
-																onMouseEnter={(
-																	e
-																) => {
-																	e.target.classList.add(
-																		"active"
-																	);
-																}}
-																onMouseLeave={(
-																	e
-																) => {
-																	e.target.classList.remove(
-																		"active"
-																	);
-																}}
-															/>
-														)}
-													</div>
-												)}
+												<div className="minis">
+													{product.mini1 && (
+														<img
+															className="minified1"
+															key={`${product.id}-mini1`}
+															src={`${process.env.PUBLIC_URL}/${product.mini1}`}
+															alt={product.name}
+															loading="lazy"
+															onMouseOver={() =>
+																handleMouseOver(
+																	`${product.id}-enlarged1`
+																)
+															}
+															onMouseLeave={
+																handleMouseLeave
+															} // Reset magnifiedImage when mouse leaves minified1
+														/>
+													)}
+													{product.mini2 && (
+														<img
+															className="minified2"
+															key={`${product.id}-mini2`}
+															src={`${process.env.PUBLIC_URL}/${product.mini2}`}
+															alt={product.name}
+															loading="lazy"
+															onMouseOver={() =>
+																handleMouseOver(
+																	`${product.id}-enlarged2`
+																)
+															}
+															onMouseLeave={
+																handleMouseLeave
+															} // Reset magnifiedImage when mouse leaves minified2
+														/>
+													)}
+													{product.mini3 && (
+														<img
+															className="minified3"
+															key={`${product.id}-mini3`}
+															src={`${process.env.PUBLIC_URL}/${product.mini3}`}
+															alt={product.name}
+															loading="lazy"
+															onMouseOver={() =>
+																handleMouseOver(
+																	`${product.id}-enlarged3`
+																)
+															}
+															onMouseLeave={
+																handleMouseLeave
+															} // Reset magnifiedImage when mouse leaves minified3
+														/>
+													)}
+												</div>
 												<img
 													key={product.id}
 													src={`${process.env.PUBLIC_URL}/${product.imageUrl}`}
@@ -295,8 +297,56 @@ function ProductShop() {
 														(product.mini1 ||
 															product.mini2 ||
 															product.mini3) &&
-														"active"
+														"active magnified"
 													}
+													style={{
+														display: !magnifiedImage
+															? "block"
+															: "none",
+													}} // Hide main image when magnifiedImage is not set
+												/>
+
+												<img
+													className="enlarged1"
+													key={`${product.id}-enlarged1`}
+													src={`${process.env.PUBLIC_URL}/${product.mini1}`}
+													alt={product.name}
+													loading="lazy"
+													style={{
+														display:
+															magnifiedImage ===
+															`${product.id}-enlarged1`
+																? "block"
+																: "none",
+													}}
+												/>
+												<img
+													className="enlarged2"
+													key={`${product.id}-enlarged2`}
+													src={`${process.env.PUBLIC_URL}/${product.mini2}`}
+													alt={product.name}
+													loading="lazy"
+													style={{
+														display:
+															magnifiedImage ===
+															`${product.id}-enlarged2`
+																? "block"
+																: "none",
+													}}
+												/>
+												<img
+													className="enlarged3"
+													key={`${product.id}-enlarged3`}
+													src={`${process.env.PUBLIC_URL}/${product.mini3}`}
+													alt={product.name}
+													loading="lazy"
+													style={{
+														display:
+															magnifiedImage ===
+															`${product.id}-enlarged3`
+																? "block"
+																: "none",
+													}}
 												/>
 											</div>
 											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
