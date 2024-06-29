@@ -194,3 +194,24 @@ p {
 	}
 }
 
+.minis {
+	width: 70px;
+}
+
+.minified {
+	width: 50px;
+	margin: 10px;
+	opacity: 0.6;
+}
+
+.minis .minified.active {
+	width: 100px;
+	height: auto;
+	object-fit: contain;
+	opacity: 1;
+	z-index: 999;
+}
+
+.active {
+	z-index: 50;
+}

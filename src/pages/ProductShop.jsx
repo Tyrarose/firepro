@@ -112,17 +112,191 @@ function ProductShop() {
 													src={`${process.env.PUBLIC_URL}/${product.imageUrl}`}
 													alt={product.name}
 													loading="lazy"
+													className={
+														(product.mini1 ||
+															product.mini2 ||
+															product.mini3) &&
+														"active"
+													}
 												/>
+												{(product.mini1 ||
+													product.mini2 ||
+													product.mini3) && (
+													<div className="minis">
+														{product.mini1 && (
+															<img
+																className="minified"
+																key={product.id}
+																src={`${process.env.PUBLIC_URL}/${product.mini1}`}
+																alt={
+																	product.name
+																}
+																loading="lazy"
+																onMouseEnter={(
+																	e
+																) => {
+																	e.target.classList.add(
+																		"active"
+																	);
+																}}
+																onMouseLeave={(
+																	e
+																) => {
+																	e.target.classList.remove(
+																		"active"
+																	);
+																}}
+															/>
+														)}
+														{product.mini2 && (
+															<img
+																className="minified"
+																key={product.id}
+																src={`${process.env.PUBLIC_URL}/${product.mini2}`}
+																alt={
+																	product.name
+																}
+																loading="lazy"
+																onMouseEnter={(
+																	e
+																) => {
+																	e.target.classList.add(
+																		"active"
+																	);
+																}}
+																onMouseLeave={(
+																	e
+																) => {
+																	e.target.classList.remove(
+																		"active"
+																	);
+																}}
+															/>
+														)}
+														{product.mini3 && (
+															<img
+																className="minified"
+																key={product.id}
+																src={`${process.env.PUBLIC_URL}/${product.mini3}`}
+																alt={
+																	product.name
+																}
+																loading="lazy"
+																onMouseEnter={(
+																	e
+																) => {
+																	e.target.classList.add(
+																		"active"
+																	);
+																}}
+																onMouseLeave={(
+																	e
+																) => {
+																	e.target.classList.remove(
+																		"active"
+																	);
+																}}
+															/>
+														)}
+													</div>
+												)}
 											</div>
 										</>
 									) : (
 										<>
-											<div className="col-md-6 picture text-start col-sm-12">
+											<div className="col-md-6 picture text-end col-sm-12">
+												{(product.mini1 ||
+													product.mini2 ||
+													product.mini3) && (
+													<div className="minis">
+														{product.mini1 && (
+															<img
+																className="minified"
+																key={product.id}
+																src={`${process.env.PUBLIC_URL}/${product.mini1}`}
+																alt={
+																	product.name
+																}
+																loading="lazy"
+																onMouseEnter={(
+																	e
+																) => {
+																	e.target.classList.add(
+																		"active"
+																	);
+																}}
+																onMouseLeave={(
+																	e
+																) => {
+																	e.target.classList.remove(
+																		"active"
+																	);
+																}}
+															/>
+														)}
+														{product.mini2 && (
+															<img
+																className="minified"
+																key={product.id}
+																src={`${process.env.PUBLIC_URL}/${product.mini2}`}
+																alt={
+																	product.name
+																}
+																loading="lazy"
+																onMouseEnter={(
+																	e
+																) => {
+																	e.target.classList.add(
+																		"active"
+																	);
+																}}
+																onMouseLeave={(
+																	e
+																) => {
+																	e.target.classList.remove(
+																		"active"
+																	);
+																}}
+															/>
+														)}
+														{product.mini3 && (
+															<img
+																className="minified"
+																key={product.id}
+																src={`${process.env.PUBLIC_URL}/${product.mini3}`}
+																alt={
+																	product.name
+																}
+																loading="lazy"
+																onMouseEnter={(
+																	e
+																) => {
+																	e.target.classList.add(
+																		"active"
+																	);
+																}}
+																onMouseLeave={(
+																	e
+																) => {
+																	e.target.classList.remove(
+																		"active"
+																	);
+																}}
+															/>
+														)}
+													</div>
+												)}
 												<img
 													key={product.id}
 													src={`${process.env.PUBLIC_URL}/${product.imageUrl}`}
 													alt={product.name}
 													loading="lazy"
+													className={
+														(product.mini1 ||
+															product.mini2 ||
+															product.mini3) &&
+														"active"
+													}
 												/>
 											</div>
 											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">

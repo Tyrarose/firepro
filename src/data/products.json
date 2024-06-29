@@ -5,7 +5,10 @@
 		"imageUrl": "images/productsImage/product1.png",
 		"description": "Compact yet powerful, this aerosol can is your instant defense against small fires, delivering quick and effective extinguishing action.",
 		"feature": "13.5 fl oz",
-		"price": 200
+		"price": 200,
+		"mini1": "images/productsMore/product1-1.png",
+		"mini2": "images/productsMore/product1-2.png",
+		"mini3": "images/productsMore/product1-3.png"
 	},
 	{
 		"id": 2,
@@ -14,7 +17,10 @@
 		"description": "Swift and precise, our 1-liter extinguisher reaches far and acts fast, ensuring rapid suppression when every second counts.",
 		"feature": "Discharge Length: 25 feet.",
 		"feature2": "Discharge time: 15 seconds",
-		"price": 200
+		"price": 200,
+		"mini1": "images/productsMore/product2-1.png",
+		"mini2": "images/productsMore/product2-2.png",
+		"mini3": "images/productsMore/product2-3.png"
 	},
 	{
 		"id": 3,
@@ -41,7 +47,10 @@
 		"description": "Robust and effective, our 4-liter extinguisher delivers a sustained burst of suppression power, conquering flames swiftly and decisively.",
 		"feature": "Discharge Length: 40 feet.",
 		"feature2": "Discharge time: 29 seconds",
-		"price": 200
+		"price": 200,
+		"mini1": "images/productsMore/product5-1.png",
+		"mini2": "images/productsMore/product5-2.png",
+		"mini3": "images/productsMore/product5-3.png"
 	},
 	{
 		"id": 6,
