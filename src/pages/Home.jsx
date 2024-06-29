@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import Flickity from "react-flickity-component";
 
 import "../styles/Home.css";
+import "flickity/css/flickity.css"; // Import Flickity CSS
 
 import Preloader from "../components/preloader";
+import homeSlides from "../data/homeSlide.json";
 
 function Home() {
 	const navigate = useNavigate();
@@ -37,11 +40,21 @@ function Home() {
 			viewButton.addEventListener("mouseout", handleMouseOut);
 
 			return () => {
-				viewButton.removeEventListener("mouseover", handleMouseOver);
-				viewButton.removeEventListener("mouseout", handleMouseOut);
+				if (viewButton) {
+					viewButton.removeEventListener(
+						"mouseover",
+						handleMouseOver
+					);
+					viewButton.removeEventListener("mouseout", handleMouseOut);
+				}
 			};
 		}
 	}, [loading]);
+
+	const flickityOptions = {
+		wrapAround: true,
+		initialIndex: 1,
+	};
 
 	return (
 		<div>
@@ -52,7 +65,7 @@ function Home() {
 					<div className="Home-contents">
 						<div className="firebg"></div>
 
-						<div className="row">
+						<section className="row">
 							<div className="col-md-5">
 								<div className="well text-center">
 									<div className="featuredpic_container">
@@ -114,7 +127,27 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</div>
+						</section>
+
+						<section className="m-5 pt-4 pb-4">
+							<Flickity
+								className={"gallery"}
+								elementType={"div"}
+								options={flickityOptions}
+								disableImagesLoaded={false}
+								reloadOnUpdate
+								static
+							>
+								{homeSlides.map((slide, index) => (
+									<div key={index} className="mx-2">
+										<img
+											src={slide.imgUrl}
+											alt={slide.imgName}
+										/>
+									</div>
+								))}
+							</Flickity>
+						</section>
 					</div>
 				</div>
 			)}

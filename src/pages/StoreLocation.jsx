@@ -12,7 +12,7 @@ function StoreLocation() {
 
 	const handleZoomClick = () => {
 		setZoomed(!zoomed);
-		setZoomLevel(zoomed ? 1 : 3);
+		setZoomLevel(zoomed ? 1 : 2);
 	};
 
 	const handleTouchMove = (e) => {

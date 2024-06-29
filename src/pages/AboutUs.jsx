@@ -44,7 +44,7 @@ export default function AboutUs() {
 									{aboutUsData.map((item, index) => (
 										<div
 											key={index}
-											className={`item-card ${index < 2 ? "col-4" : "col-8"}`}
+											className={`item-card ${index < 2 ? "col-5" : "col-10"}`}
 										>
 											<div className="service-box">
 												<img
@@ -113,7 +113,7 @@ export default function AboutUs() {
 					</section>
 
 					<section className="container text-center my-4 history-container">
-						<div className="third-section">
+						<div className="third-section m-3">
 							<h1 className="my-4 heading2">
 								BEHIND THE PRODUCT
 							</h1>
@@ -154,7 +154,7 @@ export default function AboutUs() {
 								</div>
 							</div>
 							<div className="row d-none d-md-flex">
-								<div className="col-12 text-center history-content">
+								<div className="col-12  text-center history-content">
 									{historyData.map((item, index) => (
 										<p
 											key={index}

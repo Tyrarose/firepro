@@ -1,5 +1,5 @@
 * {
-	/* border: 1px red dotted; */
+	/* border: 1px pink dotted; */
 }
 
 .Home-contents {
@@ -139,4 +139,58 @@
 		align-items: center;
 		height: 100%;
 	}
+}
+
+.gallery-section {
+}
+.gallery-cell {
+	width: 66%;
+	height: 200px;
+	margin-right: 10px;
+	counter-increment: gallery-cell;
+}
+
+.gallery-cell:before {
+	display: block;
+	text-align: center;
+	content: counter(gallery-cell);
+	line-height: 200px;
+	font-size: 80px;
+}
+
+.flickity-prev-next-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.2;
+	transition: opacity 0.3s;
+}
+
+.flickity-prev-next-button:hover {
+	opacity: 0.7;
+}
+
+.flickity-prev-next-button.previous {
+	left: -50px;
+}
+
+.flickity-prev-next-button.next {
+	right: -50px;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+	fill: #333;
+}
+
+.flickity-prev-next-button .flickity-button-icon path {
+	stroke: none;
 }
