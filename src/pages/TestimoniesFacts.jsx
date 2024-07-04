@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "../styles/TestimoniesFacts.css";
+
+import testimoniesData from "../data/testimonies.json";
 import Preloader from "../components/preloader";
 
 const TestimoniesFacts = () => {
@@ -18,13 +21,48 @@ const TestimoniesFacts = () => {
 		};
 	}, []);
 
+	const featuredTestimony = testimoniesData[0];
+	const otherTestimonies = testimoniesData.slice(1);
+
 	return (
 		<div>
 			{loading ? (
 				<Preloader />
 			) : (
-				<div>
-					<h1>Testimonies Facts</h1>
+				<div className="page-container transition-fade">
+					<div className="Ellipse1" />
+					<div className="Ellipse2" />
+
+					<section className="container">
+						<div className="second-section">
+							<h1 className="heading2">TESTIMONIES FACTS</h1>
+						</div>
+						<div className="text-center testimonies">
+							<div className="featured-testimony">
+								<p
+									dangerouslySetInnerHTML={{
+										__html: featuredTestimony.content,
+									}}
+								/>
+							</div>
+							<div className="line"></div>
+							<div className="more-testimonies">
+								{otherTestimonies.map((item, index) => (
+									<p
+										key={index}
+										className={
+											index % 2 === 0
+												? "testimony-black"
+												: "testimony-red"
+										}
+										dangerouslySetInnerHTML={{
+											__html: item.content,
+										}}
+									/>
+								))}
+							</div>
+						</div>
+					</section>
 				</div>
 			)}
 		</div>

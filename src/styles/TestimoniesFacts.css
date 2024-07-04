@@ -1,3 +1,39 @@
 .transition-fade {
 	transition: opacity 0.3s ease-in-out;
 }
+
+.testimonies {
+}
+
+.testimonies {
+	border-radius: 10px;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	margin: 5px 5px;
+	padding: 3vh 3vh 3vh 3vh;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+.testimonies:hover {
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.8);
+}
+
+.testimonies p {
+	text-align: center;
+	font-size: 1rem;
+	margin: 40px 20px;
+}
+
+.line {
+	border: 1px #ca0000 solid;
+	margin: 0px 20px;
+}
+
+.testimony-black {
+	color: black;
+}
+
+.testimony-red {
+	color: #c1301b;
+}

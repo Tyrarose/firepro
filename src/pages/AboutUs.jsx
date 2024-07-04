@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../styles/AboutUs.css";
 
+import Preloader from "../components/preloader";
+
 import aboutUsData from "../data/aboutUs.json";
 import historyData from "../data/history.json";
-import Preloader from "../components/preloader";
 
 export default function AboutUs() {
 	const [activeIndex1, setActiveIndex1] = useState(0);
