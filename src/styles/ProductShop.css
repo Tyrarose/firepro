@@ -47,7 +47,7 @@ h1 {
 }
 
 .picture > img {
-	height: 280px;
+	width: 320px;
 }
 
 .prices {
@@ -90,7 +90,7 @@ p {
 
 .scroll-to-top-btn {
 	position: fixed;
-	bottom: 20px;
+	bottom: 70px;
 	right: 20px;
 	z-index: 1000;
 	display: flex;
@@ -118,6 +118,19 @@ p {
 	.mobile_even {
 		display: none;
 	}
+	.enlarged1,
+	.enlarged2,
+	.enlarged3 img {
+		width: 320px;
+		height: auto;
+	}
+	.minis {
+		position: relative;
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+		margin: 5px;
+	}
 }
 
 /* Media query for phones (max-width: 767px) */
@@ -143,11 +156,13 @@ p {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column-reverse;
 	}
 
 	.picture > img {
-		width: 60%;
-		height: auto;
+		width: auto;
+		height: 230px;
+		margin: 10px;
 	}
 
 	.productdeets {
@@ -192,13 +207,18 @@ p {
 		padding: 5px;
 		font-size: 1rem;
 	}
-}
-
-.minis {
-	position: relative;
-	display: flex;
-	gap: 10px;
-	flex-direction: column;
+	.minis {
+		position: relative;
+		display: flex;
+		gap: 10px;
+		flex-direction: row;
+		margin-top: 10px;
+	}
+	.enlarged1,
+	.enlarged2,
+	.enlarged3 {
+		margin: 10px;
+	}
 }
 
 .minified1,
@@ -207,14 +227,5 @@ p {
 	width: 50px;
 	opacity: 0.6;
 	transition: all 0.3s ease;
-	cursor: pointer;
-}
-
-.enlarged1,
-.enlarged2,
-.enlarged3 {
-	display: none;
-	width: 300px;
-	height: auto;
-	margin: 20px;
+	cursor: alias;
 }

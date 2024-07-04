@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/ProductShop.css";
-
 import productsData from "../data/products.json";
 import Preloader from "../components/preloader";
 
 function ProductShop() {
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [loading, setLoading] = useState(true);
+	const [magnifiedImage, setMagnifiedImage] = useState({});
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -30,14 +28,12 @@ function ProductShop() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const [magnifiedImage, setMagnifiedImage] = useState(null);
-
-	const handleMouseOver = (imageId) => {
-		setMagnifiedImage(imageId);
+	const handleMouseOver = (productId, imageId) => {
+		setMagnifiedImage({ productId, imageId });
 	};
 
 	const handleMouseLeave = () => {
-		setMagnifiedImage(null); // Reset magnifiedImage state when mouse leaves
+		setMagnifiedImage({});
 	};
 
 	const scrollToTop = () => {
@@ -72,7 +68,7 @@ function ProductShop() {
 									{product.id % 2 === 0 ? (
 										<>
 											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-												<div className="productdeets ">
+												<div className="productdeets">
 													<h1 className="product-name">
 														{product.name}
 													</h1>
@@ -127,12 +123,13 @@ function ProductShop() {
 															loading="lazy"
 															onMouseOver={() =>
 																handleMouseOver(
-																	`${product.id}-enlarged1`
+																	product.id,
+																	"enlarged1"
 																)
 															}
 															onMouseLeave={
 																handleMouseLeave
-															} // Reset magnifiedImage when mouse leaves minified1
+															}
 														/>
 													)}
 													{product.mini2 && (
@@ -144,12 +141,13 @@ function ProductShop() {
 															loading="lazy"
 															onMouseOver={() =>
 																handleMouseOver(
-																	`${product.id}-enlarged2`
+																	product.id,
+																	"enlarged2"
 																)
 															}
 															onMouseLeave={
 																handleMouseLeave
-															} // Reset magnifiedImage when mouse leaves minified2
+															}
 														/>
 													)}
 													{product.mini3 && (
@@ -161,12 +159,13 @@ function ProductShop() {
 															loading="lazy"
 															onMouseOver={() =>
 																handleMouseOver(
-																	`${product.id}-enlarged3`
+																	product.id,
+																	"enlarged3"
 																)
 															}
 															onMouseLeave={
 																handleMouseLeave
-															} // Reset magnifiedImage when mouse leaves minified3
+															}
 														/>
 													)}
 												</div>
@@ -182,10 +181,12 @@ function ProductShop() {
 														"active magnified"
 													}
 													style={{
-														display: !magnifiedImage
-															? "block"
-															: "none",
-													}} // Hide main image when magnifiedImage is not set
+														display:
+															magnifiedImage.productId ===
+															product.id
+																? "none"
+																: "block",
+													}}
 												/>
 
 												<img
@@ -196,8 +197,10 @@ function ProductShop() {
 													loading="lazy"
 													style={{
 														display:
-															magnifiedImage ===
-															`${product.id}-enlarged1`
+															magnifiedImage.productId ===
+																product.id &&
+															magnifiedImage.imageId ===
+																"enlarged1"
 																? "block"
 																: "none",
 													}}
@@ -210,8 +213,10 @@ function ProductShop() {
 													loading="lazy"
 													style={{
 														display:
-															magnifiedImage ===
-															`${product.id}-enlarged2`
+															magnifiedImage.productId ===
+																product.id &&
+															magnifiedImage.imageId ===
+																"enlarged2"
 																? "block"
 																: "none",
 													}}
@@ -224,8 +229,10 @@ function ProductShop() {
 													loading="lazy"
 													style={{
 														display:
-															magnifiedImage ===
-															`${product.id}-enlarged3`
+															magnifiedImage.productId ===
+																product.id &&
+															magnifiedImage.imageId ===
+																"enlarged3"
 																? "block"
 																: "none",
 													}}
@@ -245,12 +252,13 @@ function ProductShop() {
 															loading="lazy"
 															onMouseOver={() =>
 																handleMouseOver(
-																	`${product.id}-enlarged1`
+																	product.id,
+																	"enlarged1"
 																)
 															}
 															onMouseLeave={
 																handleMouseLeave
-															} // Reset magnifiedImage when mouse leaves minified1
+															}
 														/>
 													)}
 													{product.mini2 && (
@@ -262,12 +270,13 @@ function ProductShop() {
 															loading="lazy"
 															onMouseOver={() =>
 																handleMouseOver(
-																	`${product.id}-enlarged2`
+																	product.id,
+																	"enlarged2"
 																)
 															}
 															onMouseLeave={
 																handleMouseLeave
-															} // Reset magnifiedImage when mouse leaves minified2
+															}
 														/>
 													)}
 													{product.mini3 && (
@@ -279,12 +288,13 @@ function ProductShop() {
 															loading="lazy"
 															onMouseOver={() =>
 																handleMouseOver(
-																	`${product.id}-enlarged3`
+																	product.id,
+																	"enlarged3"
 																)
 															}
 															onMouseLeave={
 																handleMouseLeave
-															} // Reset magnifiedImage when mouse leaves minified3
+															}
 														/>
 													)}
 												</div>
@@ -300,10 +310,12 @@ function ProductShop() {
 														"active magnified"
 													}
 													style={{
-														display: !magnifiedImage
-															? "block"
-															: "none",
-													}} // Hide main image when magnifiedImage is not set
+														display:
+															magnifiedImage.productId ===
+															product.id
+																? "none"
+																: "block",
+													}}
 												/>
 
 												<img
@@ -314,8 +326,10 @@ function ProductShop() {
 													loading="lazy"
 													style={{
 														display:
-															magnifiedImage ===
-															`${product.id}-enlarged1`
+															magnifiedImage.productId ===
+																product.id &&
+															magnifiedImage.imageId ===
+																"enlarged1"
 																? "block"
 																: "none",
 													}}
@@ -328,8 +342,10 @@ function ProductShop() {
 													loading="lazy"
 													style={{
 														display:
-															magnifiedImage ===
-															`${product.id}-enlarged2`
+															magnifiedImage.productId ===
+																product.id &&
+															magnifiedImage.imageId ===
+																"enlarged2"
 																? "block"
 																: "none",
 													}}
@@ -342,8 +358,10 @@ function ProductShop() {
 													loading="lazy"
 													style={{
 														display:
-															magnifiedImage ===
-															`${product.id}-enlarged3`
+															magnifiedImage.productId ===
+																product.id &&
+															magnifiedImage.imageId ===
+																"enlarged3"
 																? "block"
 																: "none",
 													}}
@@ -399,27 +417,17 @@ function ProductShop() {
 								</div>
 							))}
 						</div>
-
-						<div className="col-12 text-center my-3 quote">
-							<hr />
-							<h5>
-								Equip yourself with "Our Extinguishers" for
-								proactive fire safety and peace of mind in any
-								environment.
-							</h5>
-
-							<hr />
-						</div>
 					</div>
-					{showScrollButton && (
-						<button
-							className="scroll-to-top-btn"
-							onClick={scrollToTop}
-						>
-							<ArrowUpwardIcon />
-						</button>
-					)}
 				</div>
+			)}
+			{showScrollButton && (
+				<button
+					className="scroll-to-top-btn"
+					onClick={scrollToTop}
+					aria-label="Scroll to Top"
+				>
+					<ArrowUpwardIcon />
+				</button>
 			)}
 		</div>
 	);
