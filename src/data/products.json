@@ -29,7 +29,10 @@
 		"description": "Extended reach, extended safety. Our 2-liter extinguisher provides a reliable shield with increased discharge time for thorough fire control.",
 		"feature": "Discharge Length: 25 feet.",
 		"feature2": "Discharge time: 27 seconds",
-		"price": 136.5
+		"price": 136.5,
+		"mini1": "images/productsMore/product3-1.png",
+		"mini2": "images/productsMore/product3-2.png",
+		"mini3": "images/productsMore/product3-3.png"
 	},
 	{
 		"id": 4,
@@ -38,7 +41,10 @@
 		"description": "Vigorous and efficient, the 3-liter extinguisher covers a wide area with a quick response, making it an essential tool in fire emergencies.",
 		"feature": "Discharge Length: 40 feet.",
 		"feature2": "Discharge time: 19 seconds",
-		"price": 162.15
+		"price": 162.15,
+		"mini1": "images/productsMore/product4-1.png",
+		"mini2": "images/productsMore/product4-2.png",
+		"mini3": "images/productsMore/product4-3.png"
 	},
 	{
 		"id": 5,
@@ -59,7 +65,10 @@
 		"description": "Unmatched capacity, unmatched performance. The 2.5-gallon extinguisher offers extended duration for comprehensive fire control, ensuring safety in complex situations.",
 		"feature": "Discharge Length: 40 feet.",
 		"feature2": "Discharge time: 88 seconds (1 min 8s)",
-		"price": 211.79
+		"price": 211.79,
+		"mini1": "images/productsMore/product6-1.png",
+		"mini2": "images/productsMore/product6-2.png",
+		"mini3": "images/productsMore/product6-3.png"
 	},
 	{
 		"id": 7,
@@ -68,7 +77,10 @@
 		"description": "A fire blanket made of non-flammable material, designed to smother small fires in emergencies. Ideal for use in kitchens, homes, and workshops.",
 		"feature": "",
 		"feature2": "",
-		"price": 35.0
+		"price": 35.0,
+		"mini1": "images/productsMore/product7-1.png",
+		"mini2": "images/productsMore/product7-2.png",
+		"mini3": "images/productsMore/product7-3.png"
 	},
 	{
 		"id": 8,
@@ -77,6 +89,9 @@
 		"description": "A water sprinkler system designed for efficient irrigation of gardens and lawns. Features adjustable spray patterns and coverage for even watering.",
 		"feature": "",
 		"feature2": "",
-		"price": 396.45
+		"price": 396.45,
+		"mini1": "images/productsMore/product8-1.png",
+		"mini2": "images/productsMore/product8-2.png",
+		"mini3": "images/productsMore/product8-3.png"
 	}
 ]
