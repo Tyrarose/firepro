@@ -48,11 +48,9 @@ function ProductShop() {
 				<div className="page-container transition-fade">
 					<div className="container">
 						<div className="col-12 text-center">
-							<div className="introduction">
-								<h2>
-									<strong>Our Extinguishers</strong>
-								</h2>
-								<h6 className="my-4">
+							<div className="mt-5 mb-4">
+								<h1 className="heading2">OUR EXTINGUISHERS</h1>
+								<h6>
 									Empowering Safety: Where Efficiency Meets
 									Fire Protection
 								</h6>

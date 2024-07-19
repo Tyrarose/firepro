@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavItem, Container, Offcanvas } from "react-bootstrap";
+import {
+	Navbar,
+	Nav,
+	NavItem,
+	Container,
+	Offcanvas,
+	Form,
+	FormControl,
+	Button,
+} from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
 
 import "../styles/Header.css";
@@ -117,6 +126,17 @@ export default function Header() {
 											About Us
 										</NavLink>
 									</NavItem>
+									<Form className="d-flex search-bar">
+										<FormControl
+											type="search"
+											placeholder="Search"
+											className="me-1"
+											aria-label="Search"
+										/>
+										<Button variant="outline-success">
+											Search
+										</Button>
+									</Form>
 								</Nav>
 							</Offcanvas.Body>
 						</Navbar.Offcanvas>

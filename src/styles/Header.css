@@ -35,6 +35,42 @@ nav {
 	background-color: red;
 }
 
+.search-bar {
+	margin-top: 16px;
+	display: flex;
+	align-items: center;
+}
+
+.search-bar .form-control {
+	/* border: none;
+	border-bottom: 2px solid #ccc;
+	border-radius: 0;
+	outline: none;
+	box-shadow: none;
+	width: 200px;
+	transition: border-color 0.3s ease; */
+}
+
+.search-bar .form-control:focus {
+	border-color: #c1301b;
+}
+
+.search-bar .btn {
+	/* border: none;
+	background: none;
+	color: #c1301b;
+	padding: 0;
+	margin-left: 5px;
+	transition: color 0.3s ease; */
+	color: #c1301b;
+	border: 1px solid #c1301b;
+}
+
+.search-bar .btn:hover {
+	color: white;
+	background-color: #c1301b;
+}
+
 /* Media query for phones */
 @media only screen and (max-width: 767px) {
 	.navbar {

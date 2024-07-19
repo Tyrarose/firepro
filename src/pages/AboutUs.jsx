@@ -41,7 +41,7 @@ export default function AboutUs() {
 					<div className="Ellipse1" />
 					<div className="Ellipse2" />
 
-					<section className="container text-center">
+					<section className="container text-center mt-5">
 						<div className="">
 							<h1 className="heading2">
 								MISSION, VISION & CORE VALUES

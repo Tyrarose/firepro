@@ -23,8 +23,14 @@ const ContactUs = () => {
 			{loading ? (
 				<Preloader />
 			) : (
-				<div>
-					<h1>Contact Us</h1>
+				<div className="page-container transition-fade">
+					<div className="container">
+						<div className="col-12 text-center">
+							<div className="mt-5 mb-4">
+								<h1 className="heading2">REACH OUT TO US</h1>
+							</div>
+						</div>
+					</div>
 				</div>
 			)}
 		</div>

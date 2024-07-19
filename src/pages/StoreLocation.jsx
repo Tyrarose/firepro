@@ -40,18 +40,14 @@ function StoreLocation() {
 			) : (
 				<div className="page-container transition-fade">
 					<div className="container">
-						<div className="row text-center">
-							<div className="my-3">
-								<h3>
-									<strong>Our Store Locations</strong>
-								</h3>
-								<h6>Discover Our Convenient Store Locations</h6>
-							</div>
+						<div className="row text-center mt-5 mb-3">
+							<h1 className="heading2">OUR STORE LOCATIONS</h1>
+							<h6>Discover Our Convenient Store Locations</h6>
 						</div>
 						<div className="row text-center">
 							<div className="col-12">
 								<div
-									className={`my-3 zoomable-image ${zoomed ? "zoomed" : ""}`}
+									className={`zoomable-image ${zoomed ? "zoomed" : ""}`}
 									onClick={handleZoomClick}
 									onTouchMove={handleTouchMove}
 									style={{

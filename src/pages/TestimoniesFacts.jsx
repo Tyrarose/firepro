@@ -35,7 +35,7 @@ const TestimoniesFacts = () => {
 
 					<section className="container">
 						<div className="second-section">
-							<h1 className="heading2">TESTIMONIES FACTS</h1>
+							<h1 className="heading2 mt-5">TESTIMONIES FACTS</h1>
 						</div>
 						<div className="text-center testimonies">
 							<div className="featured-testimony">
