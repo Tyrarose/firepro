@@ -53,9 +53,10 @@ export default function Header() {
 						<Navbar.Offcanvas
 							id={`offcanvasNavbar-expand-${expand}`}
 							aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-							placement="end"
+							placement="end" // Ensures Offcanvas is aligned to the right
 							show={expanded}
 							onHide={handleClose}
+							className="offcanvas-end" // Apply custom CSS class
 						>
 							<Offcanvas.Header closeButton>
 								<Offcanvas.Title
@@ -65,7 +66,7 @@ export default function Header() {
 								</Offcanvas.Title>
 							</Offcanvas.Header>
 							<Offcanvas.Body>
-								<Nav className="justify-content-center flex-grow-1">
+								<Nav className="justify-content-center nav">
 									<NavItem>
 										<NavLink
 											to="/"
@@ -130,11 +131,10 @@ export default function Header() {
 										<FormControl
 											type="search"
 											placeholder="Search"
-											className="me-1"
 											aria-label="Search"
 										/>
-										<Button variant="outline-success">
-											Search
+										<Button variant="">
+											<i className="fa-solid fa-magnifying-glass"></i>
 										</Button>
 									</Form>
 								</Nav>

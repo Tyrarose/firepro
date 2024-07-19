@@ -2,13 +2,17 @@
 	/* border: 1px green dotted; */
 }
 
-nav {
-	margin-top: 1%;
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
 .nav-link {
 	color: black !important;
-	font-size: clamp(14px, 2vw, 16px);
+	font-size: clamp(12px, 1vw, 14px);
+	height: 100%;
 }
 
 .nav-item:hover {
@@ -19,16 +23,16 @@ nav {
 }
 
 .nav-item {
-	margin-top: 1rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+	padding: 1rem;
+	height: 30px;
+	display: flex;
+	align-items: flex-end;
 }
 
 .brand-image {
 	width: auto;
-	height: 90px;
-	position: absolute;
-	top: 1%;
+	height: 80px;
+	margin-right: 50px;
 }
 
 .active-link {
@@ -36,9 +40,8 @@ nav {
 }
 
 .search-bar {
-	margin-top: 16px;
-	display: flex;
-	align-items: center;
+	height: 40px;
+	margin-left: 50px;
 }
 
 .search-bar .form-control {
@@ -47,8 +50,11 @@ nav {
 	border-radius: 0;
 	outline: none;
 	box-shadow: none;
-	width: 200px;
 	transition: border-color 0.3s ease; */
+
+	width: 14vw;
+	font-size: clamp(12px, 1vw, 14px);
+	transition: border-color 0.3s ease;
 }
 
 .search-bar .form-control:focus {
@@ -62,8 +68,11 @@ nav {
 	padding: 0;
 	margin-left: 5px;
 	transition: color 0.3s ease; */
-	color: #c1301b;
 	border: 1px solid #c1301b;
+	/* outline: #c1301b; */
+	color: #c1301b;
+	transition: color 0.3s ease;
+	margin-left: 5px;
 }
 
 .search-bar .btn:hover {
@@ -71,19 +80,44 @@ nav {
 	background-color: #c1301b;
 }
 
+/* Ensure the Offcanvas is positioned correctly */
+.offcanvas-end {
+	right: 0;
+}
+
+/* Optional: adjust width of Offcanvas if needed */
+.offcanvas-end .offcanvas-body {
+	width: 100%; /* Adjust this value as needed */
+}
+
+/* Ensure content in Offcanvas is centered */
+.offcanvas-end .nav {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
 /* Media query for phones */
 @media only screen and (max-width: 767px) {
 	.navbar {
-		margin-top: 7%;
+		margin-top: 3%;
 		margin-bottom: 9%;
 	}
 	.brand-image {
-		height: 80px;
+		height: 60px;
 		padding: 0%;
 		margin-left: 2%;
 	}
 
 	.home-page {
 		margin-bottom: 0;
+	}
+
+	.search-bar {
+		margin-top: 14px;
+	}
+
+	.search-bar .form-control {
+		width: 50vw;
 	}
 }
