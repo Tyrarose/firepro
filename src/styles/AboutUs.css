@@ -1,5 +1,5 @@
 * {
-	/* border: 1px pink dotted; */
+	/* border: 1px green dotted; */
 }
 
 .page-container {
@@ -81,9 +81,7 @@ section {
 	margin-bottom: 30px;
 }
 
-.first-section,
-.second-section,
-.third-section {
+.glass {
 	margin: 10px 0px;
 	/* background-color: rgba(243, 189, 189, 0.09); */
 	padding: 50px 30px;
@@ -92,14 +90,14 @@ section {
 	/* box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1); */
 }
 
-.third-section {
+.glass {
 	border-radius: 10px;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 	margin: 5px 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
-.third-section:hover {
+.glass:hover {
 	background-color: rgb(253, 253, 254);
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
@@ -157,7 +155,7 @@ section {
 .carousel-item {
 	padding: 10px;
 	margin-bottom: 20px;
-	min-height: 425px;
+	min-height: 710px;
 }
 
 .carousel-item > p {
@@ -176,6 +174,7 @@ section {
 	margin-top: 30px;
 }
 .item-card {
+	min-height: 710px;
 	border-radius: 10px;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
@@ -242,4 +241,89 @@ section {
 	margin: 0 5px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+}
+
+.stripes-border {
+	background-color: pink;
+	margin: auto;
+	padding: 10px 10px;
+	background-image: linear-gradient(
+		135deg,
+		#ff0000 25%,
+		#ffffff 25%,
+		#ffffff 50%,
+		#ff0000 50%,
+		#ff0000 75%,
+		#ffffff 75%,
+		#ffffff 100%
+	);
+	background-size: 56.57px 56.57px;
+}
+
+.white-box {
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+}
+
+.more {
+	padding: 0 27px;
+}
+
+.team-member {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.team-member .logo {
+	background-color: #ff701f;
+	color: white;
+	border-radius: 50%;
+	width: 110px;
+	height: 110px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 46px;
+	font-weight: bold;
+}
+
+.team-member .position {
+	margin-top: 10px;
+}
+
+.team-member .name {
+	margin-top: 5px;
+	padding: 10px 0;
+	background-color: lightgray;
+	border-radius: 5px;
+	font-weight: bold;
+	width: 75%;
+}
+
+.custom-carousel-indicators-3 {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.custom-carousel-indicators-3 .carousel-indicator {
+	width: 10px;
+	height: 10px;
+	background-color: #d9d9d9;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.custom-carousel-indicators-3 .carousel-indicator.active {
+	background-color: #ca0000;
+}
+
+.team-data {
+	padding: 10px;
+	margin-bottom: 0px;
+	min-height: 280px;
 }

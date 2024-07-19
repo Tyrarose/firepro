@@ -6,6 +6,7 @@ import Preloader from "../components/preloader";
 
 import aboutUsData from "../data/aboutUs.json";
 import historyData from "../data/history.json";
+import teamData from "../data/team.json";
 
 export default function AboutUs() {
 	const [activeIndex1, setActiveIndex1] = useState(0);
@@ -16,6 +17,11 @@ export default function AboutUs() {
 	const [activeIndex2, setActiveIndex2] = useState(0);
 	const handleSelect2 = (selectedIndex, e) => {
 		setActiveIndex2(selectedIndex);
+	};
+
+	const [activeIndex3, setActiveIndex3] = useState(0);
+	const handleSelect3 = (selectedIndex, e) => {
+		setActiveIndex3(selectedIndex); // Corrected here
 	};
 
 	const [loading, setLoading] = useState(true);
@@ -36,7 +42,7 @@ export default function AboutUs() {
 					<div className="Ellipse2" />
 
 					<section className="container text-center">
-						<div className="second-section">
+						<div className="">
 							<h1 className="heading2">
 								MISSION, VISION & CORE VALUES
 							</h1>
@@ -114,7 +120,7 @@ export default function AboutUs() {
 					</section>
 
 					<section className="container text-center my-4 history-container">
-						<div className="third-section m-3">
+						<div className="glass m-3">
 							<h1 className="my-4 heading2">
 								BEHIND THE PRODUCT
 							</h1>
@@ -164,6 +170,77 @@ export default function AboutUs() {
 												__html: item.content,
 											}}
 										/>
+									))}
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section className="container text-center more">
+						<div className="stripes-border glass">
+							<div className="white-box">
+								<h1 className="my-4 heading2">MEET THE TEAM</h1>
+								<div className="d-md-none">
+									<Carousel
+										activeIndex={activeIndex3}
+										onSelect={handleSelect3}
+										className="custom-carousel-3"
+										indicators={false}
+										interval={9000}
+									>
+										{teamData.map((item, index) => (
+											<Carousel.Item
+												key={index}
+												className="carousel-item team-data"
+											>
+												<div className="team-member">
+													<div className="logo">
+														{item.logo}
+													</div>
+													<div className="position">
+														{item.position}
+													</div>
+													<div className="name">
+														{item.name}
+													</div>
+												</div>
+											</Carousel.Item>
+										))}
+									</Carousel>
+									<div className="custom-carousel-indicators-3">
+										{teamData.map((_, index) => (
+											<span
+												key={index}
+												className={
+													index === activeIndex3
+														? "carousel-indicator active"
+														: "carousel-indicator"
+												}
+												onClick={() =>
+													handleSelect3(index)
+												}
+											></span>
+										))}
+									</div>
+								</div>
+								<div className="row d-none d-md-flex">
+									{teamData.map((item, index) => (
+										<div
+											className="col-md-4 text-center team-data"
+											key={index}
+										>
+											<div className="team-member">
+												<div className="logo">
+													{item.logo}
+												</div>
+												<div className="position">
+													{item.position}
+												</div>
+												<div className="name">
+													{item.name}
+												</div>
+											</div>
+										</div>
 									))}
 								</div>
 							</div>

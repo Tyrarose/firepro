@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"logo": "GS",
+		"position": "President",
+		"name": "GARY SHIRK"
+	},
+	{
+		"id": 2,
+		"logo": "LM",
+		"position": "Business Advisor",
+		"name": "LEON MARTIN"
+	},
+	{
+		"id": 3,
+		"logo": "JS",
+		"position": "Vice President",
+		"name": "JADEN SHIRK"
+	},
+	{
+		"id": 4,
+		"logo": "RS",
+		"position": "Vice President",
+		"name": "RANDALL SHIRK"
+	},
+	{
+		"id": 5,
+		"logo": "LS",
+		"position": "Warehouse Manager",
+		"name": "LEONDALE SHIRK"
+	},
+	{
+		"id": 6,
+		"logo": "PS",
+		"position": "Warranty Manager & Office Coordinator",
+		"name": "PHOEBE SHIRK"
+	},
+	{
+		"id": 7,
+		"logo": "JH",
+		"position": "Leading Distributor",
+		"name": "JAVEN HOOVER"
+	}
+]
