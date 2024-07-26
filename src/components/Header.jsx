@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
 
-import "../styles/Header.css";
+import "../styles/ContactUs.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header() {
@@ -31,18 +31,21 @@ export default function Header() {
 					className={isHomePage ? "home-page" : ""}
 				>
 					<Container fluid>
-						{isHomePage ? null : (
-							<NavLink to="/">
-								<img
-									src={
-										process.env.PUBLIC_URL +
-										"/images/mainImages/fireproshield.png"
-									}
-									alt="fireproshield"
-									className="brand-image"
-								/>
-							</NavLink>
-						)}
+						<NavLink to="/">
+							<img
+								src={
+									process.env.PUBLIC_URL +
+									"/images/mainImages/fireproshield.png"
+								}
+								alt="fireproshield"
+								className="brand-image"
+								style={{
+									visibility: isHomePage
+										? "hidden"
+										: "visible",
+								}}
+							/>
+						</NavLink>
 						<Navbar.Toggle
 							aria-controls={`offcanvasNavbar-expand-${expand}`}
 							className="ms-auto"
@@ -53,10 +56,10 @@ export default function Header() {
 						<Navbar.Offcanvas
 							id={`offcanvasNavbar-expand-${expand}`}
 							aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-							placement="end" // Ensures Offcanvas is aligned to the right
+							placement="end"
 							show={expanded}
 							onHide={handleClose}
-							className="offcanvas-end" // Apply custom CSS class
+							className="offcanvas-end"
 						>
 							<Offcanvas.Header closeButton>
 								<Offcanvas.Title
