@@ -57,9 +57,9 @@
 }
 
 .viewext {
-	background: rgba(193, 48, 27, 1);
+	background: #c1301b;
 	border-radius: 10px;
-	color: rgba(255, 255, 255, 1);
+	color: #ffffff;
 	padding: 8px 65px;
 }
 
@@ -71,13 +71,13 @@
 }
 
 .video-container {
-    max-width: 100%;
-    margin: 0 auto;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 .video-container video {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 /* Responsive styles */

@@ -151,7 +151,7 @@ function Home() {
 
 						<section className="m-5 pt-4 pb-4">
 							<div className="video-container">
-								<video controls>
+								<video controls autoplay loop>
 									<source
 										src={
 											process.env.PUBLIC_URL +
@@ -163,7 +163,6 @@ function Home() {
 								</video>
 							</div>
 						</section>
-						
 					</div>
 				</div>
 			)}
