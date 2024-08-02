@@ -32,6 +32,11 @@ export default function AboutUs() {
 		}, 50);
 	}, []);
 
+	// Function to check if a string ends with .png
+	function isPngImage(string) {
+		return string.endsWith("png");
+	}
+
 	return (
 		<div>
 			{loading ? (
@@ -195,7 +200,27 @@ export default function AboutUs() {
 											>
 												<div className="team-member">
 													<div className="logo">
-														{item.logo}
+														{isPngImage(
+															item.logo
+														) ? (
+															<img
+																className="logo"
+																src={item.logo}
+																alt={item.name}
+																onError={(
+																	e
+																) => {
+																	e.target.onerror =
+																		null;
+																	e.target.src =
+																		"path/to/default/image.png";
+																}}
+															/>
+														) : (
+															<span>
+																{item.logo}
+															</span>
+														)}
 													</div>
 													<div className="position">
 														{item.position}
@@ -231,7 +256,21 @@ export default function AboutUs() {
 										>
 											<div className="team-member">
 												<div className="logo">
-													{item.logo}
+													{isPngImage(item.logo) ? (
+														<img
+															className="logo"
+															src={item.logo}
+															alt={item.name}
+															onError={(e) => {
+																e.target.onerror =
+																	null;
+																e.target.src =
+																	"path/to/default/image.png";
+															}}
+														/>
+													) : (
+														<span>{item.logo}</span>
+													)}
 												</div>
 												<div className="position">
 													{item.position}
