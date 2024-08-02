@@ -71,17 +71,28 @@ function ProductShop() {
 														{product.name}
 													</h1>
 													<p className="text-center product-info">
-														<strong>
-															{product.feature}
+														<strong
+															dangerouslySetInnerHTML={{
+																__html: product.feature,
+															}}
+														>
+															{/* {product.feature} */}
 														</strong>
 														<br />
-														<strong>
-															{product.feature2}
+														<strong
+															dangerouslySetInnerHTML={{
+																__html: product.feature2,
+															}}
+														>
+															{/* {product.feature2} */}
 														</strong>
 													</p>
-													<p className="product-description">
-														{product.description}
-													</p>
+													<p
+														className="product-description"
+														dangerouslySetInnerHTML={{
+															__html: product.description,
+														}}
+													></p>
 													<div className="row bottomers">
 														<div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
 															<p className="prices mb-0">
@@ -371,17 +382,28 @@ function ProductShop() {
 														{product.name}
 													</h1>
 													<p className="text-center product-info">
-														<strong>
-															{product.feature}
+														<strong
+															dangerouslySetInnerHTML={{
+																__html: product.feature,
+															}}
+														>
+															{/* {product.feature} */}
 														</strong>
 														<br />
-														<strong>
-															{product.feature2}
+														<strong
+															dangerouslySetInnerHTML={{
+																__html: product.feature2,
+															}}
+														>
+															{/* {product.feature2} */}
 														</strong>
 													</p>
-													<p className="product-description">
-														{product.description}
-													</p>
+													<p
+														className="product-description"
+														dangerouslySetInnerHTML={{
+															__html: product.description,
+														}}
+													></p>
 													<div className="row bottomers">
 														<div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
 															<p className="prices mb-0">
