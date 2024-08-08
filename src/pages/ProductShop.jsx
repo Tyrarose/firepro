@@ -17,23 +17,30 @@ function ProductShop() {
 
 	useEffect(() => {
 		if (highlightProductId) {
-			const productElement = document.getElementById(
-				`product-${highlightProductId}`
-			);
-			if (productElement) {
-				productElement.scrollIntoView({
-					behavior: "smooth",
-					block: "center",
-				});
-				productElement.classList.add("highlight-product");
+			// Delay to ensure the page has rendered
+			const timer = setTimeout(() => {
+				const productElement = document.getElementById(
+					`product-${highlightProductId}`
+				);
+				if (productElement) {
+					productElement.scrollIntoView({
+						behavior: "smooth",
+						block: "center",
+					});
+					productElement.classList.add("highlight-product");
 
-				// Remove the highlight parameter from the URL after highlighting
-				const timer = setTimeout(() => {
-					navigate(location.pathname, { replace: true });
-				}, 3000); // Adjust delay if needed
+					// Remove the highlight parameter from the URL after highlighting
+					// navigate(location.pathname, { replace: true });
+					// Remove the highlight parameter from the URL after highlighting
+					const timer = setTimeout(() => {
+						navigate(location.pathname, { replace: true });
+					}, 3000); // Adjust delay if needed
 
-				return () => clearTimeout(timer);
-			}
+					return () => clearTimeout(timer);
+				}
+			}, 100); // Adjust the delay if needed
+
+			return () => clearTimeout(timer);
 		}
 	}, [highlightProductId, navigate, location.pathname]);
 
