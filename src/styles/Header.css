@@ -12,7 +12,6 @@
 .nav-link {
 	color: black !important;
 	font-size: clamp(12px, 1vw, 14px);
-	height: 100%;
 }
 
 .nav-item:hover {
@@ -24,7 +23,6 @@
 
 .nav-item {
 	padding: 1rem;
-	height: 30px;
 	display: flex;
 	align-items: flex-end;
 }
@@ -37,7 +35,7 @@
 }
 
 .active-link {
-	background-color: red;
+	border-bottom: 3px #c1301b solid;
 }
 
 .search-bar {
@@ -120,4 +118,47 @@
 	.search-bar .form-control {
 		width: 60vw;
 	}
+}
+
+.search-bar {
+	position: relative;
+}
+
+.search-results {
+	position: absolute;
+	top: 80%;
+	right: 10%;
+	background-color: white;
+	border: 1px solid #ddd;
+	z-index: 1000;
+	max-height: 250px;
+	overflow-y: auto;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	width: 1000px;
+}
+
+.product-item {
+	border-bottom: 1px rgb(207, 207, 207) solid;
+	padding: 10px 20px 5px 5px;
+}
+
+.product-item > p {
+	font-weight: 100;
+	font-size: 14px;
+}
+
+.highlight {
+	color: #c0311b; /* Or any other color to highlight */
+	font-weight: bold;
+}
+
+.product-item:hover {
+	background-color: #c0311b;
+	color: white;
+	cursor: pointer;
+}
+
+.product-item:hover .highlight {
+	color: white;
+	font-weight: 100;
 }

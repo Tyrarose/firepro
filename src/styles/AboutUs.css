@@ -123,6 +123,14 @@ section {
 	padding: 0px 40px;
 }
 
+.aboutus-desciption {
+	font-size: 18px;
+}
+
+.description {
+	font-size: 18px;
+}
+
 @media only screen and (max-width: 768px) {
 	.second-section {
 		margin: 50px 5px 5px 5px;
@@ -134,7 +142,7 @@ section {
 	}
 
 	.aboutus-description {
-		font-size: clamp(14px, 2vw, 16px);
+		font-size: clamp(16px, 2vw, 16px);
 	}
 }
 

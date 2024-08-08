@@ -240,3 +240,11 @@ p {
 		transform 0.2s,
 		border 0.2s;
 }
+
+.highlight-product {
+	box-shadow: 0 0 10px #c1301b;
+	transition:
+		border 0.3s ease,
+		box-shadow 0.3s ease;
+	animation: removeShadow 3s forwards;
+}

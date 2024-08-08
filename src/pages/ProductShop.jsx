@@ -1,31 +1,62 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/ProductShop.css";
+
 import productsData from "../data/products.json";
+
 import Preloader from "../components/preloader";
 
 function ProductShop() {
+	const location = useLocation();
+	const navigate = useNavigate();
+	const queryParams = new URLSearchParams(location.search);
+	const highlightProductId = queryParams.get("highlight");
+
+	useEffect(() => {
+		if (highlightProductId) {
+			const productElement = document.getElementById(
+				`product-${highlightProductId}`
+			);
+			if (productElement) {
+				productElement.scrollIntoView({
+					behavior: "smooth",
+					block: "center",
+				});
+				productElement.classList.add("highlight-product");
+
+				// Remove the highlight parameter from the URL after highlighting
+				const timer = setTimeout(() => {
+					navigate(location.pathname, { replace: true });
+				}, 3000); // Adjust delay if needed
+
+				return () => clearTimeout(timer);
+			}
+		}
+	}, [highlightProductId, navigate, location.pathname]);
+
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [magnifiedImage, setMagnifiedImage] = useState({});
 
 	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 30);
-
 		const handleScroll = () => {
-			if (window.scrollY > 100) {
-				setShowScrollButton(true);
-			} else {
-				setShowScrollButton(false);
-			}
+			setShowScrollButton(window.scrollY > 100);
 		};
 
 		window.addEventListener("scroll", handleScroll);
 
-		return () => window.removeEventListener("scroll", handleScroll);
+		// Simulate loading
+		const loadingTimer = setTimeout(() => {
+			setLoading(false);
+		}, 30);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			clearTimeout(loadingTimer);
+		};
 	}, []);
 
 	const handleMouseOver = (productId, imageId) => {
@@ -60,8 +91,9 @@ function ProductShop() {
 						<div className="col-12 images_combo">
 							{productsData.map((product) => (
 								<div
+									id={`product-${product.id}`}
 									key={product.id}
-									className={`row product_card ${product.id % 2 === 0 ? "even-product" : ""}`}
+									className={`row product_card ${product.id % 2 === 0 ? "even-product" : ""} ${highlightProductId == product.id ? "highlight-product" : ""}`}
 								>
 									{product.id % 2 === 0 ? (
 										<>
@@ -75,17 +107,13 @@ function ProductShop() {
 															dangerouslySetInnerHTML={{
 																__html: product.feature,
 															}}
-														>
-															{/* {product.feature} */}
-														</strong>
+														></strong>
 														<br />
 														<strong
 															dangerouslySetInnerHTML={{
 																__html: product.feature2,
 															}}
-														>
-															{/* {product.feature2} */}
-														</strong>
+														></strong>
 													</p>
 													<p
 														className="product-description"
@@ -386,17 +414,13 @@ function ProductShop() {
 															dangerouslySetInnerHTML={{
 																__html: product.feature,
 															}}
-														>
-															{/* {product.feature} */}
-														</strong>
+														></strong>
 														<br />
 														<strong
 															dangerouslySetInnerHTML={{
 																__html: product.feature2,
 															}}
-														>
-															{/* {product.feature2} */}
-														</strong>
+														></strong>
 													</p>
 													<p
 														className="product-description"

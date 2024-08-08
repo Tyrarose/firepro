@@ -9,18 +9,63 @@ import {
 	FormControl,
 	Button,
 } from "react-bootstrap";
-import { NavLink, useLocation } from "react-router-dom";
-
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import productsData from "../data/products.json";
 import "../styles/ContactUs.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header() {
+	const navigate = useNavigate();
+
+	const handleProductClick = (productId) => {
+		navigate(`/productshop?highlight=${productId}`);
+		handleClose(); // Close the offcanvas menu
+		setSearchTerm(""); // Clear the search input
+		setFilteredProducts([]); // Clear the search results
+	};
+
 	const [expanded, setExpanded] = useState(false);
 	const location = useLocation();
-
 	const isHomePage = location.pathname === "/";
 
 	const handleClose = () => setExpanded(false);
+
+	const [searchTerm, setSearchTerm] = useState("");
+	const [filteredProducts, setFilteredProducts] = useState([]);
+
+	const handleSearch = (event) => {
+		const term = event.target.value;
+		setSearchTerm(term);
+		if (term) {
+			const filtered = productsData.filter(
+				(product) =>
+					product.name.toLowerCase().includes(term.toLowerCase()) ||
+					product.description
+						.toLowerCase()
+						.includes(term.toLowerCase())
+			);
+			setFilteredProducts(filtered);
+		} else {
+			setFilteredProducts([]);
+		}
+	};
+
+	const highlightText = (text, highlight) => {
+		if (!highlight) return text;
+
+		const regex = new RegExp(`(${highlight})`, "gi");
+		const parts = text.split(regex);
+
+		return parts.map((part, index) =>
+			regex.test(part) ? (
+				<span key={index} className="highlight">
+					{part}
+				</span>
+			) : (
+				part
+			)
+		);
+	};
 
 	return (
 		<>
@@ -73,9 +118,12 @@ export default function Header() {
 									<NavItem>
 										<NavLink
 											to="/"
-											className="nav-link"
+											className={({ isActive }) =>
+												isActive
+													? "nav-link active-link"
+													: "nav-link"
+											}
 											onClick={handleClose}
-											activeClassName="active-link"
 										>
 											Home
 										</NavLink>
@@ -83,9 +131,12 @@ export default function Header() {
 									<NavItem>
 										<NavLink
 											to="/productshop"
-											className="nav-link"
+											className={({ isActive }) =>
+												isActive
+													? "nav-link active-link"
+													: "nav-link"
+											}
 											onClick={handleClose}
-											activeClassName="active-link"
 										>
 											Product Shop
 										</NavLink>
@@ -93,9 +144,12 @@ export default function Header() {
 									<NavItem>
 										<NavLink
 											to="/storelocation"
-											className="nav-link"
+											className={({ isActive }) =>
+												isActive
+													? "nav-link active-link"
+													: "nav-link"
+											}
 											onClick={handleClose}
-											activeClassName="active-link"
 										>
 											Store Location
 										</NavLink>
@@ -103,9 +157,12 @@ export default function Header() {
 									<NavItem>
 										<NavLink
 											to="/testimoniesandfacts"
-											className="nav-link"
+											className={({ isActive }) =>
+												isActive
+													? "nav-link active-link"
+													: "nav-link"
+											}
 											onClick={handleClose}
-											activeClassName="active-link"
 										>
 											Testimonies Facts
 										</NavLink>
@@ -113,9 +170,12 @@ export default function Header() {
 									<NavItem>
 										<NavLink
 											to="/contactus"
-											className="nav-link"
+											className={({ isActive }) =>
+												isActive
+													? "nav-link active-link"
+													: "nav-link"
+											}
 											onClick={handleClose}
-											activeClassName="active-link"
 										>
 											Contact Us
 										</NavLink>
@@ -123,9 +183,12 @@ export default function Header() {
 									<NavItem>
 										<NavLink
 											to="/aboutus"
-											className="nav-link"
+											className={({ isActive }) =>
+												isActive
+													? "nav-link active-link"
+													: "nav-link"
+											}
 											onClick={handleClose}
-											activeClassName="active-link"
 										>
 											About Us
 										</NavLink>
@@ -135,11 +198,56 @@ export default function Header() {
 											type="search"
 											placeholder="Search"
 											aria-label="Search"
+											value={searchTerm}
+											onChange={handleSearch}
 										/>
-										<Button variant="">
+										<Button variant="outline-primary">
 											<i className="fa-solid fa-magnifying-glass"></i>
 										</Button>
 									</Form>
+									{searchTerm && (
+										<div className="search-results">
+											{filteredProducts.length > 0 ? (
+												filteredProducts.map(
+													(product) => (
+														<div
+															key={product.id}
+															className="product-item"
+															onClick={() =>
+																handleProductClick(
+																	product.id
+																)
+															}
+														>
+															<h4 className="text-end">
+																{highlightText(
+																	product.name,
+																	searchTerm
+																)}
+															</h4>
+															<p className="text-end">
+																{highlightText(
+																	product
+																		.description
+																		.length >
+																		50
+																		? product.description.substring(
+																				0,
+																				130
+																			) +
+																				"..."
+																		: product.description,
+																	searchTerm
+																)}
+															</p>
+														</div>
+													)
+												)
+											) : (
+												<p>No products found</p>
+											)}
+										</div>
+									)}
 								</Nav>
 							</Offcanvas.Body>
 						</Navbar.Offcanvas>
