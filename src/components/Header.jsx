@@ -50,6 +50,12 @@ export default function Header() {
 		}
 	};
 
+	const handleBlur = () => {
+		// Clear search results when search box loses focus
+		setSearchTerm("");
+		setFilteredProducts([]);
+	};
+
 	const highlightText = (text, highlight, maxLength = null) => {
 		if (!highlight) return text;
 
@@ -206,6 +212,7 @@ export default function Header() {
 												aria-label="Search"
 												value={searchTerm}
 												onChange={handleSearch}
+												onBlur={handleBlur}
 											/>
 											<Button variant="outline-primary">
 												<i className="fa-solid fa-magnifying-glass"></i>
@@ -238,7 +245,7 @@ export default function Header() {
 																				product.description,
 																				searchTerm,
 																				40
-																			) // Limit to 50 characters on mobile
+																			)
 																		: highlightText(
 																				product.description,
 																				searchTerm,
