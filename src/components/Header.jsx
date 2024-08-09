@@ -51,9 +51,11 @@ export default function Header() {
 	};
 
 	const handleBlur = () => {
-		// Clear search results when search box loses focus
-		setSearchTerm("");
-		setFilteredProducts([]);
+		// Delay clearing to allow onMouseDown event to trigger first
+		setTimeout(() => {
+			setSearchTerm("");
+			setFilteredProducts([]);
+		}, 100);
 	};
 
 	const highlightText = (text, highlight, maxLength = null) => {
