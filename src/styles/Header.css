@@ -1,5 +1,5 @@
 * {
-	/* border: 1px green dotted; */
+	/* border: 1px pink dotted; */
 }
 
 .nav {
@@ -41,16 +41,11 @@
 .search-bar {
 	height: 40px;
 	margin-left: 50px;
+	position: relative;
+	z-index: 1050;
 }
 
 .search-bar .form-control {
-	/* border: none;
-	border-bottom: 2px solid #ccc;
-	border-radius: 0;
-	outline: none;
-	box-shadow: none;
-	transition: border-color 0.3s ease; */
-
 	width: 14vw;
 	font-size: clamp(12px, 1vw, 14px);
 	transition: border-color 0.3s ease;
@@ -61,14 +56,8 @@
 }
 
 .search-bar .btn {
-	/* border: none;
-	background: none;
-	color: #c1301b;
-	padding: 0;
-	margin-left: 5px;
-	transition: color 0.3s ease; */
+	transition: color 0.3s ease;
 	border: 1px solid #c1301b;
-	/* outline: #c1301b; */
 	color: #c1301b;
 	transition: color 0.3s ease;
 	margin-left: 5px;
@@ -77,51 +66,6 @@
 .search-bar .btn:hover {
 	color: white;
 	background-color: #c1301b;
-}
-
-/* Media query for phones */
-@media only screen and (max-width: 767px) {
-	/* Ensure the Offcanvas is positioned correctly */
-	.offcanvas-end {
-		right: 0;
-	}
-
-	/* Optional: adjust width of Offcanvas if needed */
-	.offcanvas-end .offcanvas-body {
-		width: 100%; /* Adjust this value as needed */
-	}
-
-	/* Ensure content in Offcanvas is centered */
-	.offcanvas-end .nav {
-		display: flex;
-		flex-direction: column;
-		align-items: end;
-	}
-	.navbar {
-		margin-top: 3%;
-		margin-bottom: 9%;
-	}
-	.brand-image {
-		height: 60px;
-		padding: 0%;
-		margin-left: 2%;
-	}
-
-	.home-page {
-		margin-bottom: 0;
-	}
-
-	.search-bar {
-		margin-top: 14px;
-	}
-
-	.search-bar .form-control {
-		width: 60vw;
-	}
-}
-
-.search-bar {
-	position: relative;
 }
 
 .search-results {
@@ -148,7 +92,7 @@
 }
 
 .highlight {
-	color: #c0311b; /* Or any other color to highlight */
+	color: #c0311b;
 	font-weight: bold;
 }
 
@@ -161,4 +105,62 @@
 .product-item:hover .highlight {
 	color: white;
 	font-weight: 100;
+}
+
+/* Media query for phones */
+@media only screen and (max-width: 767px) {
+	/* .offcanvas-end {
+		right: 0;
+	}
+
+	.offcanvas-end .offcanvas-body {
+		width: 100%;
+	}*/
+
+	.offcanvas-end .nav {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+
+	/* .navbar {
+		margin-top: 3%;
+		margin-bottom: 9%;
+	} */
+
+	/* .brand-image {
+		height: 60px;
+		padding: 0%;
+		margin-left: 2%;
+	} */
+
+	.search-bar {
+		margin-top: 14px;
+		width: 100%;
+		margin-left: 0;
+		position: relative;
+	}
+
+	.search-bar .form-control {
+		width: 100%;
+		font-size: clamp(14px, 1vw, 16px);
+	}
+
+	.search-bar .btn {
+		width: 20%;
+	}
+
+	.search-container {
+		display: flex;
+		flex-direction: column;
+		order: -1;
+		width: 100%;
+	}
+
+	.search-results {
+		width: 100%;
+		position: relative;
+		z-index: 1000;
+		left: 0;
+	}
 }

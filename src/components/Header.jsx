@@ -50,8 +50,13 @@ export default function Header() {
 		}
 	};
 
-	const highlightText = (text, highlight) => {
+	const highlightText = (text, highlight, maxLength = null) => {
 		if (!highlight) return text;
+
+		// Truncate the text if maxLength is specified
+		if (maxLength && text.length > maxLength) {
+			text = text.substring(0, maxLength) + "...";
+		}
 
 		const regex = new RegExp(`(${highlight})`, "gi");
 		const parts = text.split(regex);
@@ -193,61 +198,62 @@ export default function Header() {
 											About Us
 										</NavLink>
 									</NavItem>
-									<Form className="d-flex search-bar">
-										<FormControl
-											type="search"
-											placeholder="Search"
-											aria-label="Search"
-											value={searchTerm}
-											onChange={handleSearch}
-										/>
-										<Button variant="outline-primary">
-											<i className="fa-solid fa-magnifying-glass"></i>
-										</Button>
-									</Form>
-									{searchTerm && (
-										<div className="search-results">
-											{filteredProducts.length > 0 ? (
-												filteredProducts.map(
-													(product) => (
-														<div
-															key={product.id}
-															className="product-item"
-															onClick={() =>
-																handleProductClick(
-																	product.id
-																)
-															}
-														>
-															<h4 className="text-end">
-																{highlightText(
-																	product.name,
-																	searchTerm
-																)}
-															</h4>
-															<p className="text-end">
-																{highlightText(
-																	product
-																		.description
-																		.length >
-																		50
-																		? product.description.substring(
-																				0,
+									<div className="search-container">
+										<Form className="d-flex search-bar">
+											<FormControl
+												type="search"
+												placeholder="Search"
+												aria-label="Search"
+												value={searchTerm}
+												onChange={handleSearch}
+											/>
+											<Button variant="outline-primary">
+												<i className="fa-solid fa-magnifying-glass"></i>
+											</Button>
+										</Form>
+										{searchTerm && (
+											<div className="search-results">
+												{filteredProducts.length > 0 ? (
+													filteredProducts.map(
+														(product) => (
+															<div
+																key={product.id}
+																className="product-item"
+																onClick={() =>
+																	handleProductClick(
+																		product.id
+																	)
+																}
+															>
+																<h4 className="text-end">
+																	{highlightText(
+																		product.name,
+																		searchTerm
+																	)}
+																</h4>
+																<p className="text-end">
+																	{window.innerWidth <=
+																	767
+																		? highlightText(
+																				product.description,
+																				searchTerm,
+																				40
+																			) // Limit to 50 characters on mobile
+																		: highlightText(
+																				product.description,
+																				searchTerm,
 																				130
-																			) +
-																				"..."
-																		: product.description,
-																	searchTerm
-																)}
-															</p>
-														</div>
+																			)}
+																</p>
+															</div>
+														)
 													)
-												)
-											) : (
-												<p>No products found</p>
-											)}
-										</div>
-									)}
+												) : (
+													<p>No products found</p>
+												)}
+											</div>
+										)}
+									</div>
 								</Nav>
 							</Offcanvas.Body>
 						</Navbar.Offcanvas>
