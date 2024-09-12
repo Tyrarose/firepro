@@ -234,31 +234,48 @@ export default function Header() {
 																	)
 																}
 															>
-																<h4 className="text-end">
-																	{highlightText(
-																		product.name,
-																		searchTerm
-																	)}
-																</h4>
-																<p className="text-end">
-																	{window.innerWidth <=
-																	767
-																		? highlightText(
-																				product.description,
-																				searchTerm,
-																				40
-																			)
-																		: highlightText(
-																				product.description,
-																				searchTerm,
-																				130
-																			)}
-																</p>
+																<h5
+																	className="text-start"
+																	dangerouslySetInnerHTML={{
+																		__html: product.name,
+																	}}
+																></h5>
+
+																<p
+																	className="text-start"
+																	dangerouslySetInnerHTML={{
+																		__html:
+																			window.innerWidth <=
+																			767
+																				? product
+																						.description
+																						.length >
+																					40
+																					? product.description.substring(
+																							0,
+																							40
+																						) +
+																						" ..."
+																					: product.description
+																				: product
+																							.description
+																							.length >
+																					  130
+																					? product.description.substring(
+																							0,
+																							120
+																						) +
+																						" ..."
+																					: product.description,
+																	}}
+																></p>
 															</div>
 														)
 													)
 												) : (
-													<p>No products found</p>
+													<p className="text-start ">
+														No products found
+													</p>
 												)}
 											</div>
 										)}

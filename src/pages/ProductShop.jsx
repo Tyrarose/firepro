@@ -144,9 +144,9 @@ function ProductShop() {
 																	}}
 																>
 																	$
-																	{
-																		product.price
-																	}
+																	{product.price.toFixed(
+																		2
+																	)}
 																</span>
 															</p>
 															<button className="btn buy_now mt-md-0">
@@ -451,9 +451,9 @@ function ProductShop() {
 																	}}
 																>
 																	$
-																	{
-																		product.price
-																	}
+																	{product.price.toFixed(
+																		2
+																	)}
 																</span>
 															</p>
 															<button className="btn buy_now mt-md-0">
