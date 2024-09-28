@@ -56,7 +56,8 @@
 		"price": 197.96,
 		"mini1": "images/productsMore/product5-1.png",
 		"mini2": "images/productsMore/product5-2.png",
-		"mini3": "images/productsMore/product5-3.png"
+		"mini3": "images/productsMore/product5-3.png",
+		"free": "images/productsImage/free.png"
 	},
 	{
 		"id": 6,
@@ -68,7 +69,8 @@
 		"price": 244.47,
 		"mini1": "images/productsMore/product6-1.png",
 		"mini2": "images/productsMore/product6-2.png",
-		"mini3": "images/productsMore/product6-3.png"
+		"mini3": "images/productsMore/product6-3.png",
+		"free": "images/productsImage/free.png"
 	},
 	{
 		"id": 7,

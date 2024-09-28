@@ -102,6 +102,7 @@ function ProductShop() {
 									key={product.id}
 									className={`row product_card ${product.id % 2 === 0 ? "even-product" : ""} ${highlightProductId == product.id ? "highlight-product" : ""}`}
 								>
+									{/* image on left because even */}
 									{product.id % 2 === 0 ? (
 										<>
 											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
@@ -281,9 +282,17 @@ function ProductShop() {
 																: "none",
 													}}
 												/>
+												{product.free && (
+													<img
+														src={product.free}
+														alt="Freebie"
+														className="freebies"
+													/>
+												)}
 											</div>
 										</>
 									) : (
+										// {/* image on right because even */}
 										<>
 											<div className="col-md-6 picture text-end col-sm-12">
 												<div className="minis">
@@ -410,6 +419,13 @@ function ProductShop() {
 																: "none",
 													}}
 												/>
+												{product.free && (
+													<img
+														src={product.free}
+														alt="Freebie"
+														className="freebies"
+													/>
+												)}
 											</div>
 											<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
 												<div className="productdeets">
