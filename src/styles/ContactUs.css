@@ -1,7 +1,6 @@
 .transition-fade {
 	transition: opacity 0.3s ease-in-out;
 }
-
 .contact-info {
 	text-align: center;
 	font-size: 1.2rem;
@@ -47,9 +46,8 @@
 
 .contact-body {
 	font-family: Arial, sans-serif;
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
-	align-items: center;
 }
 
 .contact-container {
@@ -177,7 +175,7 @@ button.submit-buyer-info-btn i {
 }
 
 .phone-link {
-	margin-left: 8px;
+	min-width: 150px;
 }
 
 .email-link {
@@ -195,4 +193,24 @@ button.submit-buyer-info-btn i {
 .sample-number {
 	color: gray;
 	font-weight: 100;
+}
+
+/* Media query for bigger than phone (min-width: 767px) */
+@media only screen and (min-width: 768px) {
+	.contact-body {
+		display: flex;
+	}
+}
+
+/* Media query for phones (min-width: 767px) */
+@media only screen and (max-width: 767px) {
+	.sample-number {
+		display: block;
+	}
+	.chip-container {
+		display: block;
+	}
+	.chip {
+		margin: 5px;
+	}
 }

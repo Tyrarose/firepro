@@ -26,24 +26,96 @@ const ContactUs = () => {
 		setFormData((prevData) => ({ ...prevData, preferredComm: comm })); // Update the preferred communication method
 	};
 
+	const toTitleCase = (str) => {
+		return str
+			.toLowerCase()
+			.split(" ")
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join(" ");
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		const cleanedContact = formData.contact.replace(/\s+/g, ""); // Remove spaces
-		console.log("User Input:", {
-			Name: formData.name,
-			Contact: cleanedContact,
-			PreferredComm: formData.preferredComm,
-			PreferredTime: formData.preferredTime,
-		});
+		// Remove all non-digit characters for cleanedContact
+		const cleanedContact = formData.contact.replace(/\D/g, ""); // Remove all non-digit characters
+		const formattedName = toTitleCase(formData.name); // Format name to title case
 
-		alert(
-			`Thank you, ${formData.name}! 😊\n\n` +
-				`We have received your contact number: **${cleanedContact}**.\n` +
-				`You prefer to be contacted by **${formData.preferredComm ? formData.preferredComm.charAt(0).toUpperCase() + formData.preferredComm.slice(1) : "not specified"}**.\n` +
-				`The best time for a call is **${formData.preferredTime ? formData.preferredTime.charAt(0).toUpperCase() + formData.preferredTime.slice(1) : "not specified"}**.\n\n` +
-				`We’ll be in touch shortly!`
-		);
+		// Send the data to Telegram
+		const token = process.env.REACT_APP_BOT_TOKEN;
+		const chatId = process.env.REACT_APP_CHAT_ID;
+
+		// Get the current hour
+		const currentHour = new Date().getHours();
+		let greeting;
+
+		// Determine the appropriate greeting based on the current hour
+		if (currentHour < 12) {
+			greeting = "Good morning";
+		} else if (currentHour < 17) {
+			greeting = "Good afternoon";
+		} else if (currentHour < 21) {
+			greeting = "Good evening";
+		} else {
+			greeting = "Good night"; // For late-night notifications
+		}
+
+		// Create a mapping of preferred times to their descriptions
+		const timeDescriptions = {
+			morning: "Morning (9 AM - 12 PM)",
+			afternoon: "Afternoon (12 PM - 3 PM)",
+			evening: "Evening (3 PM - 6 PM)",
+		};
+
+		// Construct the Telegram message
+		const telegramMessage =
+			`${greeting} 🌞, Gary Shrik! 🎉 You have a new order request:\n\n` +
+			`✨ Name: ${formattedName}\n` + // Use the formatted name here
+			`📞 Contact: +${cleanedContact}\n` + // Use cleanedContact without spaces
+			`💬 Preferred Communication: ${formData.preferredComm ? formData.preferredComm.charAt(0).toUpperCase() + formData.preferredComm.slice(1) : "not specified"}\n` +
+			`⏰ Preferred Time for a Call: ${formData.preferredTime ? timeDescriptions[formData.preferredTime] : "not specified"}\n\n` + // Use the mapping here
+			`Please reach out to ${formattedName} as soon as possible! 😊💖\n\n` +
+			`Thank you for your wonderful service! 🥳`;
+
+		fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				chat_id: chatId,
+				text: telegramMessage,
+			}),
+		})
+			.then((response) => {
+				if (response.ok) {
+					// Same greeting logic here for the alert
+					alert(
+						`${greeting}, ${formattedName}! 😊\n\n` + // Use the formatted name here
+							`Thank you for choosing us for your fire safety needs! 🔥🛡️\n\n` +
+							`We have received your contact number: **+1 ${cleanedContact}**.\n` + // Use cleanedContact without spaces
+							`You prefer to be contacted by **${formData.preferredComm ? formData.preferredComm.charAt(0).toUpperCase() + formData.preferredComm.slice(1) : "not specified"}**.\n` +
+							`The best time for a call is **${formData.preferredTime ? timeDescriptions[formData.preferredTime] : "not specified"}**.\n\n` + // Use the mapping here
+							`We’ll be in touch shortly! 💖`
+					);
+
+					// Reset form data
+					setFormData({
+						name: "",
+						contact: "",
+						preferredTime: "",
+						preferredComm: "",
+					});
+				} else {
+					alert(
+						"There was an error sending your request. Please try again."
+					);
+				}
+			})
+			.catch((error) => {
+				console.error("Error sending Telegram message:", error);
+				alert("Failed to notify about your request.");
+			});
 	};
 
 	useEffect(() => {
@@ -57,7 +129,7 @@ const ContactUs = () => {
 			<div className="page-container transition-fade">
 				<div className="Ellipse1" />
 				<div className="Ellipse2" />
-				<div className="container">
+				<div className="">
 					<div className="m-5">
 						<div className="col-12">
 							<h1 className="heading2">We’ll Call You!</h1>
