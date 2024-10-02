@@ -1,7 +1,3 @@
-* {
-	/* border: 1px green dotted; */
-}
-
 .page-container {
 	transition: opacity 0.3s ease-in-out;
 }
@@ -83,11 +79,8 @@ section {
 
 .glass {
 	margin: 10px 0px;
-	/* background-color: rgba(243, 189, 189, 0.09); */
 	padding: 50px 30px;
 	border-radius: 50px;
-	/* backdrop-filter: blur(4px); */
-	/* box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .glass {

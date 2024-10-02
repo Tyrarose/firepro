@@ -30,8 +30,6 @@ function ProductShop() {
 					productElement.classList.add("highlight-product");
 
 					// Remove the highlight parameter from the URL after highlighting
-					// navigate(location.pathname, { replace: true });
-					// Remove the highlight parameter from the URL after highlighting
 					const timer = setTimeout(() => {
 						navigate(location.pathname, { replace: true });
 					}, 3000); // Adjust delay if needed
@@ -76,6 +74,10 @@ function ProductShop() {
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
+	const handleBuyNowClick = () => {
+		navigate("/contactus");
 	};
 
 	return (
@@ -150,7 +152,12 @@ function ProductShop() {
 																	)}
 																</span>
 															</p>
-															<button className="btn buy_now mt-md-0">
+															<button
+																className="btn buy_now mt-md-0"
+																onClick={
+																	handleBuyNowClick
+																}
+															>
 																Buy now
 															</button>
 														</div>
@@ -472,7 +479,12 @@ function ProductShop() {
 																	)}
 																</span>
 															</p>
-															<button className="btn buy_now mt-md-0">
+															<button
+																className="btn buy_now mt-md-0"
+																onClick={
+																	handleBuyNowClick
+																}
+															>
 																Buy now
 															</button>
 														</div>

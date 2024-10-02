@@ -1,50 +1,6 @@
-.transition-fade {
-	transition: opacity 0.3s ease-in-out;
+* {
+	/* border: 1px red dotted; */
 }
-
-.contact-info {
-	text-align: center;
-	font-size: 1.2rem;
-}
-
-.contact-line {
-	justify-content: center;
-	align-items: center;
-}
-
-.phone,
-.fax,
-.email,
-.address {
-	margin: 0;
-	padding: 5px 0;
-}
-
-.phone,
-.fax {
-	display: inline-block;
-}
-
-.bolded-red-text {
-	color: #c1301b;
-	font-weight: bold;
-}
-
-.separator {
-	padding: 0 10px;
-}
-
-.email,
-.address {
-	display: block;
-	text-align: center;
-	color: #333;
-}
-
-.email {
-	font-style: italic;
-}
-
 .contact-body {
 	font-family: Arial, sans-serif;
 	display: flex;
@@ -107,12 +63,7 @@ input {
 .input-container i {
 	margin-right: 10px;
 	font-size: 18px;
-	color: #888; /* Gray for default state */
-	transition: color 0.3s; /* Smooth transition for color change */
-}
-
-.icon-red {
-	color: #c1301b !important; /* Red color */
+	color: #888;
 }
 
 .input-container input,
@@ -133,25 +84,19 @@ input {
 }
 
 .chip {
-	min-width: 250px;
 	padding: 10px 15px;
 	border-radius: 20px;
 	background-color: #e0e0e0;
 	cursor: pointer;
-	color: #333;
-	transition:
-		background-color 0.3s,
-		color 0.3s;
 }
 
 .chip:hover {
 	background-color: #d0d0d0;
-	color: #333;
 }
 
 .chip-selected {
-	color: white !important;
-	background-color: #c1301b !important;
+	color: white;
+	background-color: #c1301b;
 }
 
 .submit-btn-container {
@@ -174,25 +119,4 @@ button.submit-buyer-info-btn {
 
 button.submit-buyer-info-btn i {
 	margin-right: 8px;
-}
-
-.phone-link {
-	margin-left: 8px;
-}
-
-.email-link {
-	margin-left: 8px;
-}
-
-.address-link {
-	margin-left: 8px;
-}
-
-.phone-link:hover {
-	color: red;
-}
-
-.sample-number {
-	color: gray;
-	font-weight: 100;
 }
