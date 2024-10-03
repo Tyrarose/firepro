@@ -124,21 +124,25 @@ const ContactUs = () => {
 				channelID
 			);
 			if (channelSuccess) {
-				alert(`${greeting}, ${formattedName}! 😊\n\n
-				Thank you for choosing us for your fire safety needs! 🔥🛡️\n\n
-				We have received your contact number: +${cleanedContact}.\n
-				You prefer to be contacted by ${
-					formData.preferredComm
-						? formData.preferredComm.charAt(0).toUpperCase() +
-							formData.preferredComm.slice(1)
-						: "not specified"
-				}.\n
-				The best time for a call is ${
-					formData.preferredTime
-						? timeDescriptions[formData.preferredTime]
-						: "not specified"
-				}.\n\n
-				We’ll be in touch shortly! 💖`);
+				alert(
+					`${greeting}, ${formattedName}! 😊\n\n` +
+						`Thank you for choosing us for your fire safety needs! 🔥🛡️\n\n` +
+						`We have received your contact number: +${cleanedContact}.\n` +
+						`You prefer to be contacted by ${
+							formData.preferredComm
+								? formData.preferredComm
+										.charAt(0)
+										.toUpperCase() +
+									formData.preferredComm.slice(1)
+								: "not specified"
+						}.\n` +
+						`The best time for a call is ${
+							formData.preferredTime
+								? timeDescriptions[formData.preferredTime]
+								: "not specified"
+						}.\n\n` +
+						`We’ll be in touch shortly! 💖`
+				);
 			}
 		}
 	};
