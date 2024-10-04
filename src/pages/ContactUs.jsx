@@ -1,17 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css"; // Import the styles
 import Preloader from "../components/preloader"; // Assuming this is used elsewhere
 import "../styles/Header.css";
 
 const ContactUs = () => {
+	// get form data
 	const [formData, setFormData] = useState({
 		name: "",
 		contact: "",
 		preferredTime: "",
-		preferredComm: "", // Add this field to store the communication preference
+		preferredComm: "",
 	});
 
-	const hasText = (value) => value.trim() !== "";
-	const formRef = useRef(null);
+	const hasText = (value) => value.trim() !== ""; // icon color if has text
+
+	const formRef = useRef(null); // position form
+
+	const [isLoading, setIsLoading] = useState(false); // cursor loads when submit clicked
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -23,7 +29,15 @@ const ContactUs = () => {
 	};
 
 	const handleCommSelect = (comm) => {
-		setFormData((prevData) => ({ ...prevData, preferredComm: comm })); // Update the preferred communication method
+		setFormData((prevData) => ({ ...prevData, preferredComm: comm }));
+	};
+
+	// Updated handlePhoneChange to accept the phone number string directly
+	const handlePhoneChange = (value) => {
+		setFormData((prevData) => ({
+			...prevData,
+			contact: value || "", // Update the state with the phone number or empty string
+		}));
 	};
 
 	const toTitleCase = (str) => {
@@ -68,52 +82,44 @@ const ContactUs = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setIsLoading(true); // Start loading cursor
 
-		const cleanedContact = formData.contact.replace(/\D/g, ""); // Remove all non-digit characters
-		const formattedName = toTitleCase(formData.name); // Format name to title case
+		const { name, contact, preferredTime, preferredComm } = formData;
 
-		// Get the current hour
-		const currentHour = new Date().getHours();
-		let greeting;
-
-		// Determine the appropriate greeting based on the current hour
-		if (currentHour < 12) {
-			greeting = "Good morning";
-		} else if (currentHour < 17) {
-			greeting = "Good afternoon";
-		} else if (currentHour < 21) {
-			greeting = "Good evening";
-		} else {
-			greeting = "Good night"; // For late-night notifications
+		// Validate phone number
+		if (!isValidPhoneNumber(contact)) {
+			alert("Please enter a valid phone number.");
+			setIsLoading(false);
+			return;
 		}
 
-		// Create a mapping of preferred times to their descriptions
+		const cleanedContact = contact.replace(/\D/g, ""); // Remove all non-digit characters for Telegram
+		const formattedName = toTitleCase(name);
+
+		const currentHour = new Date().getHours();
+		let greeting =
+			currentHour < 12
+				? "Good morning"
+				: currentHour < 17
+					? "Good afternoon"
+					: currentHour < 21
+						? "Good evening"
+						: "Good night";
+
 		const timeDescriptions = {
 			morning: "Morning (9 AM - 12 PM)",
 			afternoon: "Afternoon (12 PM - 3 PM)",
 			evening: "Evening (3 PM - 6 PM)",
 		};
 
-		// Construct the Telegram message
 		const telegramMessage =
 			`${greeting} 🌞, Gary Shrik! 🎉 You have a new order request:\n\n` +
 			`✨ Name: ${formattedName}\n` +
-			`📞 Contact: +${cleanedContact}\n` +
-			`💬 Preferred Communication: ${
-				formData.preferredComm
-					? formData.preferredComm.charAt(0).toUpperCase() +
-						formData.preferredComm.slice(1)
-					: "not specified"
-			}\n` +
-			`⏰ Preferred Time for a Call: ${
-				formData.preferredTime
-					? timeDescriptions[formData.preferredTime]
-					: "not specified"
-			}\n\n` +
-			`Please reach out to ${formattedName} as soon as possible! 😊💖\n\n` +
-			`Thank you for your wonderful service! 🥳`;
+			`📞 Contact: ${contact}\n` + // Use the formatted contact
+			`💬 Preferred Communication: ${preferredComm ? preferredComm.charAt(0).toUpperCase() + preferredComm.slice(1) : "not specified"}\n` +
+			`⏰ Preferred Time for a Call: ${preferredTime ? timeDescriptions[preferredTime] : "not specified"}\n\n` +
+			`Please reach out to ${formattedName} as soon as possible! 😊💖\n\nThank you for your wonderful service! 🥳`;
 
-		// Send the message to the chat and then to the channel
 		const chatID = process.env.REACT_APP_CHAT_ID;
 		const channelID = process.env.REACT_APP_CHANNEL_ID;
 
@@ -125,26 +131,19 @@ const ContactUs = () => {
 			);
 			if (channelSuccess) {
 				alert(
-					`${greeting}, ${formattedName}! 😊\n\n` +
-						`Thank you for choosing us for your fire safety needs! 🔥🛡️\n\n` +
-						`We have received your contact number: +${cleanedContact}.\n` +
-						`You prefer to be contacted by ${
-							formData.preferredComm
-								? formData.preferredComm
-										.charAt(0)
-										.toUpperCase() +
-									formData.preferredComm.slice(1)
-								: "not specified"
-						}.\n` +
-						`The best time for a call is ${
-							formData.preferredTime
-								? timeDescriptions[formData.preferredTime]
-								: "not specified"
-						}.\n\n` +
-						`We’ll be in touch shortly! 💖`
+					`${greeting}, ${formattedName}! 😊\n\nThank you for choosing us for your fire safety needs! 🔥🛡️\n\nWe have received your contact number: ${contact}.\nYou prefer to be contacted by ${preferredComm ? preferredComm.charAt(0).toUpperCase() + preferredComm.slice(1) : "not specified"}.\nThe best time for a call is ${preferredTime ? timeDescriptions[preferredTime] : "not specified"}.\n\nWe’ll be in touch shortly! 💖`
 				);
+
+				// Clear the form data after success
+				setFormData({
+					name: "",
+					contact: "",
+					preferredTime: "",
+					preferredComm: "",
+				});
 			}
 		}
+		setIsLoading(false); // Stop loading cursor after alert is shown
 	};
 
 	useEffect(() => {
@@ -155,7 +154,9 @@ const ContactUs = () => {
 
 	return (
 		<div className="contact-body">
-			<div className="page-container transition-fade">
+			<div
+				className={`page-container transition-fade ${isLoading ? "loading-cursor" : ""}`}
+			>
 				<div className="Ellipse1" />
 				<div className="Ellipse2" />
 				<div className="">
@@ -202,9 +203,10 @@ const ContactUs = () => {
 										Your Contact Number
 										<span className="sample-number">
 											{" "}
-											(sample: +1 715 555 0199)
+											(format: +1 715 555 0199)
 										</span>
 									</label>
+
 									<div className="input-container">
 										<i
 											className={`fas fa-phone-alt ${
@@ -213,16 +215,14 @@ const ContactUs = () => {
 													: ""
 											}`}
 										></i>
-										<input
-											type="tel"
-											id="contact"
-											name="contact"
+
+										<PhoneInput
+											international
+											defaultCountry="US"
 											value={formData.contact}
-											onChange={handleChange}
-											placeholder="+1 800 555 0199"
+											onChange={handlePhoneChange}
+											placeholder="Enter phone number"
 											required
-											pattern="^\+1 [0-9]{3} [0-9]{3} [0-9]{4}$"
-											inputMode="numeric"
 										/>
 									</div>
 								</div>
@@ -314,9 +314,19 @@ const ContactUs = () => {
 								<button
 									type="submit"
 									className="submit-buyer-info-btn"
+									disabled={isLoading} // Disable button when loading
 								>
-									<i className="fas fa-paper-plane"></i>{" "}
-									Request a Call
+									{isLoading ? (
+										<>
+											<i className="fas fa-spinner fa-spin"></i>{" "}
+											Processing...
+										</>
+									) : (
+										<>
+											<i className="fas fa-paper-plane"></i>{" "}
+											Request a Call
+										</>
+									)}
 								</button>
 							</form>
 						</div>
