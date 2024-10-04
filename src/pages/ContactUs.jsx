@@ -118,7 +118,7 @@ const ContactUs = () => {
 			`📞 Contact: ${contact}\n` + // Use the formatted contact
 			`💬 Preferred Communication: ${preferredComm ? preferredComm.charAt(0).toUpperCase() + preferredComm.slice(1) : "not specified"}\n` +
 			`⏰ Preferred Time for a Call: ${preferredTime ? timeDescriptions[preferredTime] : "not specified"}\n\n` +
-			`Please reach out to ${formattedName} as soon as possible! 😊💖\n\nThank you for your wonderful service! 🥳`;
+			`Please reach out to **${formattedName}** as soon as possible! 😊💖\n\nThank you for your wonderful service! 🥳`;
 
 		const chatID = process.env.REACT_APP_CHAT_ID;
 		const channelID = process.env.REACT_APP_CHANNEL_ID;
