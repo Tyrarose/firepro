@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Flickity from "react-flickity-component";
 
 import "../styles/Home.css";
-import "flickity/css/flickity.css"; // Import Flickity CSS
+import "flickity/css/flickity.css";
 
 import Preloader from "../components/preloader";
 import homeSlides from "../data/homeSlide.json";
@@ -149,20 +149,7 @@ function Home() {
 							</Flickity>
 						</section>
 
-						<section className="m-5 pt-4 pb-4">
-							<div className="video-container">
-								<video autoPlay loop muted>
-									<source
-										src={
-											process.env.PUBLIC_URL +
-											"/images/homeSlides/packaging-vid.mp4"
-										}
-										type="video/mp4"
-									/>
-									Your browser does not support the video tag.
-								</video>
-							</div>
-						</section>
+						
 					</div>
 				</div>
 			)}
