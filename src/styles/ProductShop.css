@@ -157,21 +157,20 @@ p {
 		padding: 0px;
 	}
 
-	.picture > img:nth-child(-n + 5) {
-		flex-direction: column-reverse;
+	.picture {
+		margin: auto;
+		padding: auto;
 	}
 
 	.picture > img:nth-child(-n + 5) {
+		flex-direction: column-reverse;
 		width: auto;
 		height: 200px;
 		margin: 10px;
 	}
 	.freebies {
-		height: 150px;
-		/* background-color: red; */
-		margin-bottom: -80px;
-		margin-right: -210px;
-		padding-top: 30px;
+		margin-left: -8px;
+		height:70px;
 	}
 
 	.productdeets {
@@ -220,7 +219,7 @@ p {
 		position: relative;
 		display: flex;
 		gap: 10px;
-		flex-direction: row;
+		flex-direction: column;
 		margin-top: 10px;
 	}
 	.enlarged1,

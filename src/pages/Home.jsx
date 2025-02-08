@@ -72,7 +72,7 @@ function Home() {
 										<img
 											src={
 												process.env.PUBLIC_URL +
-												"/images/mainImages/featured.png"
+												"/images/mainImages/featured.webp"
 											}
 											alt="Featured"
 										/>

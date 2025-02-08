@@ -2,98 +2,98 @@
 	{
 		"id": 1,
 		"name": "Aerosol Can",
-		"imageUrl": "images/productsImage/product1.png",
+		"imageUrl": "images/productsImage/product1.webp",
 		"description": "Compact yet powerful, this aerosol can is your instant defense against small fires, delivering quick and effective extinguishing action.",
 		"feature": "13.5 fl oz",
 		"price": 22.26,
-		"mini1": "images/productsMore/product1-1.png",
-		"mini2": "images/productsMore/product1-2.png",
-		"mini3": "images/productsMore/product1-3.png"
+		"mini1": "images/productsMore/product1-1.webp",
+		"mini2": "images/productsMore/product1-2.webp",
+		"mini3": "images/productsMore/product1-3.webp"
 	},
 	{
 		"id": 2,
 		"name": "1L Fire Extinguisher",
-		"imageUrl": "images/productsImage/product2.png",
+		"imageUrl": "images/productsImage/product2.webp",
 		"description": "<strong>Option 1:</strong> 1L canister with foaming nozzle empty<br><strong>Option 2:</strong> 1L canister filled with non-freeze protected ColdFire suppressant<br><strong>Option 3:</strong> 1L canister filled with -40 freeze protected ColdFire suppressant",
 		"feature": "Discharge Length: 25 feet.",
 		"feature2": "Discharge time: 15 seconds",
 		"price": 156.3,
-		"mini1": "images/productsMore/product2-1.png",
-		"mini2": "images/productsMore/product2-2.png",
-		"mini3": "images/productsMore/product2-3.png"
+		"mini1": "images/productsMore/product2-1.webp",
+		"mini2": "images/productsMore/product2-2.webp",
+		"mini3": "images/productsMore/product2-3.webp"
 	},
 	{
 		"id": 3,
 		"name": "2L Fire Extinguisher",
-		"imageUrl": "images/productsImage/product3.png",
+		"imageUrl": "images/productsImage/product3.webp",
 		"description": "<strong>Option 1:</strong> 2L canister with foaming nozzle empty<br><strong>Option 2:</strong> 2L canister filled with non-freeze protected ColdFire<br><strong>Option 3:</strong> 2L canister filled with -40 ColdFire suppressant",
 		"feature": "Discharge Length: 25 feet.",
 		"feature2": "Discharge time: 27 seconds",
 		"price": 165.3,
-		"mini1": "images/productsMore/product3-1.png",
-		"mini2": "images/productsMore/product3-2.png",
-		"mini3": "images/productsMore/product3-3.png"
+		"mini1": "images/productsMore/product3-1.webp",
+		"mini2": "images/productsMore/product3-2.webp",
+		"mini3": "images/productsMore/product3-3.webp"
 	},
 	{
 		"id": 4,
 		"name": "3L Fire Extinguisher",
-		"imageUrl": "images/productsImage/product4.png",
+		"imageUrl": "images/productsImage/product4.webp",
 		"description": "<strong>Option 1:</strong> 3L canister with foaming nozzle empty<br><strong>Option 2:</strong> 3L canister filled with non-freeze protected ColdFire suppressant<br><strong>Option 3:</strong> 3L canister filled with -40 ColdFire suppressant",
 		"feature": "Discharge Length: 40 feet.",
 		"feature2": "Discharge time: 19 seconds",
 		"price": 191.16,
-		"mini1": "images/productsMore/product4-1.png",
-		"mini2": "images/productsMore/product4-2.png",
-		"mini3": "images/productsMore/product4-3.png"
+		"mini1": "images/productsMore/product4-1.webp",
+		"mini2": "images/productsMore/product4-2.webp",
+		"mini3": "images/productsMore/product4-3.webp"
 	},
 	{
 		"id": 5,
 		"name": "4L Fire Extinguisher",
-		"imageUrl": "images/productsImage/product5.png",
+		"imageUrl": "images/productsImage/product5.webp",
 		"description": "<strong>Option 1:</strong> 4L canister with foaming nozzle empty<br><strong>Option 2:</strong> 4L canister filled with non-freeze protected ColdFire suppressant<br><strong>Option 3:</strong> 4L canister filled with -40 ColdFire suppressant",
 		"feature": "Discharge Length: 40 feet.",
 		"feature2": "Discharge time: 29 seconds",
 		"price": 197.96,
-		"mini1": "images/productsMore/product5-1.png",
-		"mini2": "images/productsMore/product5-2.png",
-		"mini3": "images/productsMore/product5-3.png",
-		"free": "images/productsImage/free.png"
+		"mini1": "images/productsMore/product5-1.webp",
+		"mini2": "images/productsMore/product5-2.webp",
+		"mini3": "images/productsMore/product5-3.webp",
+		"free": "images/productsImage/free.webp"
 	},
 	{
 		"id": 6,
 		"name": "2.5-gallon Fire Extinguisher",
-		"imageUrl": "images/productsImage/product6.png",
+		"imageUrl": "images/productsImage/product6.webp",
 		"description": "<strong>Option 1:</strong> 2.5 gallon canister with foaming nozzle empty<br><strong>Option 2:</strong> 2.5 gallon canister with foaming nozzle filled with non-freezeprotected ColdFire<br><strong>Option 3:</strong> 2.5 gallon canister filled with -40 freeze protected ColdFire",
 		"feature": "Discharge Length: 40 feet.",
 		"feature2": "Discharge time: 80 seconds (1 min, 20s)",
 		"price": 244.47,
-		"mini1": "images/productsMore/product6-1.png",
-		"mini2": "images/productsMore/product6-2.png",
-		"mini3": "images/productsMore/product6-3.png",
-		"free": "images/productsImage/free.png"
+		"mini1": "images/productsMore/product6-1.webp",
+		"mini2": "images/productsMore/product6-2.webp",
+		"mini3": "images/productsMore/product6-3.webp",
+		"free": "images/productsImage/free.webp"
 	},
 	{
 		"id": 7,
 		"name": "Fire Blanket",
-		"imageUrl": "images/productsImage/product7.png",
+		"imageUrl": "images/productsImage/product7.webp",
 		"description": "A fire blanket made of non-flammable material, designed to smother small fires in emergencies. Ideal for use in kitchens, homes, and workshops.",
 		"feature": "Size: 1.2m x 1.2m",
 		"feature2": "",
 		"price": 35.0,
-		"mini1": "images/productsMore/product7-1.png",
-		"mini2": "images/productsMore/product7-2.png",
-		"mini3": "images/productsMore/product7-3.png"
+		"mini1": "images/productsMore/product7-1.webp",
+		"mini2": "images/productsMore/product7-2.webp",
+		"mini3": "images/productsMore/product7-3.webp"
 	},
 	{
 		"id": 8,
 		"name": "Water Sprinkler",
-		"imageUrl": "images/productsImage/product8.png",
+		"imageUrl": "images/productsImage/product8.webp",
 		"description": "The Fire Pro automatic sprinklers activate at high heat spraying Cold Fire® within a 11 ft. diameter in less than 15 seconds! The suppressant is famous for its ability to remove heat from surfaces and prevent re-ignition. </br> </br> Comes standard with automatic head activation of 135°F. Buy empty or filled with Cold Fire® suppresant. </br></br> Buy Empty extinguishers & automatic sprinklers to save big! All you need is Cold Fire® suppressant refill kit & an air compressor </br></br><strong>OR<strong> <br><br> Buy extinguishers prefilled with COLD FIRE® & ready to go!",
 		"feature": "HOW IT WORKS:",
 		"feature2": "",
 		"price": 438.37,
-		"mini1": "images/productsMore/product8-1.png",
-		"mini2": "images/productsMore/product8-2.png",
-		"mini3": "images/productsMore/product8-3.png"
+		"mini1": "images/productsMore/product8-1.webp",
+		"mini2": "images/productsMore/product8-2.webp",
+		"mini3": "images/productsMore/product8-3.webp"
 	}
 ]

@@ -7,13 +7,13 @@
 	},
 	{
 		"id": 2,
-		"logo": "RS",
+		"logo": "images/team/RS.png",
 		"position": "Founder / Vice President",
 		"name": "RANDALL SHIRK"
 	},
 	{
 		"id": 3,
-		"logo": "JS",
+		"logo": "images/team/JS.png",
 		"position": "Business Development Manager",
 		"name": "JAYDON SHIRK"
 	},

@@ -58,7 +58,7 @@ function StoreLocation() {
 									<img
 										src={
 											process.env.PUBLIC_URL +
-											"/images/mainImages/Map1.svg"
+											"/images/mainImages/Map1.webp"
 										}
 										alt=""
 										className="img-fluid"

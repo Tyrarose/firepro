@@ -83,7 +83,7 @@
 /* Responsive styles */
 @media only screen and (min-width: 768px) {
 	.firebg {
-		background-image: url("/public/images/mainImages/firebg3.png");
+		background-image: url("/public/images/mainImages/firebg3.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -98,7 +98,7 @@
 }
 @media only screen and (max-width: 768px) {
 	.firebg {
-		background-image: url("/public/images/mainImages/firebg3.png");
+		background-image: url("/public/images/mainImages/firebg3.webp");
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -120,7 +120,7 @@
 		margin-top: -50px;
 		margin-bottom: -25px;
 		display: block;
-		background: url("/public/images/mainImages/featured.png") no-repeat
+		background: url("/public/images/mainImages/featured.webp") no-repeat
 			center;
 		background-size: contain;
 	}
