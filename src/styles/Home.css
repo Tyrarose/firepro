@@ -23,7 +23,7 @@
 }
 
 .featuredpic_container img {
-	width: 45vh;
+	width: 20vh;
 	transform: scale(1.3);
 	z-index: -99;
 }

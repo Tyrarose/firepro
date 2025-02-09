@@ -102,7 +102,7 @@ function Home() {
 
 								<div className="well">
 									<div className="home-subtitle">
-										Approximately 80% of fire attacks with
+										Approximately 80% of fires attacked with
 										extinguishers are successfully defeated.
 										Fire extinguishers save!
 									</div>
