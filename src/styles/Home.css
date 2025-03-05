@@ -24,6 +24,7 @@
     animation: fadeZoom 0.8s ease-out forwards;
 }
 
+
 .featuredpic_container {
     animation: fadeZoom 0.8s ease-out forwards;
 	z-index: -99;
@@ -39,6 +40,7 @@
 .trailer {
     animation: float 3s infinite ease-in-out;
 }
+
 
 
 .featuredpic_container img {
@@ -131,6 +133,10 @@
 		opacity: 0.6;
 	}
 	/* Tablet styles */
+	.trailer img {
+		width: 100vw;
+	}
+	/* Tablet styles */
 	.featuredpic_container img {
 		height: 40svh;
 		width: auto;
@@ -149,6 +155,10 @@
 		height: 100%;
 		z-index: -99;
 		opacity: 0.6;
+	}
+
+	.trailer img {
+		width: 100vw;
 	}
 
 	.featuredpic_container {

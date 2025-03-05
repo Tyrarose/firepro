@@ -126,6 +126,15 @@ p {
 
 /* Hide the second button on desktop (min-width: 768px) */
 @media only screen and (min-width: 768px) {
+	.big-product {
+		padding: 20px;
+	}
+	
+	.big-product .picture > img:nth-child(-n + 5) {
+		width: 480px;
+		height: auto;
+		margin: 0 -90px;
+	}	
 	.col-md-6.buy_now_container:last-child {
 		display: none;
 	}
@@ -236,6 +245,15 @@ p {
 	.enlarged3 {
 		margin: 10px;
 	}
+	.big-product {
+	}
+	
+	.big-product .picture > img:nth-child(-n + 5) {
+		width: auto;
+		height: 250px;
+		margin: 10px -40px 0px -40px;
+	}
+	
 }
 
 .minified1,
@@ -266,11 +284,3 @@ p {
 	animation: removeShadow 3s forwards;
 }
 
-.big-product {
-    padding: 20px;
-}
-
-.big-product .picture > img:nth-child(-n + 5) {
-    width: 480px;
-	margin: 0 -90px;
-}

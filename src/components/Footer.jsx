@@ -12,9 +12,9 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container footer-container">
-                <div className="row footer-sections">
+                <div className="row footer-grid">
                     {/* About Section */}
-                    <div className="col-md-5 col-sm-12 footer-about">
+                    <div className="col-md-6 footer-item">
                         <h5>About Us</h5>
                         <div className="flameout_logo-container">
                             <a href="/" className="flameout_logo_link">
@@ -33,7 +33,7 @@ const Footer = () => {
                     </div>
                     
                     {/* Quick Links */}
-                    <div className="col-md-3 col-sm-6 footer-links">
+                    <div className="col-md-6 footer-item">
                         <h5>Quick Links</h5>
                         <ul className="list-unstyled">
                             <li><a href="/productshop">Products</a></li>
@@ -45,7 +45,7 @@ const Footer = () => {
                     </div>
                     
                     {/* Contact Info */}
-                    <div className="col-md-2 col-sm-6 footer-contact">
+                    <div className="col-md-6 footer-item">
                         <h5>Contact Us</h5>
                         <p>Email: </p>
                         <p>Phone: </p>
@@ -53,7 +53,7 @@ const Footer = () => {
                     </div>
                     
                     {/* Social Media */}
-                    <div className="col-md-2 col-sm-6 footer-social">
+                    <div className="col-md-6 footer-item">
                         <h5>Follow Us</h5>
                         <div className="social-icons">
                             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i> Facebook</a>

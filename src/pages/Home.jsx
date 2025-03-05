@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Flickity from "react-flickity-component";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import "../styles/Home.css";
 import "flickity/css/flickity.css";
@@ -55,6 +56,28 @@ function Home() {
 		wrapAround: true,
 		initialIndex: 1,
 	};
+
+	const [showScrollButton, setShowScrollButton] = useState(false);
+		useEffect(() => {
+				const handleScroll = () => {
+					setShowScrollButton(window.scrollY > 100);
+				};
+		
+				window.addEventListener("scroll", handleScroll);
+		
+				// Simulate loading
+				const loadingTimer = setTimeout(() => {
+					setLoading(false);
+				}, 30);
+		
+				return () => {
+					window.removeEventListener("scroll", handleScroll);
+					clearTimeout(loadingTimer);
+				};
+			}, []);
+		const scrollToTop = () => {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		};
 
 	return (
 		<div>
@@ -159,8 +182,15 @@ function Home() {
 								))}
 							</Flickity>
 						</section>
-
-						
+						{showScrollButton && (
+						<button
+							className="scroll-to-top-btn"
+							onClick={scrollToTop}
+							aria-label="Scroll to Top"
+						>
+							<ArrowUpwardIcon />
+						</button>
+					)}
 					</div>
 				</div>
 			)}

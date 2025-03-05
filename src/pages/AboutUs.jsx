@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../styles/AboutUs.css";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import Preloader from "../components/preloader";
 
@@ -9,6 +10,28 @@ import historyData from "../data/history.json";
 import teamData from "../data/team.json";
 
 export default function AboutUs() {
+	const [showScrollButton, setShowScrollButton] = useState(false);
+	useEffect(() => {
+			const handleScroll = () => {
+				setShowScrollButton(window.scrollY > 100);
+			};
+	
+			window.addEventListener("scroll", handleScroll);
+	
+			// Simulate loading
+			const loadingTimer = setTimeout(() => {
+				setLoading(false);
+			}, 30);
+	
+			return () => {
+				window.removeEventListener("scroll", handleScroll);
+				clearTimeout(loadingTimer);
+			};
+		}, []);
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	const [activeIndex1, setActiveIndex1] = useState(0);
 	const handleSelect1 = (selectedIndex, e) => {
 		setActiveIndex1(selectedIndex);
@@ -285,7 +308,17 @@ export default function AboutUs() {
 							</div>
 						</div>
 					</section>
+					{showScrollButton && (
+						<button
+							className="scroll-to-top-btn"
+							onClick={scrollToTop}
+							aria-label="Scroll to Top"
+						>
+							<ArrowUpwardIcon />
+						</button>
+					)}
 				</div>
+				
 			)}
 		</div>
 	);
