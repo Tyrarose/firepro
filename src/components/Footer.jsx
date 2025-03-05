@@ -3,55 +3,71 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Footer.css";
 
 const Footer = () => {
-	const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
-	useEffect(() => {
-		setCurrentYear(new Date().getFullYear());
-	}, []);
+    useEffect(() => {
+        setCurrentYear(new Date().getFullYear());
+    }, []);
 
-	return (
-		<footer>
-			<div className="container footer-container text-center">
-				<div className="feet align-items-center col-12">
-					{/* Social Icons */}
-					<div className="socials-container col-md-5 col-sm-12 d-flex mb-3 ">
-						<div className="social-icons">
-							<a
-								href="https://www.facebook.com"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fab fa-facebook-f"></i>
-								Facebook
-							</a>
-						</div>
-					</div>
-					{/* Copyright */}
-					<div className="copyright-container col-md-3 col-sm-12">
-						<a href="/" className="text-center copyright-link">
-							<p className="text-center copyright">
-								&copy; Firepro {currentYear}
-							</p>
-						</a>
-					</div>
-					{/* Flameout Logo */}
-					<div className="flameout_logo-container col-md-4 col-sm-12 d-flex">
-						<a href="/" className="flameout_logo_link">
-							<div className="flameout_logo">
-								<img
-									src={
-										process.env.PUBLIC_URL +
-										"/images/mainImages/flameout_logo.png"
-									}
-									alt="Flameout Logo"
-								/>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</footer>
-	);
+    return (
+        <footer className="footer">
+            <div className="container footer-container">
+                <div className="row footer-sections">
+                    {/* About Section */}
+                    <div className="col-md-5 col-sm-12 footer-about">
+                        <h5>About Us</h5>
+                        <div className="flameout_logo-container">
+                            <a href="/" className="flameout_logo_link">
+                                <div className="flameout_logo">
+                                    <img
+                                        src={
+                                            process.env.PUBLIC_URL +
+                                            "/images/mainImages/flameout_logo.png"
+                                        }
+                                        alt="Flameout Logo"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                        <p>Your go-to store for fire protection solutions. Ensuring safety and reliability since day one.</p>
+                    </div>
+                    
+                    {/* Quick Links */}
+                    <div className="col-md-3 col-sm-6 footer-links">
+                        <h5>Quick Links</h5>
+                        <ul className="list-unstyled">
+                            <li><a href="/productshop">Products</a></li>
+                            <li><a href="/storelocation">Store Location</a></li>
+                            <li><a href="/testimoniesandfacts">Testimonials & Facts</a></li>
+                            <li><a href="/contactus">Contact Us</a></li>
+                            <li><a href="/aboutus">About Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    {/* Contact Info */}
+                    <div className="col-md-2 col-sm-6 footer-contact">
+                        <h5>Contact Us</h5>
+                        <p>Email: </p>
+                        <p>Phone: </p>
+                        <p>Address: </p>
+                    </div>
+                    
+                    {/* Social Media */}
+                    <div className="col-md-2 col-sm-6 footer-social">
+                        <h5>Follow Us</h5>
+                        <div className="social-icons">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i> Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* Copyright and Developed By */}
+                <div className="footer-bottom text-center mt-4">
+                    <p>&copy; Firepro {currentYear} | Developed by <a href="https://www.linkedin.com/in/tyraclemente/" target="_blank" rel="noopener noreferrer">Tyra</a></p>
+                </div>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;

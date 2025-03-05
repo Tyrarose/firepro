@@ -1,115 +1,116 @@
-* {
-	/* border: 1px red dotted; */
+.footer {
+    background-color: white;
+    padding: 40px 0;
+    color: #333;
+    font-family: "Poppins", sans-serif;
 }
 
 .footer-container {
-	padding: 0px;
-	margin-bottom: 0px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.feet {
-	display: flex;
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
 }
 
+.footer-about {
+    flex: 2; /* Make About Us wider */
+    text-align: left;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    flex: 1; /* Make other sections smaller */
+}
+
+.footer-links h5, .footer-contact h5, .footer-social h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover {
+    color: #c1301b;
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
 .social-icons {
-	display: flex;
-	gap: 8px;
+    display: flex;
+    gap: 12px;
 }
 
 .social-icons a {
-	color: #000;
-	transition: color 0.3s;
-	text-decoration: none;
-	border: 1px black solid;
-	border-radius: 10px;
-	padding: 4px 8px;
-}
-
-.social-icons i {
-	margin-right: 3px;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .social-icons a:hover {
-	border: 1px black solid;
-	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    color: #c1301b;
 }
 
-.social-icons a:hover i.fa-facebook-f {
-	color: #3b5998;
-}
 
-.social-icons a:hover i.fa-twitter {
-	color: #1da1f2;
-}
-
-.social-icons a:hover i.fa-instagram {
-	color: #e4405f;
-}
-
-.copyright {
-	margin-bottom: 0;
-}
-
-.flameout_logo_container {
-	overflow: hidden;
-}
-
+/* Flameout Logo */
 .flameout_logo img {
-	width: 120px;
-	height: auto;
-	object-fit: contain;
-	transition: transform 0.3s ease;
+    width: 160px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
 .flameout_logo img:hover {
-	transform: scale(1.1);
-	overflow: hidden;
+    transform: scale(1.1);
 }
 
-.copyright-link,
-.flameout_logo_link {
-	text-decoration: none;
-	color: inherit;
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    font-size: 14px;
 }
 
-.copyright-link:hover,
-.flameout_logo_link:hover {
-	text-decoration: underline;
-	color: red;
+.footer-bottom a {
+    text-decoration: none;
+    color: #c1301b;
+    font-weight: bold;
 }
 
-.socials-container {
-	justify-content: start;
+.footer-bottom a:hover {
+    text-decoration: underline;
 }
 
-.copyright-container {
-	justify-content: center;
-}
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.flameout_logo-container {
-	justify-content: end;
-}
+    .footer-about {
+        flex: none;
+    }
 
-@media only screen and (max-width: 768px) {
-	.feet {
-		margin-top: 30px;
-		justify-content: space-around;
-	}
-
-	.social-icons a {
-		font-size: 0;
-	}
-	.social-icons a i {
-		font-size: 1.5rem;
-	}
-
-	.copyright {
-		font-size: 10px;
-	}
-
-	.flameout_logo img {
-		width: 65px;
-		height: auto;
-		object-fit: contain;
-	}
+    .social-icons {
+        justify-content: center;
+    }
 }
