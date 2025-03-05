@@ -44,6 +44,8 @@ function StoreLocation() {
 							<h1 className="heading2">OUR STORE LOCATIONS</h1>
 							<h6>Discover Our Convenient Store Locations</h6>
 						</div>
+					</div>
+					<div className="custom-container">
 						<div className="row text-center">
 							<div className="col-12">
 								<div
@@ -58,7 +60,7 @@ function StoreLocation() {
 									<img
 										src={
 											process.env.PUBLIC_URL +
-											"/images/mainImages/Map1.webp"
+											"/images/mainImages/Map.webp"
 										}
 										alt=""
 										className="img-fluid"

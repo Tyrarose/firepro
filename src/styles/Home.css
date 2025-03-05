@@ -19,17 +19,17 @@
 
 .featuredpic_container {
 	z-index: -99;
-	overflow: hidden;
+	width: 100%;
 }
 
 .featuredpic_container img {
-	width: 20vh;
-	transform: scale(1.3);
+	height: 82svh;
+	width: auto;
 	z-index: -99;
 }
 
 .fireproshield img {
-	width: 50vh;
+	width: 60vh;
 	max-width: 100%;
 	height: auto;
 	object-fit: cover;
@@ -81,7 +81,7 @@
 }
 
 /* Responsive styles */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
 	.firebg {
 		background-image: url("/public/images/mainImages/firebg3.webp");
 		background-size: cover;
@@ -96,7 +96,29 @@
 		opacity: 0.6;
 	}
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.firebg {
+		background-image: url("/public/images/mainImages/firebg3.webp");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -99;
+		opacity: 0.6;
+	}
+	/* Tablet styles */
+	.featuredpic_container img {
+		height: 40svh;
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 767px) {
 	.firebg {
 		background-image: url("/public/images/mainImages/firebg3.webp");
 		background-size: cover;
@@ -118,10 +140,8 @@
 	.featuredpic-mobile {
 		height: 55vh;
 		margin-top: -50px;
-		margin-bottom: -25px;
 		display: block;
-		background: url("/public/images/mainImages/featured.webp") no-repeat
-			center;
+		background: url("/public/images/mainImages/featured.webp") no-repeat center;
 		background-size: contain;
 	}
 

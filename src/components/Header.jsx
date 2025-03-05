@@ -79,10 +79,10 @@ export default function Header() {
 			)
 		);
 	};
+	const expand = "lg";
 
 	return (
 		<>
-			{["md"].map((expand) => (
 				<Navbar
 					key={expand}
 					expand={expand}
@@ -285,7 +285,6 @@ export default function Header() {
 						</Navbar.Offcanvas>
 					</Container>
 				</Navbar>
-			))}
 		</>
 	);
 }

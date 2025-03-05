@@ -2,12 +2,18 @@
 	transition: opacity 0.3s ease-in-out;
 }
 
+.custom-container{
+	padding: 0 80px ;
+}
+
 .zoomable-image {
 	overflow: hidden;
 	position: relative;
 }
 
 .zoomable-image img {
+	margin: auto;
+	border-radius: 30px;
 	max-width: 100%;
 	height: auto;
 	display: block;
@@ -26,3 +32,8 @@
 		height: 68vh;
 	}
 }
+
+* {
+	/* border: 1px red dotted; */
+}
+

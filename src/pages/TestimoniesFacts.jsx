@@ -39,16 +39,20 @@ const TestimoniesFacts = () => {
 						</div>
 						<div className="text-center testimonies">
 							<div className="featured-testimony">
+								
+							<div className="custom-card">
 								<p
 									dangerouslySetInnerHTML={{
 										__html: featuredTestimony.content,
 									}}
 								/>
+								</div>
 							</div>
 							<div className="line"></div>
 							<div className="more-testimonies">
 								{otherTestimonies.map((item, index) => (
-									<p
+									<div className="custom-card">
+										<p
 										key={index}
 										className={
 											index % 2 === 0
@@ -59,6 +63,7 @@ const TestimoniesFacts = () => {
 											__html: item.content,
 										}}
 									/>
+									</div>
 								))}
 							</div>
 						</div>

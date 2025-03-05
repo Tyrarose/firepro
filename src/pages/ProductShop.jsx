@@ -102,7 +102,7 @@ function ProductShop() {
 								<div
 									id={`product-${product.id}`}
 									key={product.id}
-									className={`row product_card ${product.id % 2 === 0 ? "even-product" : ""} ${highlightProductId == product.id ? "highlight-product" : ""}`}
+									className={`row product_card ${product.big ? "big-product" : ""} ${product.id % 2 === 0 ? "even-product" : ""} ${highlightProductId == product.id ? "highlight-product" : ""}`}
 								>
 									{/* image on left because even */}
 									{product.id % 2 === 0 ? (

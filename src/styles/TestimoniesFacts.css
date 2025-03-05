@@ -2,27 +2,65 @@
 	transition: opacity 0.3s ease-in-out;
 }
 
-.testimonies {
+.more-testimonies {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr); /* Default: 1 column (mobile) */
+	gap: 60px;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	text-align: center;
 }
 
-.testimonies {
-	border-radius: 10px;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-	margin: 5px 5px;
-	padding: 3vh 3vh 3vh 3vh;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+/* Tablet: 2 testimonies per row */
+@media (min-width: 768px) {
+	.more-testimonies {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
-.testimonies:hover {
+
+/* Desktop: 3 testimonies per row */
+@media (min-width: 1024px) {
+	.more-testimonies {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+
+
+.custom-card {
+	border-radius: 10px;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+	margin: 20px 0;
+	padding: 2vh;
+	transition: all 0.5s ease;
+}
+
+/* Adding big quotation marks */
+.custom-card p::before,
+.custom-card p::after {
+	content: "“";
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.custom-card p::after {
+	content: "”";
+}
+
+.custom-card:hover {
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.8);
+	transform: translateY(-5px);
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .testimonies p {
 	text-align: center;
-	font-size: 1rem;
+	font-size: 1.1rem;
+	font-style: italic;
 	margin: 40px 20px;
+	line-height: 1.6;
 }
 
 .line {

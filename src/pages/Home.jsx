@@ -81,6 +81,17 @@ function Home() {
 							</div>
 
 							<div className="col-md-7 home-side d-flex">
+							<div className="well">
+									<div className="trailer">
+										<img
+											src={
+												process.env.PUBLIC_URL +
+												"/images/mainImages/trailer.svg"
+											}
+											alt="trailer"
+										/>
+									</div>
+								</div>
 								<div className="well">
 									<div className="fireproshield">
 										<img

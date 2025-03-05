@@ -104,6 +104,15 @@
 	font-weight: 100;
 }
 
+@media only screen and (max-width: 991px) {
+	.navbar-toggler {
+		display: block;
+	}
+	.nav {
+		display: none; /* Hide normal nav items */
+	}
+}
+
 /* Media query for phones */
 @media only screen and (max-width: 767px) {
 	.offcanvas-end .nav {

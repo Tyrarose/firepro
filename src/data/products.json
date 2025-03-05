@@ -12,6 +12,7 @@
 	},
 	{
 		"id": 2,
+		"big": true,
 		"name": "1L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product2.webp",
 		"description": "<strong>Option 1:</strong> 1L canister with foaming nozzle empty<br><strong>Option 2:</strong> 1L canister filled with non-freeze protected ColdFire suppressant<br><strong>Option 3:</strong> 1L canister filled with -40 freeze protected ColdFire suppressant",
@@ -24,6 +25,7 @@
 	},
 	{
 		"id": 3,
+		"big": true,
 		"name": "2L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product3.webp",
 		"description": "<strong>Option 1:</strong> 2L canister with foaming nozzle empty<br><strong>Option 2:</strong> 2L canister filled with non-freeze protected ColdFire<br><strong>Option 3:</strong> 2L canister filled with -40 ColdFire suppressant",
@@ -36,6 +38,7 @@
 	},
 	{
 		"id": 4,
+		"big": true,
 		"name": "3L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product4.webp",
 		"description": "<strong>Option 1:</strong> 3L canister with foaming nozzle empty<br><strong>Option 2:</strong> 3L canister filled with non-freeze protected ColdFire suppressant<br><strong>Option 3:</strong> 3L canister filled with -40 ColdFire suppressant",
@@ -48,6 +51,7 @@
 	},
 	{
 		"id": 5,
+		"big": true,
 		"name": "4L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product5.webp",
 		"description": "<strong>Option 1:</strong> 4L canister with foaming nozzle empty<br><strong>Option 2:</strong> 4L canister filled with non-freeze protected ColdFire suppressant<br><strong>Option 3:</strong> 4L canister filled with -40 ColdFire suppressant",
@@ -61,6 +65,7 @@
 	},
 	{
 		"id": 6,
+		"big": true,
 		"name": "2.5-gallon Fire Extinguisher",
 		"imageUrl": "images/productsImage/product6.webp",
 		"description": "<strong>Option 1:</strong> 2.5 gallon canister with foaming nozzle empty<br><strong>Option 2:</strong> 2.5 gallon canister with foaming nozzle filled with non-freezeprotected ColdFire<br><strong>Option 3:</strong> 2.5 gallon canister filled with -40 freeze protected ColdFire",
@@ -86,7 +91,7 @@
 	},
 	{
 		"id": 8,
-		"name": "Water Sprinkler",
+		"name": "Automatic Sprinkler",
 		"imageUrl": "images/productsImage/product8.webp",
 		"description": "The Fire Pro automatic sprinklers activate at high heat spraying Cold Fire® within a 11 ft. diameter in less than 15 seconds! The suppressant is famous for its ability to remove heat from surfaces and prevent re-ignition. </br> </br> Comes standard with automatic head activation of 135°F. Buy empty or filled with Cold Fire® suppresant. </br></br> Buy Empty extinguishers & automatic sprinklers to save big! All you need is Cold Fire® suppressant refill kit & an air compressor </br></br><strong>OR<strong> <br><br> Buy extinguishers prefilled with COLD FIRE® & ready to go!",
 		"feature": "HOW IT WORKS:",
