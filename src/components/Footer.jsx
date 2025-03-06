@@ -45,7 +45,7 @@ const Footer = () => {
                     </div>
                     
                     {/* Contact Info */}
-                    <div className="col-md-6 footer-item">
+                    <div className="col-md-6 footer-item footer-contact">
                         <h5>Contact Us</h5>
                         <p>Email: </p>
                         <p>Phone: </p>
