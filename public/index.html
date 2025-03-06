@@ -1,73 +1,91 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#000000" />
-		<meta
-			name="description"
-			content="Web site created using create-react-app"
-		/>
-		<meta http-equiv="Cache-Control" content="max-age=604800, public" />
-		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-		<!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-		/>
+	<title>FlameOutSolutions - Fire Safety & Extinguishers for Home & Business</title>
 
-		<link
-			rel="preload"
-			href="/public/images/mainImages/featured.png"
-			as="image"
-		/>
-		<link
-			rel="preload"
-			href="/public/images/mainImages/firebg3.png"
-			as="image"
-		/>
-		<link
-			rel="preload"
-			href="/public/images/mainImages/Map1.svg"
-			as="image"
-		/>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
 
-		<title>FlameOutSolutions</title>
-	</head>
-	<body>
-		<div id="root"></div>
-		<!-- 
-  ╭──────────────────────────╮
-  │                          │
-  │   Developed by Rosie     │
-  │                          │
-  ╰──────────────────────────╯
--->
+	<!-- Web App Manifest -->
+	<link rel="manifest" href="%PUBLIC_URL%/site.webmanifest">
 
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-		<script
-			src="https://kit.fontawesome.com/a076d05399.js"
-			crossorigin="anonymous"
-		></script>
-	</body>
+	<!-- Theme Color -->
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- SEO Meta Tags -->
+	<meta name="description" content="FlameOutSolutions provides top-quality fire extinguishers and safety solutions to keep your home and business protected.">
+	<meta name="keywords" content="fire extinguishers, fire safety, fire protection, FlameOutSolutions">
+	<meta name="author" content="FlameOutSolutions">
+	<meta name="robots" content="index, follow">
+	<meta name="language" content="English">
+	<!-- <link rel="canonical" href="https://www.flameoutsolutions.com"> -->
+
+	<!-- Open Graph Meta Tags (for Facebook & LinkedIn) -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="FlameOutSolutions - Your Fire Safety Partner">
+	<meta property="og:description" content="FlameOutSolutions provides top-quality fire extinguishers and safety solutions to keep your home and business protected.">
+	<meta property="og:image" content="https://www.flameoutsolutions.com/images/mainImages/featured.png">
+	<!-- <meta property="og:url" content="https://www.flameoutsolutions.com"> -->
+	<meta property="og:site_name" content="FlameOutSolutions">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="FlameOutSolutions - Your Fire Safety Partner">
+	<meta name="twitter:description" content="FlameOutSolutions offers high-quality fire extinguishers and safety solutions. Stay safe and prepared.">
+	<meta name="twitter:image" content="https://www.flameoutsolutions.com/images/mainImages/featured.png">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	<!-- Preloading Important Images -->
+	<link rel="preload" href="%PUBLIC_URL%/images/mainImages/featured.png" as="image">
+	<link rel="preload" href="%PUBLIC_URL%/images/mainImages/firebg3.png" as="image">
+	<link rel="preload" href="%PUBLIC_URL%/images/mainImages/Map.webp" as="image">
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "FlameOutSolutions",
+		"url": "https://www.flameoutsolutions.com",
+		"logo": "https://www.flameoutsolutions.com/android-chrome-192x192.png",
+		"description": "FlameOutSolutions provides fire extinguishers and fire safety solutions for homes and businesses.",
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "+1-800-555-1234",
+			"contactType": "Customer Service"
+		},
+		"sameAs": [
+			"https://www.facebook.com/FlameOutSolutions"
+		]
+	}
+	</script>
+
+</head>
+<body>
+
+	<!-- React Root -->
+	<div id="root"></div>
+
+	<!-- JavaScript -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+	<!-- NoScript Fallback -->
+	<noscript>
+		<p>JavaScript is disabled in your browser. Some features may not work properly.</p>
+	</noscript>
+
+</body>
 </html>

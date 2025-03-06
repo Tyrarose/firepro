@@ -10,23 +10,16 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer className="footer">
-            <div className="container footer-container">
+        <footer>
+            <div className="container">
                 <div className="row footer-grid">
+
                     {/* About Section */}
                     <div className="col-md-6 footer-item">
                         <h5>About Us</h5>
                         <div className="flameout_logo-container">
-                            <a href="/" className="flameout_logo_link">
-                                <div className="flameout_logo">
-                                    <img
-                                        src={
-                                            process.env.PUBLIC_URL +
-                                            "/images/mainImages/flameout_logo.png"
-                                        }
-                                        alt="Flameout Logo"
-                                    />
-                                </div>
+                            <a href="/" className="flameout_logo">
+                                <img src="/images/mainImages/flameout_logo.svg" alt="Flameout Logo"/>
                             </a>
                         </div>
                         <p>Your go-to store for fire protection solutions. Ensuring safety and reliability since day one.</p>
@@ -45,19 +38,22 @@ const Footer = () => {
                     </div>
                     
                     {/* Contact Info */}
-                    <div className="col-md-6 footer-item footer-contact">
+                    <div className="col-md-6 footer-item">
                         <h5>Contact Us</h5>
-                        <p>Email: </p>
-                        <p>Phone: </p>
-                        <p>Address: </p>
+                        <ul className="list-unstyled">
+                            <li><i className="fa-solid fa-envelope"></i> <span>sample@email.com</span></li>
+                            <li><i className="fa-solid fa-phone"></i> <span>+1 234 567 890</span></li>
+                            <li><i className="fa-solid fa-map-marker-alt"></i> <span>123 Fire Safety St, City, Country</span></li>
+                        </ul>
                     </div>
                     
                     {/* Social Media */}
                     <div className="col-md-6 footer-item">
                         <h5>Follow Us</h5>
-                        <div className="social-icons">
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i> Facebook</a>
-                        </div>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <i className="fa-brands fa-facebook"></i>
+                            Facebook
+                        </a>
                     </div>
                 </div>
                 

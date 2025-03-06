@@ -134,13 +134,13 @@ function Home() {
 									</div>
 								</div>
 
-								<div className="well">
-									<div className="home-subtitle">
+								<div className="home-subtitle">
+									<div className="">
 										Approximately 80% of fires attacked with
 										extinguishers are successfully defeated.
 										Fire extinguishers save!
 									</div>
-									<div className="home-subtitle fw-bold mt-3">
+									<div className="fw-bold mt-3">
 										In the event of a fire, Fire Pro fire extinguishers are your first line of defense.
 									</div>
 								</div>
