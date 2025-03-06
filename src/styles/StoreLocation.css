@@ -29,14 +29,22 @@
 
 @media only screen and (max-width: 768px) {
 	.zoomable-image {
-		height: 68vh;
+		height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+		margin: 10px;
 	}
+
+	.zoomable-image img {
+        transform: rotate(90deg) !important;
+        width: 100vh;
+        height: auto;
+        max-width: none;
+    }
 	.custom-container{
 		padding: 0 6px;
 	}
-}
-
-* {
-	/* border: 1px red dotted; */
 }
 
