@@ -85,10 +85,25 @@
     z-index: -99;
 }
 
-.featuredpic_container img { height: 82svh; }
+.featuredpic_container img { 
+    height: 82svh; 
+    width: auto;
+}
 
-.trailer {
-    animation: float 3s infinite ease-in-out;
+
+.featuredpic_container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    text-align: center;
+}
+
+
+.trailer img {
+    max-width: 100%;
+    height: auto; 
+    display: block; 
 }
 
 /* Fireproshield */
@@ -162,13 +177,39 @@
 }
 
 /* Responsive Styles */
-@media only screen and (max-width: 1023px) {
-    .trailer img { width: 100vw; }
-    .featuredpic_container img { height: 40svh; }
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    .home-side .well {
+        margin-left: auto;  
+        margin-right: auto; 
+        text-align: center; 
+        display: flex;      
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .featuredpic_container img {
+        height: 50svh;
+        width: auto;
+    }
+
+    .home-title, .home-subtitle {
+        text-align: center;
+        width: 90%;
+        margin: auto;
+    }
+
+    .fireproshield {
+        width: 50%;
+        margin: -30px auto 20px;
+    }
 }
 
+/* Mobile Adjustments */
 @media only screen and (max-width: 767px) {
-    .featuredpic_container { display: none; }
+    .featuredpic_container {
+        display: none;
+    }
 
     .featuredpic-mobile {
         height: 48vh;
@@ -177,25 +218,17 @@
         background: url("/public/images/mainImages/featured.webp") no-repeat center;
         background-size: contain;
     }
-	.trailer { 
-		width: 80vw; 
-		margin: auto;
-	}
-	
-    .trailer img { 
-		width: 80vw; 
-	}
 
-	.fireproshield {
+    .fireproshield {
         width: 60%;
-		margin: -50px auto 20px;
+        margin: -50px auto 20px;
     }
 
     .home-title, .home-subtitle {
-		align-items: center;
+        align-items: center;
         padding: 10px 0;
-		margin: auto;
-		text-align: center;
+        margin: auto;
+        text-align: center;
     }
 
     .mainbutton {
@@ -204,4 +237,8 @@
         align-items: center;
         height: 100%;
     }
+}
+
+*{
+    /* border: 1px red dotted; */
 }

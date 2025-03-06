@@ -89,7 +89,7 @@ function Home() {
 						<div className="firebg"></div>
 
 						<section className="row">
-							<div className="col-md-5">
+							<div className="col-lg-5 col-md-4">
 								<div className="well text-center">
 									<div className="featuredpic_container">
 										<img
@@ -103,7 +103,7 @@ function Home() {
 								</div>
 							</div>
 
-							<div className="col-md-7 home-side d-flex">
+							<div className="col-lg-7 col-md-8 home-side d-flex">
 								<div className="well">
 									<div className="fireproshield">
 										<img
@@ -134,13 +134,13 @@ function Home() {
 									</div>
 								</div>
 
-								<div className="home-subtitle">
-									<div className="">
+								<div className="well">
+									<div className="home-subtitle">
 										Approximately 80% of fires attacked with
 										extinguishers are successfully defeated.
 										Fire extinguishers save!
 									</div>
-									<div className="fw-bold mt-3">
+									<div className="home-subtitle fw-bold mt-3">
 										In the event of a fire, Fire Pro fire extinguishers are your first line of defense.
 									</div>
 								</div>
