@@ -41,8 +41,8 @@ const Footer = () => {
                     <div className="col-md-6 footer-item">
                         <h5>Contact Us</h5>
                         <ul className="list-unstyled">
-                            <li><i className="fa-solid fa-envelope"></i> <span>sample@email.com</span></li>
-                            <li><i className="fa-solid fa-phone"></i> <span>+1 234 567 890</span></li>
+                            <li><i className="fa-solid fa-envelope"></i> <span>office@fireprowi.com</span></li>
+                            <li><i className="fa-solid fa-phone"></i> <span>715-922-9042</span></li>
                             <li><i className="fa-solid fa-map-marker-alt"></i> <span>123 Fire Safety St, City, Country</span></li>
                         </ul>
                     </div>
