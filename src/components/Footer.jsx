@@ -43,7 +43,7 @@ const Footer = () => {
                         <ul className="list-unstyled">
                             <li><i className="fa-solid fa-envelope"></i> <span>office@fireprowi.com</span></li>
                             <li><i className="fa-solid fa-phone"></i> <span>715-922-9042</span></li>
-                            <li><i className="fa-solid fa-map-marker-alt"></i> <span>123 Fire Safety St, City, Country</span></li>
+                            <li><i className="fa-solid fa-map-marker-alt"></i> <span>Greenwood, WI | USA</span></li>
                         </ul>
                     </div>
                     
