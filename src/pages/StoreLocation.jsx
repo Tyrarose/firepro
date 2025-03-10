@@ -15,6 +15,12 @@ function StoreLocation() {
 		setZoomLevel(zoomed ? 1 : 2);
 	};
 
+	const handleKeyDown = (e) => {
+		if (e.key === "Enter" || e.key === " ") {
+			handleZoomClick();
+		}
+	};
+
 	const handleTouchMove = (e) => {
 		if (zoomed) {
 			const rect = imageRef.current.getBoundingClientRect();
@@ -38,15 +44,15 @@ function StoreLocation() {
 			{loading ? (
 				<Preloader />
 			) : (
-				<div className="page-container transition-fade">
-					<div className="container">
-						<div className="row text-center mt-5 mb-3">
-							<h1 className="heading2">OUR STORE LOCATIONS</h1>
+				<main className="page-container transition-fade">
+					<section className="container">
+						<header className="row text-center mt-5 mb-3">
+							<h1 className="heading2">Our Store Locations</h1>
 							<h6>Discover Our Convenient Store Locations</h6>
-						</div>
-					</div>
-					<div className="custom-container">
-						<div className="row text-center">
+						</header>
+					</section>
+					<section className="custom-container">
+						<article className="row text-center">
 							<div className="col-12">
 								<div
 									className={`zoomable-image ${zoomed ? "zoomed" : ""}`}
@@ -56,13 +62,16 @@ function StoreLocation() {
 										overflow: "hidden",
 										cursor: zoomed ? "zoom-out" : "zoom-in",
 									}}
+									role="button"
+									tabIndex={0}
+									aria-label="Interactive map of store locations. Click to zoom."
 								>
 									<img
 										src={
 											process.env.PUBLIC_URL +
 											"/images/mainImages/Map.webp"
 										}
-										alt=""
+										alt="Store locations map showing all available branches"
 										className="img-fluid"
 										ref={imageRef}
 										style={{
@@ -73,9 +82,9 @@ function StoreLocation() {
 									/>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
+						</article>
+					</section>
+				</main>
 			)}
 		</div>
 	);

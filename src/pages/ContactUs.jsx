@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css"; // Import the styles
-import Preloader from "../components/preloader"; // Assuming this is used elsewhere
+import "react-phone-number-input/style.css";
+import { toast, ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/Header.css";
 
 const ContactUs = () => {
@@ -14,9 +15,7 @@ const ContactUs = () => {
 	});
 
 	const hasText = (value) => value.trim() !== ""; // icon color if has text
-
 	const formRef = useRef(null); // position form
-
 	const [isLoading, setIsLoading] = useState(false); // cursor loads when submit clicked
 
 	const handleChange = (e) => {
@@ -69,13 +68,13 @@ const ContactUs = () => {
 			if (!response.ok) {
 				const errorData = await response.json();
 				console.error("Telegram API Error:", errorData);
-				alert(`Error sending the request to ${chatID}`);
+				toast.error(`Error sending the request to ${chatID}`);
 				return false;
 			}
 			return true;
 		} catch (error) {
 			console.error("Error sending Telegram message:", error);
-			alert("Failed to notify about your request.");
+			toast.error("Failed to notify about your request.");
 			return false;
 		}
 	};
@@ -88,7 +87,7 @@ const ContactUs = () => {
 
 		// Validate phone number
 		if (!isValidPhoneNumber(contact)) {
-			alert("Please enter a valid phone number.");
+			toast.error("Please enter a valid phone number.");
 			setIsLoading(false);
 			return;
 		}
@@ -117,7 +116,7 @@ const ContactUs = () => {
 			`✨ Name: ${formattedName}\n` +
 			`📞 Contact: ${contact}\n` + // Use the formatted contact
 			`💬 Preferred Communication: ${preferredComm ? preferredComm.charAt(0).toUpperCase() + preferredComm.slice(1) : "not specified"}\n` +
-			`⏰ Preferred Time for a Call: ${preferredTime ? timeDescriptions[preferredTime] : "not specified"}\n\n` +
+			`⏰ Preferred Time for a talk: ${preferredTime ? timeDescriptions[preferredTime] : "not specified"}\n\n` +
 			`Please reach out to **${formattedName}** as soon as possible! 😊💖\n\nThank you for your wonderful service! 🥳`;
 
 		const chatID = process.env.REACT_APP_CHAT_ID;
@@ -130,9 +129,12 @@ const ContactUs = () => {
 				channelID
 			);
 			if (channelSuccess) {
-				alert(
-					`${greeting}, ${formattedName}! 😊\n\nThank you for choosing us for your fire safety needs! 🔥🛡️\n\nWe have received your contact number: ${contact}.\nYou prefer to be contacted by ${preferredComm ? preferredComm.charAt(0).toUpperCase() + preferredComm.slice(1) : "not specified"}.\nThe best time for a call is ${preferredTime ? timeDescriptions[preferredTime] : "not specified"}.\n\nWe’ll be in touch shortly! 💖`
-				);
+				toast.success(
+					`Thanks, ${formattedName}! 😊\n📞 ${contact} | 💬 ${preferredComm ? preferredComm.charAt(0).toUpperCase() + preferredComm.slice(1) : "Not specified"} | ⏰ ${preferredTime ? timeDescriptions[preferredTime] : "Anytime"}\nWe'll be in touch soon! 💖`
+				  );
+				  
+				  
+
 
 				// Clear the form data after success
 				setFormData({
@@ -145,6 +147,7 @@ const ContactUs = () => {
 		}
 		setIsLoading(false); // Stop loading cursor after alert is shown
 	};
+	
 
 	useEffect(() => {
 		if (window.location.hash === "#contactForm" && formRef.current) {
@@ -154,6 +157,9 @@ const ContactUs = () => {
 
 	return (
 		<div className="contact-body">
+			{/* Add ToastContainer component here */}
+			<ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+			
 			<div
 				className={`page-container transition-fade ${isLoading ? "loading-cursor" : ""}`}
 			>
@@ -162,10 +168,10 @@ const ContactUs = () => {
 				<div className="">
 					<div className="m-5">
 						<div className="col-12">
-							<h1 className="heading2">We’ll Call You!</h1>
+							<h1 className="heading2">We'll Call You!</h1>
 							<p className="text-center m-3 p-3">
 								Leave us your contact details, <br />
-								and we’ll give you a call to help you with your
+								and we'll give you a call to help you with your
 								purchase.
 							</p>
 						</div>

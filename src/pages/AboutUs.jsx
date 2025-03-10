@@ -11,50 +11,37 @@ import teamData from "../data/team.json";
 
 export default function AboutUs() {
 	const [showScrollButton, setShowScrollButton] = useState(false);
+	const [loading, setLoading] = useState(true);
+
+
 	useEffect(() => {
-			const handleScroll = () => {
-				setShowScrollButton(window.scrollY > 100);
-			};
-	
-			window.addEventListener("scroll", handleScroll);
-	
-			// Simulate loading
-			const loadingTimer = setTimeout(() => {
-				setLoading(false);
-			}, 30);
-	
-			return () => {
-				window.removeEventListener("scroll", handleScroll);
-				clearTimeout(loadingTimer);
-			};
-		}, []);
+		const handleScroll = () => {
+		setShowScrollButton(window.scrollY > 100);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		const loadingTimer = setTimeout(() => setLoading(false), 50);
+
+		return () => {
+		window.removeEventListener("scroll", handleScroll);
+		clearTimeout(loadingTimer);
+		};
+	}, []);
+
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	const [activeIndex1, setActiveIndex1] = useState(0);
-	const handleSelect1 = (selectedIndex, e) => {
-		setActiveIndex1(selectedIndex);
-	};
+	const handleSelect1 = (selectedIndex) => setActiveIndex1(selectedIndex);
 
 	const [activeIndex2, setActiveIndex2] = useState(0);
-	const handleSelect2 = (selectedIndex, e) => {
-		setActiveIndex2(selectedIndex);
-	};
-
+	const handleSelect2 = (selectedIndex) => setActiveIndex2(selectedIndex);
+  
 	const [activeIndex3, setActiveIndex3] = useState(0);
-	const handleSelect3 = (selectedIndex, e) => {
-		setActiveIndex3(selectedIndex); // Corrected here
-	};
+	const handleSelect3 = (selectedIndex) => setActiveIndex3(selectedIndex);
 
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 50);
-	}, []);
-
+	
 	// Function to check if a string ends with .png
 	function isPngImage(string) {
 		return string.endsWith("png");
@@ -65,84 +52,82 @@ export default function AboutUs() {
 			{loading ? (
 				<Preloader />
 			) : (
-				<div className="page-container transition-fade">
+				<main className="page-container transition-fade">
 					<div className="Ellipse1" />
 					<div className="Ellipse2" />
 
 					<section className="container text-center mt-5">
-						<div className="">
-							<h1 className="heading2">
-								MISSION, VISION & CORE VALUES
-							</h1>
-							<div className="d-none d-md-block">
-								<div className="row services-list justify-content-center">
-									{aboutUsData.map((item, index) => (
-										<div
-											key={index}
-											className={`item-card ${index < 2 ? "col-5" : "col-10"}`}
-										>
+						<h1 className="heading2">
+							Mission, Vision & Core Values
+						</h1>
+						<div className="d-none d-md-block">
+							<div className="row services-list justify-content-center">
+								{aboutUsData.map((item, index) => (
+									<div
+										key={index}
+										className={`item-card ${index < 2 ? "col-5" : "col-10"}`}
+									>
+										<div className="service-box">
+											<img
+												className="service-icon"
+												src={item.icon}
+												alt={`${item.title} Icon`}
+											/>
+											<h3 className="aboutus-title">
+												{item.title}
+											</h3>
+											<p
+												className="aboutus-desciption"
+												dangerouslySetInnerHTML={{
+													__html: item.description,
+												}}
+											/>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+						<div className="d-block d-md-none">
+							<Carousel
+								activeIndex={activeIndex1}
+								onSelect={handleSelect1}
+								indicators={false}
+							>
+								{aboutUsData.map((item, index) => (
+									<Carousel.Item key={index}>
+										<div className="item-card">
 											<div className="service-box">
 												<img
 													className="service-icon"
 													src={item.icon}
-													alt={`${item.title} Icon`}
+													alt={`${item.title} icon depicting ${item.title.toLowerCase()}`}
 												/>
-												<h3 className="aboutus-title">
+												<h3 className="text-center aboutus-title">
 													{item.title}
 												</h3>
 												<p
-													className="aboutus-desciption"
+													className="aboutus-description"
 													dangerouslySetInnerHTML={{
 														__html: item.description,
 													}}
 												/>
 											</div>
 										</div>
-									))}
-								</div>
-							</div>
-							<div className="d-block d-md-none">
-								<Carousel
-									activeIndex={activeIndex1}
-									onSelect={handleSelect1}
-									indicators={false}
-								>
-									{aboutUsData.map((item, index) => (
-										<Carousel.Item key={index}>
-											<div className="item-card">
-												<div className="service-box">
-													<img
-														className="service-icon"
-														src={item.icon}
-														alt={`${item.title} Icon`}
-													/>
-													<h3 className="text-center aboutus-title">
-														{item.title}
-													</h3>
-													<p
-														className="aboutus-description"
-														dangerouslySetInnerHTML={{
-															__html: item.description,
-														}}
-													/>
-												</div>
-											</div>
-										</Carousel.Item>
-									))}
-								</Carousel>
-								<div className="custom-carousel-indicators-1">
-									{aboutUsData.map((_, index) => (
-										<span
-											key={index}
-											className={
-												index === activeIndex1
-													? "carousel-indicator active"
-													: "carousel-indicator"
-											}
-											onClick={() => handleSelect1(index)}
-										></span>
-									))}
-								</div>
+									</Carousel.Item>
+								))}
+							</Carousel>
+							<div className="custom-carousel-indicators-1">
+								{aboutUsData.map((_, index) => (
+									<span
+										key={index}
+										className={
+											index === activeIndex1
+												? "carousel-indicator active"
+												: "carousel-indicator"
+										}
+										onClick={() => handleSelect1(index)}
+									></span>
+								))}
 							</div>
 						</div>
 					</section>
@@ -229,7 +214,7 @@ export default function AboutUs() {
 															<img
 																className="logo"
 																src={item.logo}
-																alt={item.name}
+																alt={`Photo of ${item.name}, ${item.position}`}
 																onError={(
 																	e
 																) => {
@@ -317,7 +302,7 @@ export default function AboutUs() {
 							<ArrowUpwardIcon />
 						</button>
 					)}
-				</div>
+				</main>
 				
 			)}
 		</div>

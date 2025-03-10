@@ -7,42 +7,28 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const TestimoniesFacts = () => {
 	const [loading, setLoading] = useState(true);
-
 	const [showScrollButton, setShowScrollButton] = useState(false);
-		useEffect(() => {
-				const handleScroll = () => {
-					setShowScrollButton(window.scrollY > 100);
-				};
-		
-				window.addEventListener("scroll", handleScroll);
-		
-				// Simulate loading
-				const loadingTimer = setTimeout(() => {
-					setLoading(false);
-				}, 30);
-		
-				return () => {
-					window.removeEventListener("scroll", handleScroll);
-					clearTimeout(loadingTimer);
-				};
-			}, []);
-		const scrollToTop = () => {
-			window.scrollTo({ top: 0, behavior: "smooth" });
-		};
 
 	useEffect(() => {
-		let mounted = true;
+		const handleScroll = () => {
+			setShowScrollButton(window.scrollY > 100);
+		};
 
-		if (mounted) {
-			setTimeout(() => {
-				setLoading(false);
-			}, 0);
-		}
+		window.addEventListener("scroll", handleScroll);
+
+		const loadingTimer = setTimeout(() => {
+			setLoading(false);
+		}, 500);
 
 		return () => {
-			mounted = false;
+			window.removeEventListener("scroll", handleScroll);
+			clearTimeout(loadingTimer);
 		};
 	}, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
 
 	const featuredTestimony = testimoniesData[0];
 	const otherTestimonies = testimoniesData.slice(1);
@@ -52,27 +38,26 @@ const TestimoniesFacts = () => {
 			{loading ? (
 				<Preloader />
 			) : (
-				<div className="page-container transition-fade">
+				<main className="page-container transition-fade">
 					<div className="Ellipse1" />
 					<div className="Ellipse2" />
 
 					<section className="container">
-						<div className="second-section">
-							<h1 className="heading2 mt-5">TESTIMONIES FACTS</h1>
-						</div>
-						<div className="text-center testimonies">
-							<div className="featured-testimony">
-								
-							<div className="custom-card">
-								<p
-									dangerouslySetInnerHTML={{
-										__html: featuredTestimony.content,
-									}}
-								/>
+						<header className="second-section">
+							<h1 className="heading2 mt-5">Testimonies and Facts</h1>
+						</header>
+						<article className="text-center testimonies">
+							<section className="featured-testimony">
+								<div className="custom-card">
+									<p
+										dangerouslySetInnerHTML={{
+											__html: featuredTestimony.content,
+										}}
+									/>
 								</div>
-							</div>
-							<div className="line"></div>
-							<div className="more-testimonies">
+							</section>
+							<hr className="line" aria-hidden="true" />
+							<section className="more-testimonies">
 								{otherTestimonies.map((item, index) => (
 									<div className="custom-card">
 										<p
@@ -88,8 +73,8 @@ const TestimoniesFacts = () => {
 									/>
 									</div>
 								))}
-							</div>
-						</div>
+							</section>
+						</article>
 					</section>
 					{showScrollButton && (
 						<button
@@ -100,7 +85,7 @@ const TestimoniesFacts = () => {
 							<ArrowUpwardIcon />
 						</button>
 					)}
-				</div>
+				</main>
 			)}
 		</div>
 	);

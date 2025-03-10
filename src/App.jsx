@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
+import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,27 +17,23 @@ import AboutUs from "./pages/AboutUs";
 
 function App() {
 	return (
-		<Router>
-			<Header />
-			<CSSTransition
-				key={window.location.pathname}
-				classNames="page-container"
-				timeout={300}
-			>
-				<Routes location={window.location}>
+		<HelmetProvider> {/* Wrap everything in HelmetProvider */}
+			<Router>
+				<Header />
+				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/productshop" element={<ProductShop />} />
-					<Route path="/storelocation" element={<StoreLocation />} />
+					<Route path="/product-shop" element={<ProductShop />} />
+					<Route path="/store-location" element={<StoreLocation />} />
 					<Route
-						path="/testimoniesandfacts"
+						path="/testimonies-facts"
 						element={<TestimoniesAndFacts />}
 					/>
-					<Route path="/contactus" element={<ContactUs />} />
-					<Route path="/aboutus" element={<AboutUs />} />
+					<Route path="/contact-us" element={<ContactUs />} />
+					<Route path="/about-us" element={<AboutUs />} />
 				</Routes>
-			</CSSTransition>
-			<Footer />
-		</Router>
+				<Footer />
+			</Router>
+		</HelmetProvider>
 	);
 }
 

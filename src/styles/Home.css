@@ -67,10 +67,6 @@
 }
 
 /* Page Layout */
-.Home-contents {
-    margin: 10px 0 35px 0;
-    height: 100%;
-}
 
 .home-side {
     flex-direction: column;
