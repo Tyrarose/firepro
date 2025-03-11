@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Footer.css";
 
@@ -10,43 +8,6 @@ const Footer = () => {
     useEffect(() => {
         setCurrentYear(new Date().getFullYear());
     }, []);
-
-    // Initialize Toast Notifications
-    const notify = (message) => {
-        toast.success(message, {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-        });
-    };
-
-    // Handle phone number click (Copy to clipboard on desktop, Open dialer on mobile)
-    const handlePhoneClick = (event) => {
-        event.preventDefault(); // Prevent default anchor action
-        const phoneNumber = "7159229042";
-        
-        // Check if it's a mobile device by screen width
-        const isMobile = window.innerWidth <= 768;
-        
-        if (!isMobile && navigator.clipboard) {
-            // Desktop: Copy to clipboard
-            navigator.clipboard.writeText(phoneNumber)
-                .then(() => {
-                    notify("Phone number copied to clipboard!");
-                })
-                .catch(err => {
-                    console.error('Failed to copy: ', err);
-                    // Fallback if clipboard API fails
-                    window.location.href = `tel:${phoneNumber}`;
-                });
-        } else {
-            // Mobile: Open dialer
-            window.location.href = `tel:${phoneNumber}`;
-        }
-    };
 
     return (
         <footer role="contentinfo" aria-label="Site Footer">
@@ -91,7 +52,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <i className="fa-solid fa-phone" aria-hidden="true"></i>
-                                <a href="#" onClick={handlePhoneClick} aria-label="Call or Copy Firepro's Phone Number"> (715) 922-9042</a>
+                                <a href="tel:7159229042" aria-label="Call or Copy Firepro's Phone Number"> (715) 922-9042</a>
                             </li>
                             <li>
                                 <i className="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
@@ -134,9 +95,6 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-            
-            {/* Add the ToastContainer to display notifications */}
-            <ToastContainer />
         </footer>
     );
 };

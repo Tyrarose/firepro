@@ -58,21 +58,14 @@ const TestimoniesFacts = () => {
 							</section>
 							<hr className="line" aria-hidden="true" />
 							<section className="more-testimonies">
-								{otherTestimonies.map((item, index) => (
-									<div className="custom-card">
-										<p
-										key={index}
-										className={
-											index % 2 === 0
-												? "testimony-black"
-												: "testimony-red"
-										}
-										dangerouslySetInnerHTML={{
-											__html: item.content,
-										}}
+							{otherTestimonies.map((item, index) => (
+								<div key={index} className="custom-card">
+									<p
+										className={index % 2 === 0 ? "testimony-black" : "testimony-red"}
+										dangerouslySetInnerHTML={{ __html: item.content }}
 									/>
-									</div>
-								))}
+								</div>
+							))}
 							</section>
 						</article>
 					</section>

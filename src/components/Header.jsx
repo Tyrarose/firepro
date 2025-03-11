@@ -304,12 +304,6 @@ export default function Header() {
 	);
 }
 
-// Helper function to truncate text
-function truncateText(text, maxLength) {
-	if (!text) return '';
-	return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-}
-
 // Helper function to get icon for page type
 function getPageIcon(pageId) {
 	switch (pageId) {

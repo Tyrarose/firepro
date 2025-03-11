@@ -15,12 +15,6 @@ function StoreLocation() {
 		setZoomLevel(zoomed ? 1 : 2);
 	};
 
-	const handleKeyDown = (e) => {
-		if (e.key === "Enter" || e.key === " ") {
-			handleZoomClick();
-		}
-	};
-
 	const handleTouchMove = (e) => {
 		if (zoomed) {
 			const rect = imageRef.current.getBoundingClientRect();
