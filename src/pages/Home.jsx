@@ -35,24 +35,6 @@ function Home() {
 		};
 	}, []);
 
-	useEffect(() => {
-		const viewButton = viewButtonRef.current;
-		if (viewButton) {
-			const handleMouseOver = () =>
-				(viewButton.textContent = "View extinguishers >>>");
-			const handleMouseOut = () =>
-				(viewButton.textContent = "View extinguishers");
-
-			viewButton.addEventListener("mouseover", handleMouseOver);
-			viewButton.addEventListener("mouseout", handleMouseOut);
-
-			return () => {
-				viewButton.removeEventListener("mouseover", handleMouseOver);
-				viewButton.removeEventListener("mouseout", handleMouseOut);
-			};
-		}
-	}, [loading]);
-
 	const flickityOptions = {
 		wrapAround: true,
 		initialIndex: 1,
@@ -70,20 +52,32 @@ function Home() {
 					name="description"
 					content="FirePro provides next-generation fire extinguishers to protect your home and business. Stay safe with our high-quality fire safety solutions."
 				/>
-				<meta property="og:title" content="FirePro - Fire Safety Solutions" />
+				<meta
+					property="og:title"
+					content="FirePro - Fire Safety Solutions"
+				/>
 				<meta
 					property="og:description"
 					content="Protect your home and business with FirePro's advanced fire extinguishers."
 				/>
-				<meta property="og:image" content="/images/mainImages/featured.webp" />
+				<meta
+					property="og:image"
+					content="/images/mainImages/featured.webp"
+				/>
 				<meta property="og:type" content="website" />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content="FirePro - Fire Safety Solutions" />
+				<meta
+					name="twitter:title"
+					content="FirePro - Fire Safety Solutions"
+				/>
 				<meta
 					name="twitter:description"
 					content="Your first line of defense in fire safety. Explore our fire extinguishers today."
 				/>
-				<meta name="twitter:image" content="/images/mainImages/featured.webp" />
+				<meta
+					name="twitter:image"
+					content="/images/mainImages/featured.webp"
+				/>
 			</Helmet>
 
 			{loading ? (
@@ -92,7 +86,7 @@ function Home() {
 				<main className="container">
 					<div className="firebg"></div>
 
-					<section className="row">
+					<section className="hero row">
 						<div className="col-lg-5 col-md-4">
 							<div className="well text-center">
 								<div className="featuredpic_container">
@@ -124,13 +118,13 @@ function Home() {
 									/>
 								</div>
 							</div>
-							<div className="well">
+							{/* <div className="well">
 								<div className="home-title">
 									<strong>
 										The next generation in fire fighting
 									</strong>
 								</div>
-							</div>
+							</div> */}
 
 							<div className="well">
 								<p className="home-subtitle">
@@ -139,27 +133,39 @@ function Home() {
 									Fire extinguishers save lives!
 								</p>
 								<p className="home-subtitle fw-bold mt-3">
-									In the event of a fire, FirePro fire extinguishers are your first line of defense.
+									In the event of a fire, FirePro fire
+									extinguishers are your first line of
+									defense.
 								</p>
 							</div>
 
 							<div className="well">
 								<div className="mainbutton">
 									<button
-										id="viewButton"
-										ref={viewButtonRef}
-										className="btn viewext"
+										className="btn btn-lg fw-bold shadow-sm px-5 py-3 viewext"
+										// className="btn viewext fw-bold shadow-sm px-5 py-3 text-sm lg:text-lg"
 										onClick={handleMoveToExtinguishers}
 										aria-label="View available fire extinguishers"
 									>
-										View extinguishers
+										View Fire Extinguishers Now
 									</button>
 								</div>
 							</div>
 						</div>
 					</section>
 
-					<section className="m-5 pt-4 pb-4">
+					<section className="row mx-5 p-4 home-gallery text-center">
+						<div className="col-lg-12 col-md-12 text-center text-md-start">
+							<h2 className="fw-bold display-5 mb-3">
+								Product{" "}
+								<span className="brand-text-red">Showcase</span>
+							</h2>
+							<p className="lead mb-4">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Assumenda ut, beatae, sequi
+								sed consequatur repudiandae placeat quos quae ex
+							</p>
+						</div>
 						<Flickity
 							className="gallery"
 							elementType="div"
@@ -172,12 +178,57 @@ function Home() {
 								<div key={index} className="mx-2">
 									<img
 										src={slide.imgUrl}
-										alt={slide.imgName || `Fire safety image ${index + 1}`}
+										alt={
+											slide.imgName ||
+											`Fire safety image ${index + 1}`
+										}
 										loading="lazy"
 									/>
 								</div>
 							))}
 						</Flickity>
+					</section>
+
+					<section className="row mx-3 mx-md-5 py-5 px-3 p-md-5 card-section text-black rounded-3 shadow-lg align-items-center cta">
+						<div className="col-12 col-md-7 text-center text-md-start mb-4 mb-md-0">
+							<h2 className="fw-bold fs-2 fs-md-1 mb-3">
+								Why Choose{" "}
+								<span className="brand-text-red">FirePro?</span>
+							</h2>
+							<p className="lead mb-4 sm:text-sm">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Assumenda ut, beatae, sequi
+								sed consequatur repudiandae placeat quos quae
+								ex, nemo et tempora molestiae sapiente nulla
+								dolore? <strong>Officiis consectetur</strong>{" "}
+								nobis tenetur.
+							</p>
+							<button
+								className="btn viewext btn-lg fw-bold shadow-sm px-4 py-2"
+								onClick={handleMoveToExtinguishers}
+								aria-label="View available fire extinguishers"
+							>
+								View Fire Extinguishers Now
+							</button>
+							<p className="mt-3 small fst-italic">
+								Fast shipping · Trusted quality · Satisfaction
+								guaranteed
+							</p>
+						</div>
+
+						<div className="col-12 col-md-5 text-center">
+							<div className="p-2 p-md-3">
+								<img
+									src="/images/productsImage/product5.webp"
+									alt="High quality fire extinguishers"
+									className="img-fluid rounded-3"
+									loading="lazy"
+								/>
+								<p className="mt-3 text-dark text-center fw-semibold">
+									Our Best Seller
+								</p>
+							</div>
+						</div>
 					</section>
 
 					{showScrollButton && (

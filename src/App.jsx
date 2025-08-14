@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
+import { HelmetProvider } from "react-helmet-async";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,10 +10,13 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import ProductShop from "./pages/ProductShop";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 import StoreLocation from "./pages/StoreLocation";
 import TestimoniesAndFacts from "./pages/TestimoniesFacts";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
+import Tyra from "./pages/Tyra";
+
 
 function App() {
 	return (
@@ -22,7 +25,9 @@ function App() {
 				<Header />
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/*" element={<Home />} />
 					<Route path="/product-shop" element={<ProductShop />} />
+					<Route path="/product-shop/:id" element={<ProductDetailsPage />} />
 					<Route path="/store-location" element={<StoreLocation />} />
 					<Route
 						path="/testimonies-facts"
@@ -30,6 +35,8 @@ function App() {
 					/>
 					<Route path="/contact-us" element={<ContactUs />} />
 					<Route path="/about-us" element={<AboutUs />} />
+					<Route path="/tyra-clemente" element={<Tyra />} />
+
 				</Routes>
 				<Footer />
 			</Router>

@@ -8,6 +8,8 @@ import Preloader from "../components/preloader";
 import aboutUsData from "../data/aboutUs.json";
 import historyData from "../data/history.json";
 import teamData from "../data/team.json";
+import '../styles/Variables.css';
+
 
 export default function AboutUs() {
 	const [showScrollButton, setShowScrollButton] = useState(false);

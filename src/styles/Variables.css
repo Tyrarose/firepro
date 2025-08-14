@@ -1,0 +1,7 @@
+:root {
+  --brand-red: #c1301b;
+  --brand-red-rgb: 193, 48, 27;
+  --text-dark: rgba(0, 0, 0, 1);
+  --fade-duration: 0.8s;
+  --fade-ease: ease-out;
+}

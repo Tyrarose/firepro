@@ -11,7 +11,7 @@
 }
 
 .nav-item:hover {
-	background-color: #c1301b;
+	background-color: --brand-red;
 }
 .nav-item:hover .nav-link {
 	color: white !important;
@@ -31,7 +31,7 @@
 }
 
 .active-link {
-	border-bottom: 3px #c1301b solid;
+	border-bottom: 3px --brand-red solid;
 }
 
 .search-container {
@@ -43,15 +43,15 @@
   
   .search-button{
 	margin-left: 12px;
-	background-color: #c1301b;
-	border-color: #c1301b;
+	background-color: --brand-red;
+	border-color: --brand-red;
 	color: white;
   }
   .search-button:hover{
 	margin-left: 12px;
 	background-color: rgba(255, 255, 255, 0);
-	border-color: #c1301b;
-	color: #c1301b;
+	border-color: --brand-red;
+	color: --brand-red;
   }
   .red-clicked {
 	background-color: #8b0000; /* Even darker red on click */

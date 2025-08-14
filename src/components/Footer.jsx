@@ -17,10 +17,10 @@ const Footer = () => {
                     {/* About Section */}
                     <div className="col-md-6 footer-item">
                         <h5>About Firepro</h5>
-                        <div className="flameout_logo-container">
-                            <a href="/" className="flameout_logo" aria-label="Go to Home Page">
+                        <div className="logo-container">
+                            <a href="/" className="logo" aria-label="Go to Home Page">
                                 <img 
-                                    src="/images/mainImages/flameout_logo.svg" 
+                                    src="/images/mainImages/fireproshield.png" 
                                     alt="Flameout Fire Protection Logo - Your safety, our priority" 
                                     width="150" 
                                     height="50" 

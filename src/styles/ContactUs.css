@@ -25,7 +25,7 @@
 }
 
 .bolded-red-text {
-	color: #c1301b;
+	color: --brand-red;
 	font-weight: bold;
 }
 
@@ -110,7 +110,7 @@ input {
 }
 
 .icon-red {
-	color: #c1301b !important; /* Red color */
+	color: --brand-red !important; /* Red color */
 }
 
 .input-container input,
@@ -149,7 +149,7 @@ input {
 
 .chip-selected {
 	color: white !important;
-	background-color: #c1301b !important;
+	background-color: --brand-red !important;
 }
 
 .submit-btn-container {
@@ -164,7 +164,7 @@ button.submit-buyer-info-btn {
 	justify-content: center;
 	padding: 10px 20px;
 	font-size: 16px;
-	background-color: #c1301b;
+	background-color: --brand-red;
 	color: white;
 	border: none;
 	border-radius: 5px;

@@ -1,6 +1,3 @@
-* {
-	/* border: 1px red dotted; */
-}
 .transition-fade {
 	transition: opacity 0.3s ease-in-out;
 }
@@ -37,6 +34,7 @@
 	border-radius: 50px;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease;
+	min-height: 350px;
 }
 
 .product_card:hover {
@@ -71,7 +69,7 @@ p {
 }
 
 .buy_now {
-	background-color: #c1301b;
+	background-color: --brand-red;
 	color: #ffffff;
 	width: 140px;
 }
@@ -86,7 +84,7 @@ p {
 
 .buy_now:hover {
 	background-color: #ffffff;
-	border-color: #c1301b;
+	border-color: --brand-red;
 	border-width: 2px;
 }
 
@@ -113,7 +111,7 @@ p {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	background-color: #c1301b;
+	background-color: --brand-red;
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -125,16 +123,7 @@ p {
 }
 
 /* Hide the second button on desktop (min-width: 768px) */
-@media only screen and (min-width: 768px) {
-	.big-product {
-		padding: 20px;
-	}
-	
-	.big-product .picture > img:nth-child(-n + 5) {
-		width: 480px;
-		height: auto;
-		margin: 0 -90px;
-	}	
+@media only screen and (min-width: 768px) {	
 	.col-md-6.buy_now_container:last-child {
 		display: none;
 	}
@@ -245,14 +234,6 @@ p {
 	.enlarged3 {
 		margin: 10px;
 	}
-	.big-product {
-	}
-	
-	.big-product .picture > img:nth-child(-n + 5) {
-		width: auto;
-		height: 250px;
-		margin: 10px -40px 0px -40px;
-	}
 	
 }
 
@@ -269,7 +250,7 @@ p {
 .minified2:hover,
 .minified3:hover {
 	opacity: 90%;
-	border: 2px solid #c1301b;
+	border: 2px solid --brand-red;
 	transform: scale(1.1);
 	transition:
 		transform 0.2s,
@@ -277,7 +258,7 @@ p {
 }
 
 .highlight-product {
-	box-shadow: 0 0 10px #c1301b;
+	box-shadow: 0 0 10px --brand-red;
 	transition:
 		border 0.3s ease,
 		box-shadow 0.3s ease;

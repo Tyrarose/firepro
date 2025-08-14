@@ -32,7 +32,7 @@ footer {
 
 .footer-item ul li a {
     text-decoration: none;
-    color: #c1301b;
+    color: --brand-red;
     transition: color 0.3s ease-in-out;
 }
 
@@ -42,7 +42,7 @@ footer {
 }
 
 .footer-item ul li span {
-    color: #c1301b; 
+    color: --brand-red; 
     transition: color 0.3s ease-in-out;
 }
 
@@ -53,7 +53,7 @@ footer {
 
 .footer-item a{
     text-decoration: none;
-    color: #c1301b;
+    color: --brand-red;
 }
 
 .footer-item a i {
@@ -65,14 +65,14 @@ footer {
     text-decoration: underline;
 }
 
-.flameout_logo img {
+.logo img {
     margin-bottom: 10px;
     width: 160px;
     height: auto;
     transition: transform 0.3s ease-in-out;
 }
 
-.flameout_logo img:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
@@ -85,7 +85,7 @@ footer {
 
 .footer-bottom a {
     text-decoration: none;
-    color: #c1301b;
+    color: --brand-red;
     font-weight: bold;
 }
 

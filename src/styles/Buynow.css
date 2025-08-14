@@ -94,7 +94,7 @@ input {
 
 .chip-selected {
 	color: white;
-	background-color: #c1301b;
+	background-color: --brand-red;
 }
 
 .submit-btn-container {
@@ -109,7 +109,7 @@ button.submit-buyer-info-btn {
 	justify-content: center;
 	padding: 10px 20px;
 	font-size: 16px;
-	background-color: #c1301b;
+	background-color: --brand-red;
 	color: white;
 	border: none;
 	border-radius: 5px;

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/ProductShop.css";
 
 import productsData from "../data/products.json";
-
 import Preloader from "../components/preloader";
 
 function ProductShop() {
@@ -14,6 +14,8 @@ function ProductShop() {
 	const navigate = useNavigate();
 	const queryParams = new URLSearchParams(location.search);
 	const highlightProductId = queryParams.get("highlight");
+	const [showModal, setShowModal] = useState(false);
+	const [selectedProduct, setSelectedProduct] = useState(null);
 
 	useEffect(() => {
 		if (highlightProductId) {
@@ -42,6 +44,33 @@ function ProductShop() {
 		}
 	}, [highlightProductId, navigate, location.pathname]);
 
+	// Additional effect to handle scroll restoration on any navigation back to this page
+	useEffect(() => {
+		const restoreScrollPosition = () => {
+			const savedScrollPosition = sessionStorage.getItem('productShopScrollPosition');
+			if (savedScrollPosition) {
+				// Use a longer delay to ensure all components are mounted
+				setTimeout(() => {
+					window.scrollTo({
+						top: parseInt(savedScrollPosition),
+						behavior: 'instant'
+					});
+					sessionStorage.removeItem('productShopScrollPosition');
+				}, 100);
+			}
+		};
+
+		// Call immediately when component mounts
+		restoreScrollPosition();
+
+		// Also listen for focus events (when user returns via browser back button)
+		window.addEventListener('focus', restoreScrollPosition);
+		
+		return () => {
+			window.removeEventListener('focus', restoreScrollPosition);
+		};
+	}, [location.pathname]); // Re-run when pathname changes
+
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [magnifiedImage, setMagnifiedImage] = useState({});
@@ -56,6 +85,20 @@ function ProductShop() {
 		// Simulate loading
 		const loadingTimer = setTimeout(() => {
 			setLoading(false);
+			
+			// Restore scroll position after loading is complete
+			const savedScrollPosition = sessionStorage.getItem('productShopScrollPosition');
+			if (savedScrollPosition) {
+				// Use requestAnimationFrame to ensure DOM is fully rendered
+				requestAnimationFrame(() => {
+					window.scrollTo({
+						top: parseInt(savedScrollPosition),
+						behavior: 'instant' // Use instant for immediate positioning
+					});
+					// Clear the saved position after restoring
+					sessionStorage.removeItem('productShopScrollPosition');
+				});
+			}
 		}, 30);
 
 		return () => {
@@ -76,8 +119,11 @@ function ProductShop() {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
-	const handleBuyNowClick = () => {
-		navigate("/contact-us");
+	// Navigate to product details page and save scroll position
+	const handleReadMoreClick = (product) => {
+		// Save current scroll position before navigating
+		sessionStorage.setItem('productShopScrollPosition', window.scrollY.toString());
+		navigate(`/product-shop/${product.id}`);
 	};
 
 	return (
@@ -86,12 +132,14 @@ function ProductShop() {
 				<Preloader />
 			) : (
 				<main className="container transition-fade">
+					{/* Remove ProductModal from here since we're using routing */}
+
 					<section className="col-12 text-center">
 						<header className="mt-5 mb-4">
 							<h1 className="heading2">Our Extinguishers</h1>
 							<h6>
-								Empowering Safety: Where Efficiency Meets
-								Fire Protection
+								Empowering Safety: Where Efficiency Meets Fire
+								Protection
 							</h6>
 						</header>
 					</section>
@@ -101,7 +149,7 @@ function ProductShop() {
 							<div
 								id={`product-${product.id}`}
 								key={product.id}
-								className={`row product_card ${product.big ? "big-product" : ""} ${product.id % 2 === 0 ? "even-product" : ""} ${highlightProductId === product.id ? "highlight-product" : ""}`}
+								className={`row product_card  ${product.id % 2 === 0 ? "even-product" : ""} ${highlightProductId === product.id ? "highlight-product" : ""}`}
 							>
 								{/* image on left because even */}
 								{product.id % 2 === 0 ? (
@@ -111,19 +159,6 @@ function ProductShop() {
 												<h1 className="product-name">
 													{product.name}
 												</h1>
-												<p className="text-center product-info">
-													<strong
-														dangerouslySetInnerHTML={{
-															__html: product.feature,
-														}}
-													></strong>
-													<br />
-													<strong
-														dangerouslySetInnerHTML={{
-															__html: product.feature2,
-														}}
-													></strong>
-												</p>
 												<p
 													className="product-description"
 													dangerouslySetInnerHTML={{
@@ -142,7 +177,7 @@ function ProductShop() {
 															</span>{" "}
 															<span
 																style={{
-																	color: "#C1301B",
+																	color: "--brand-red",
 																}}
 															>
 																$
@@ -153,11 +188,11 @@ function ProductShop() {
 														</p>
 														<button
 															className="btn buy_now mt-md-0"
-															onClick={
-																handleBuyNowClick
+															onClick={() =>
+																handleReadMoreClick(product)
 															}
 														>
-															Buy now
+															Read More
 														</button>
 													</div>
 												</div>
@@ -288,17 +323,10 @@ function ProductShop() {
 															: "none",
 												}}
 											/>
-											{product.free && (
-												<img
-													src={product.free}
-													alt="Freebie"
-													className="freebies"
-												/>
-											)}
 										</div>
 									</>
 								) : (
-									// {/* image on right because even */}
+									// {/* image on right because odd */}
 									<>
 										<div className="col-md-6 picture text-end col-sm-12">
 											<div className="minis">
@@ -425,32 +453,12 @@ function ProductShop() {
 															: "none",
 												}}
 											/>
-											{product.free && (
-												<img
-													src={product.free}
-													alt="Freebie"
-													className="freebies"
-												/>
-											)}
 										</div>
 										<div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
 											<div className="productdeets">
 												<h1 className="product-name">
 													{product.name}
 												</h1>
-												<p className="text-center product-info">
-													<strong
-														dangerouslySetInnerHTML={{
-															__html: product.feature,
-														}}
-													></strong>
-													<br />
-													<strong
-														dangerouslySetInnerHTML={{
-															__html: product.feature2,
-														}}
-													></strong>
-												</p>
 												<p
 													className="product-description"
 													dangerouslySetInnerHTML={{
@@ -469,7 +477,7 @@ function ProductShop() {
 															</span>{" "}
 															<span
 																style={{
-																	color: "#C1301B",
+																	color: "--brand-red",
 																}}
 															>
 																$
@@ -480,11 +488,11 @@ function ProductShop() {
 														</p>
 														<button
 															className="btn buy_now mt-md-0"
-															onClick={
-																handleBuyNowClick
+															onClick={() =>
+																handleReadMoreClick(product)
 															}
 														>
-															Buy now
+															Read More
 														</button>
 													</div>
 												</div>
