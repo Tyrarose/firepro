@@ -15,8 +15,8 @@ const ProductImageGallery = ({
 	handleMouseLeave,
 	handleClick,
 }) => (
-	<div className="col-md-6 picture text-end col-sm-12">
-		<div className="minis">
+	<div className="col-md-6 picture flex-column-reverse flex-lg-row text-end col-sm-12">
+		<div className="minis flex-row flex-lg-column">
 			{product.mini1 && (
 				<img
 					className="minified1"
@@ -265,7 +265,7 @@ function ProductShop() {
 						</header>
 					</section>
 
-					<section className="col-12 images_combo">
+					<section className="col-12 images_combo ">
 						{productsData.map((product) => (
 							<div
 								id={`product-${product.id}`}
