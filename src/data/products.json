@@ -3,8 +3,15 @@
 		"id": 1,
 		"name": "Aerosol Can",
 		"imageUrl": "images/productsImage/product1.webp",
-		"description": "Compact yet powerful, this aerosol can is your instant defense against small fires, delivering quick and effective extinguishing action. It features a durable stainless steel body, glow-in-the-dark labeling and a reflective strip for quick visibility in darkness or smoke.",
-		"feature": "13.5 fl oz",
+		"description": "The Fire Pro 13.5 oz Cold Fire Aerosol Can is a compact and powerful firefighting tool designed for versatility. Engineered with the same trusted Cold Fire formula, this product provides instant cooling power that quickly knocks down flames and heat while preventing reignition.",
+		"feature": [
+		"<strong>Sprays in Any Position</strong> - Engineered with a unique  internal valve, this can works even when used upside down, making it reliable in difficult to access situations.",
+		"<strong>Rapid Cooling Action</strong> - instantly reduces heat on hot surfaces, machinery, or tools, helping prevent flare-ups, and making work areas safer.",
+		"<strong>Multiple Applications</strong> - Ideal for cooling overheating equipment, brakes, welding areas, and other high-heat equipment. Can be used both proactively (before working) and reactively (to cool down hot spots).",
+		"<strong>Compact & Portable</strong> - At just 13.5 ounces, it’s easy to carry, store, and deploy whenever and wherever cooling or fire suppression is needed.",
+		"This aerosol can is a convenient, ready-to-use solution for anyone who needs reliable cooling power in a lightweight package."
+		],
+
 		"price": 24.49,
 		"mini1": "images/productsMore/product1-1.webp",
 		"mini2": "images/productsMore/product1-2.webp",
@@ -16,8 +23,10 @@
 		"name": "1L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product2.webp",
 		"description": "The 1 liter Fire Pro extinguisher is the most compact and portable unit in the lineup, ideal for personal and recreational use. Made from stainless steel and equipped with glow-in-the-dark and reflective features",
-		"feature": "Discharge Length: 25 feet.",
-		"feature2": "Discharge time: 15 seconds",
+		"feature": [
+		"Discharge Length: 25 feet.",
+		"Discharge time: 15 seconds"
+		],
 		"price": 171.93,
 		"mini1": "images/productsMore/product2-1.webp",
 		"mini2": "images/productsMore/product2-2.webp",
@@ -29,8 +38,10 @@
 		"name": "2L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product3.webp",
 		"description": "Twice the capacity of the 1 liter model, the 2 liter Fire Pro extinguisher provides enhanced firefighting power while remaining compact and easy to use. Featuring stainless steel construction, refillable design, and high-visibility labeling",
-		"feature": "Discharge Length: 25 feet.",
-		"feature2": "Discharge time: 27 seconds",
+		"feature": [
+		"Discharge Length: 25 feet.",
+		"Discharge time: 27 seconds"
+		],
 		"price": 181.83,
 		"mini1": "images/productsMore/product3-1.webp",
 		"mini2": "images/productsMore/product3-2.webp",
@@ -42,8 +53,10 @@
 		"name": "3L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product4.webp",
 		"description": "The 3 liter Fire Pro extinguisher strikes a perfect balance between portability and extended firefighting duration. Featuring stainless steel construction, refillable design, and high-visibility labeling",
-		"feature": "Discharge Length: 40 feet.",
-		"feature2": "Discharge time: 19 seconds",
+		"feature": [
+		"Discharge Length: 40 feet.",
+		"Discharge time: 19 seconds"
+		],
 		"price": 210.28,
 		"mini1": "images/productsMore/product4-1.webp",
 		"mini2": "images/productsMore/product4-2.webp",
@@ -55,8 +68,10 @@
 		"name": "4L Fire Extinguisher",
 		"imageUrl": "images/productsImage/product5.webp",
 		"description": "Built for versatility, the 4 liter Fire Pro extinguisher is equally suited for homes, shops, or equipment. It delivers all the key Fire Pro features: stainless steel body, refillable design, glow-in-the-dark and reflective markings",
-		"feature": "Discharge Length: 40 feet.",
-		"feature2": "Discharge time: 29 seconds",
+		"feature": [
+		"Discharge Length: 40 feet.",
+		"Discharge time: 29 seconds"
+		],
 		"price": 217.76,
 		"mini1": "images/productsMore/product5-1.webp",
 		"mini2": "images/productsMore/product5-2.webp",
@@ -69,8 +84,10 @@
 		"name": "2.5-gallon Fire Extinguisher",
 		"imageUrl": "images/productsImage/product6.webp",
 		"description": "The 2.5 gallon Fire Pro extinguisher is the largest and most powerful in the portable lineup. It offers over a full minute of continuous discharge and is powered by Cold Fire suppressant, which rapidly cools the fire, foams to cut off oxygen, and encapsulates fuel sources to stop flames at the root.",
-		"feature": "Discharge Length: 40 feet.",
-		"feature2": "Discharge time: 80 seconds (1 min, 20s)",
+		"feature": [
+		"Discharge Length: 40 feet.",
+		"Discharge time: 80 seconds (1 min, 20s)"
+		],
 		"price": 268.92,
 		"mini1": "images/productsMore/product6-1.webp",
 		"mini2": "images/productsMore/product6-2.webp",
@@ -81,8 +98,15 @@
 		"id": 7,
 		"name": "Fire Blanket",
 		"imageUrl": "images/productsImage/product7.webp",
-		"description": "A fire blanket quenches fire through its specialized materials anti-firing features.",
-		"feature2": "",
+		"description": "The Fire Pro Fire Blanket is a simple, effective, and reusable fire safety tool designed to smother various fires quickly and safely.",
+		"feature": [
+			"<strong>Generous Coverage</strong> – Measuring 4 feet by 4 feet (1.2m x 1.2m), it provides ample protection for suppressing kitchen fires, clothing fires, cooking fires, and other small emergencies.",
+			"<strong>Durable Construction</strong> – Made with a double-sided silicone coating for added strength, flexibility, and reliability in high-heat environments.",
+			"<strong>High Heat Resistance</strong> – Withstands temperatures up to 810°C (1,490°F), ensuring dependable performance, even under intense conditions.",
+			"<strong>Easy to Use</strong> – Features easy to use hand straps for quick deployment. Simply pull down the straps to release the blanket,  and cover the fire.",
+			"<strong>Certified Safety</strong> – Manufactured to meet EN1869 standards for fire blankets.",
+			"Compact and lightweight, this blanket comes in a protective red pouch for wall mounting or storage, making it an essential fire safety item for homes, kitchens, workshops, and vehicles!"
+		],
 		"price": 38.50,
 		"mini1": "images/productsMore/product7-1.webp",
 		"mini2": "images/productsMore/product7-2.webp",
@@ -93,8 +117,8 @@
 		"name": "Automatic Sprinkler",
 		"imageUrl": "images/productsImage/product8.webp",
 		"description": "The 12 liter Fire Pro automatic extinguisher is designed for unmanned, high-risk fire areas such as spray booths, engine compartments, diesel generators, or enclosed mechanical rooms. When high heat triggers the automatic release system, the unit instantly sprays Cold Fire suppressant in a 360-degree pattern.",
-		"feature": "HOW IT WORKS:",
-		"feature2": "",
+		"feature": [
+		],
 		"price": 482.21,
 		"mini1": "images/productsMore/product8-1.webp",
 		"mini2": "images/productsMore/product8-2.webp",

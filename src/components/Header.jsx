@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import productsData from "../data/products.json";
-import "../styles/ContactUs.css";
+import "../styles/Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header() {
@@ -26,7 +26,6 @@ export default function Header() {
 	const [showResults, setShowResults] = useState(false);
 	const [isClicked, setIsClicked] = useState(false);
 
-	// Define website pages data
 	const pagesData = [
 		{
 			id: "home",
@@ -93,8 +92,8 @@ export default function Header() {
 	const handleClose = () => setExpanded(false);
 
 	const handleButtonClick = () => {
-	setIsClicked(true);
-	setTimeout(() => setIsClicked(false), 300); // Reset after animation completes
+		setIsClicked(true);
+		setTimeout(() => setIsClicked(false), 300);
 	};
 
 	const handleSearch = (event) => {
@@ -175,7 +174,7 @@ export default function Header() {
 			<Container fluid>
 				<NavLink to="/" aria-label="Go to homepage">
 					<img
-						src={process.env.PUBLIC_URL + "/images/mainImages/fireproshield.png"}
+						src="/images/mainImages/fireproshield.png"
 						alt="FirePro Shield Logo"
 						className="brand-image"
 						style={{ visibility: isHomePage ? "hidden" : "visible" }}
@@ -210,7 +209,7 @@ export default function Header() {
 								{"path": "/contact-us", "label": "Contact Us"},
 								{"path": "/about-us", "label": "About Us"}
 							].map(({ path, label }) => (
-								<NavItem key={path}>
+								<NavItem key={path} >
 									<NavLink
 										to={path}
 										className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}
@@ -263,7 +262,7 @@ export default function Header() {
 												<div className="d-flex align-items-center">
 													{result.type === "product" && result.image && (
 														<img 
-															src={process.env.PUBLIC_URL + result.image} 
+															src={result.image} 
 															alt={result.title}
 															className="search-result-image" 
 															style={{ width: '40px', height: '40px', marginRight: '10px' }}

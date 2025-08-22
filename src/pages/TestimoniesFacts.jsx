@@ -44,7 +44,7 @@ const TestimoniesFacts = () => {
 
 					<section className="container">
 						<header className="second-section">
-							<h1 className="heading2 mt-5">Testimonies and Facts</h1>
+							<h1 className="headings mt-5">Testimonies and Facts</h1>
 						</header>
 						<article className="text-center testimonies">
 							<section className="featured-testimony">

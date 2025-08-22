@@ -8,11 +8,10 @@ import "../styles/Home.css";
 import "flickity/css/flickity.css";
 
 import Preloader from "../components/preloader";
-import homeSlides from "../data/homeSlide.json";
+import homeSlides from "../data/homeSlide";
 
 function Home() {
 	const navigate = useNavigate();
-	const viewButtonRef = useRef(null);
 	const [loading, setLoading] = useState(true);
 	const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -84,12 +83,12 @@ function Home() {
 				<Preloader />
 			) : (
 				<main className="container">
-					<div className="firebg"></div>
+					<div className="fire-bg"></div>
 
 					<section className="hero row">
 						<div className="col-lg-5 col-md-4">
 							<div className="well text-center">
-								<div className="featuredpic_container">
+								<div className="featured">
 									<img
 										src="/images/mainImages/featured.webp"
 										alt="A high-quality fire extinguisher - FirePro"
@@ -140,21 +139,18 @@ function Home() {
 							</div>
 
 							<div className="well">
-								<div className="mainbutton">
-									<button
-										className="btn btn-lg fw-bold shadow-sm px-5 py-3 viewext"
-										// className="btn viewext fw-bold shadow-sm px-5 py-3 text-sm lg:text-lg"
-										onClick={handleMoveToExtinguishers}
-										aria-label="View available fire extinguishers"
-									>
-										View Fire Extinguishers Now
-									</button>
-								</div>
+								<button
+									className="fw-bold shadow-sm next-btn"
+									onClick={handleMoveToExtinguishers}
+									aria-label="View available fire extinguishers"
+								>
+									View Fire Extinguishers Now
+								</button>
 							</div>
 						</div>
 					</section>
 
-					<section className="row mx-5 p-4 home-gallery text-center">
+					<section className="row home-gallery text-center">
 						<div className="col-lg-12 col-md-12 text-center text-md-start">
 							<h2 className="fw-bold display-5 mb-3">
 								Product{" "}
@@ -204,7 +200,7 @@ function Home() {
 								nobis tenetur.
 							</p>
 							<button
-								className="btn viewext btn-lg fw-bold shadow-sm px-4 py-2"
+								className="fw-bold shadow-sm next-btn"
 								onClick={handleMoveToExtinguishers}
 								aria-label="View available fire extinguishers"
 							>

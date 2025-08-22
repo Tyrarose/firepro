@@ -1,149 +1,148 @@
 /* =========================================================
-   VARIABLES
-   ========================================================= */
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-@keyframes fadeZoom {
-  0% { opacity: 0; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(5px); }
-  50% { transform: translateY(0); }
-}
-
-/* =========================================================
    GLOBAL TEXT STYLES
    ========================================================= */
 .brand-text-red {
-  color: var(--brand-red);
+	color: var(--brand-red);
 }
 
 .home-title,
 .home-subtitle {
-  color: var(--text-dark);
-  text-align: left;
-  font-family: Poppins, sans-serif;
-  width: 90%;
+	color: var(--text-dark);
+	text-align: left;
+	font-family: Poppins, sans-serif;
+	width: 90%;
 }
 
-.home-title { font-size: clamp(18px, 2vw, 28px); }
-.home-subtitle { font-size: clamp(14px, 2vw, 22px); }
+.home-title {
+	font-size: clamp(18px, 2vw, 28px);
+}
+.home-subtitle {
+	font-size: clamp(14px, 2vw, 22px);
+}
 
-.lead { font-size: small; }
+.lead {
+	font-size: large;
+}
 
 /* =========================================================
    BUTTONS
    ========================================================= */
-.mainbutton { justify-content: flex-start; }
 
-.viewext {
-  background: var(--brand-red);
-  border-radius: 10px;
-  color: #fff;
-  padding: 8px;
-  transition: all 0.3s;
+.next-btn {
+	border-radius: 10px;
+	padding: 16px 32px;
+	transition: all 0.3s;
+	background: var(--brand-red);
+	color: white;
 }
 
-.viewext:hover {
-  background: rgba(255, 255, 255, 0.4);
-  border: 1px solid var(--brand-red);
-  box-shadow: inset 0 0 0 1px rgba(var(--brand-red-rgb), 1);
-  color: rgba(var(--brand-red-rgb), 1);
-  font-weight: 600;
+.next-btn:hover {
+	background: var(--color-ellipse);
+	border: 1px solid var(--brand-red);
+	box-shadow: inset 0 0 0 1px var(--brand-red-hover);
+	color: var(--brand-red);
+	font-weight: 600;
 }
 
 /* =========================================================
    LAYOUT / SECTIONS
    ========================================================= */
 .home-side {
-  flex-direction: column;
-  justify-content: space-evenly;
-  animation: fadeZoom var(--fade-duration) var(--fade-ease) forwards;
+	flex-direction: column;
+	justify-content: space-evenly;
+	animation: fadeZoom var(--fade-duration) var(--fade-ease) forwards;
 }
 
 .cta {
-  margin: 10% 0;
-  background-color: rgba(217, 217, 217, 0.6);
+	margin: 10% 0;
+	background-color: var(--color-ellipse);
 }
 
-.home-gallery { margin: 10% 0; }
+.home-gallery {
+	margin: 10% 0;
+}
 
 /* =========================================================
    GALLERY
    ========================================================= */
 .gallery img {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: fadeZoom var(--fade-duration) var(--fade-ease) forwards;
+	transform: scale(0.95);
+	animation: fadeZoom var(--fade-duration) var(--fade-ease) forwards;
 }
 
 .gallery-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  counter-increment: gallery-cell;
+	width: 66%;
+	height: 200px;
+	margin-right: 10px;
+	counter-increment: gallery-cell;
 }
 
 .gallery-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
+	display: block;
+	text-align: center;
+	content: counter(gallery-cell);
+	line-height: 200px;
+	font-size: 80px;
 }
 
 /* =========================================================
    FLICKITY CONTROLS
    ========================================================= */
 .flickity-prev-next-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.2;
-  transition: opacity 0.3s;
+	background: none;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.2;
+	transition: opacity 0.3s;
 }
 
-.flickity-prev-next-button:hover { opacity: 0.7; }
-.flickity-prev-next-button.previous { left: -50px; }
-.flickity-prev-next-button.next { right: -50px; }
+.flickity-prev-next-button:hover {
+	opacity: 0.7;
+}
+.flickity-prev-next-button.previous {
+	left: -50px;
+}
+.flickity-prev-next-button.next {
+	right: -50px;
+}
 
-.flickity-button-icon { fill: #333; }
-.flickity-button-icon path { stroke: none; }
+.flickity-button-icon {
+	fill: #333;
+}
+.flickity-button-icon path {
+	stroke: none;
+}
 
 /* =========================================================
    FEATURED IMAGES
    ========================================================= */
-.featuredpic_container,
-.featuredpic_container img {
-  width: 100%;
-  animation: fadeZoom var(--fade-duration) var(--fade-ease) forwards;
-  z-index: -99;
+.featured,
+.featured img {
+	width: 100%;
+	animation: fadeZoom var(--fade-duration) var(--fade-ease) forwards;
+	z-index: -99;
 }
 
-.featuredpic_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
+.featured {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	text-align: center;
 }
 
-.featuredpic_container img {
-  height: 82svh;
-  width: auto;
+.featured img {
+	height: 82svh;
+	width: auto;
 }
 
 /* =========================================================
@@ -151,89 +150,102 @@
    ========================================================= */
 .trailer img,
 .fireproshield img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
 .fireproshield img {
-  width: 60vh;
-  object-fit: cover;
-  margin: 0;
-  z-index: -99;
+	width: 60vh;
+	object-fit: cover;
+	margin: 0;
+	z-index: -99;
 }
 
 /* =========================================================
    VIDEO
    ========================================================= */
 .video-container {
-  max-width: 100%;
-  margin: 0 auto;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 .video-container video {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 /* =========================================================
    BACKGROUND
    ========================================================= */
-.firebg {
-  background: url("/public/images/mainImages/firebg3.webp") center / cover no-repeat;
-  position: fixed;
-  inset: 0;
-  z-index: -99;
-  opacity: 0.6;
+.fire-bg {
+    background: url("/images/mainImages/firebg3.webp") center / cover no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: -99;
+    opacity: 0.6;
 }
+
 
 /* =========================================================
    RESPONSIVE STYLES
    ========================================================= */
+/* desktop */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .home-side .well {
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+	.home-side .well {
+		margin: 0 auto;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-  .featuredpic_container img { height: 50svh; }
-  .home-title, .home-subtitle {
-    text-align: center;
-    margin: auto;
-  }
+	.home-title,
+	.home-subtitle {
+		text-align: center;
+		margin: auto;
+	}
 
-  .fireproshield {
-    width: 50%;
-    margin: -30px auto 20px;
-  }
+	.fireproshield {
+		width: 50%;
+		margin: -30px auto 20px;
+	}
 }
 
+/* mobile */
 @media (max-width: 767px) {
-  .hero { flex-direction: column-reverse; }
-  .fireproshield {
-    width: 60%;
-    margin: -50px auto 20px;
-  }
+  
+	.featured img {
+		height: 40svh;
+	}
+	.hero {
+		flex-direction: column-reverse;
+	}
+	.fireproshield {
+		width: 60%;
+		margin: -50px auto 20px;
+	}
 
-  .home-title, .home-subtitle {
-    padding: 10px 0;
-    margin: auto;
-    text-align: center;
-  }
+	.home-title,
+	.home-subtitle {
+		padding: 10px 0;
+		margin: auto;
+		text-align: center;
+	}
 
-  .mainbutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	.next-btn {
+		display: block;
+		margin: 22px auto 0;
+		font-size: 16px;
+		width: 95%;
+	}
 
-  .viewext {
-    margin-top: 22px;
-    font-size: 16px;
-    width: 95%;
-  }
+	.lead {
+		font-size: small;
+	}
 }

@@ -8,7 +8,6 @@ import Preloader from "../components/preloader";
 import aboutUsData from "../data/aboutUs.json";
 import historyData from "../data/history.json";
 import teamData from "../data/team.json";
-import '../styles/Variables.css';
 
 
 export default function AboutUs() {
@@ -55,11 +54,11 @@ export default function AboutUs() {
 				<Preloader />
 			) : (
 				<main className="page-container transition-fade">
-					<div className="Ellipse1" />
-					<div className="Ellipse2" />
+					<div className="Ellipse1 bg-ellipse-color" />
+					<div className="Ellipse2 bg-ellipse-color" />
 
 					<section className="container text-center mt-5">
-						<h1 className="heading2">
+						<h1 className="headings">
 							Mission, Vision & Core Values
 						</h1>
 						<div className="d-none d-md-block">
@@ -136,7 +135,7 @@ export default function AboutUs() {
 
 					<section className="container text-center my-4 history-container">
 						<div className="glass m-3">
-							<h1 className="my-4 heading2">
+							<h1 className="my-4 headings">
 								BEHIND THE PRODUCT
 							</h1>
 							<div className="d-md-none">
@@ -194,7 +193,7 @@ export default function AboutUs() {
 					<section className="container text-center more">
 						<div className="stripes-border glass">
 							<div className="white-box">
-								<h1 className="my-4 heading2">MEET THE TEAM</h1>
+								<h1 className="my-4 headings">MEET THE TEAM</h1>
 								<div className="d-md-none">
 									<Carousel
 										activeIndex={activeIndex3}

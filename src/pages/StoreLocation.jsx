@@ -41,8 +41,8 @@ function StoreLocation() {
 				<main className="page-container transition-fade">
 					<section className="container">
 						<header className="row text-center mt-5 mb-3">
-							<h1 className="heading2">Our Store Locations</h1>
-							<h6>Discover Our Convenient Store Locations</h6>
+							<h1 className="headings">Our Store Locations</h1>
+							<h6 className="lead">Discover Our Convenient Store Locations</h6>
 						</header>
 					</section>
 					<section className="custom-container">
@@ -62,7 +62,6 @@ function StoreLocation() {
 								>
 									<img
 										src={
-											process.env.PUBLIC_URL +
 											"/images/mainImages/Map.webp"
 										}
 										alt="Store locations map showing all available branches"

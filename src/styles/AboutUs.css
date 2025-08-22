@@ -1,338 +1,323 @@
-.page-container {
-	transition: opacity 0.3s ease-in-out;
-}
-
-.transition-fade {
-	transition: opacity 0.3s ease-in-out;
-}
-
 .Ellipse1,
 .Ellipse2 {
-	width: 100vw;
-	height: 100vw;
-	max-width: 833px;
-	max-height: 833px;
-	background: rgba(217, 217, 217, 0.6);
-	border-radius: 50%;
-	position: fixed;
-	z-index: -99;
+  width: 100vw;
+  height: 100vw;
+  max-width: 833px;
+  max-height: 833px;
+  background: var(--color-ellipse);
+  border-radius: 50%;
+  position: fixed;
+  z-index: -99;
 }
 
 .Ellipse1 {
-	top: -50vh;
-	right: calc(50vw - 70%);
+  top: -50vh;
+  right: calc(50vw - 70%);
 }
 
 .Ellipse2 {
-	bottom: -40vh;
-	left: calc(50vw - 70%);
+  bottom: -40vh;
+  left: calc(50vw - 70%);
 }
 
 @media only screen and (max-width: 768px) {
-	.Ellipse1,
-	.Ellipse2 {
-		width: 60vh;
-		height: 60vh;
-	}
-	.Ellipse1 {
-		top: -40vh;
-		right: calc(0vh - 70%);
-	}
+  .Ellipse1,
+  .Ellipse2 {
+    width: 60vh;
+    height: 60vh;
+  }
+  .Ellipse1 {
+    top: -40vh;
+    right: calc(0vh - 70%);
+  }
 
-	.Ellipse2 {
-		bottom: -30vh;
-		left: calc(-35vh - 0vh);
-	}
+  .Ellipse2 {
+    bottom: -30vh;
+    left: calc(-35vh - 0vh);
+  }
 }
 
-.heading {
-	background-color: #ca0000;
-	border: 1px #ff0000 solid;
-	border-radius: 10px;
-	color: white;
-	padding: 5px 10px;
-	display: inline-block;
-}
 
-.heading2 {
-	color: #ca0000;
-}
 
 .cards {
-	position: relative;
-	padding: 0 20px;
+  position: relative;
+  padding: 0 20px;
 }
 
 .cards:not(:last-child)::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 2px;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: var(--brand-transparent-black);
 }
 
 section {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .glass {
-	margin: 10px 0px;
-	padding: 50px 30px;
-	border-radius: 50px;
+  margin: 10px 0px;
+  padding: 50px 30px;
+  border-radius: 50px;
 }
 
 .glass {
-	border-radius: 10px;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-	margin: 5px 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin: 5px 5px;
+  box-shadow: 0 0 10px var(--brand-transparent-black);
 }
+
 .glass:hover {
-	background-color: rgb(253, 253, 254);
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  background-color: rgb(253, 253, 254);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 5px var(--brand-transparent-black-hover);
 }
 
 .imagesCards {
-	height: 200px;
-	margin-bottom: 15px;
-	padding: 20px;
+  height: 200px;
+  margin-bottom: 15px;
+  padding: 20px;
 }
+
 .carousel-title {
-	font-style: normal;
-	font-weight: 900;
-	line-height: 51px;
-	text-align: center;
-	letter-spacing: 0.2em;
-	color: #ca0000;
-	margin-top: 35px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 51px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: var(--brand-dark-red);
+  margin-top: 35px;
 }
 
 .history-content {
-	padding: 0px 40px;
+  padding: 0px 40px;
 }
 
 .aboutus-desciption {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .description {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 768px) {
-	.second-section {
-		margin: 50px 5px 5px 5px;
-		padding: 0px;
-	}
+  .second-section {
+    margin: 50px 5px 5px 5px;
+    padding: 0px;
+  }
 
-	.aboutus-title {
-		font-size: clamp(24px, 2vw, 24px);
-	}
+  .aboutus-title {
+    font-size: clamp(24px, 2vw, 24px);
+  }
 
-	.aboutus-description {
-		font-size: clamp(16px, 2vw, 16px);
-	}
+  .aboutus-description {
+    font-size: clamp(16px, 2vw, 16px);
+  }
 }
 
 .description {
-	text-align: center;
-	margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 /**** CAROUSEL ****/
 
 .carousel-item > * {
-	margin-top: 15px;
+  margin-top: 15px;
 }
+
 .carousel-item {
-	padding: 10px;
-	margin-bottom: 20px;
-	min-height: 710px;
+  padding: 10px;
+  margin-bottom: 20px;
+  min-height: 710px;
 }
 
 .carousel-item > p {
-	text-align: center;
+  text-align: center;
 }
 
 .carousel-item > img {
-	width: 20vh;
-	padding: 20px;
+  width: 20vh;
+  padding: 20px;
 }
 
 /*==============================================
 06. SERVICES BLOCK CSS
 ================================================*/
 .services-list {
-	margin-top: 30px;
+  margin-top: 30px;
 }
+
 .item-card {
-	min-height: 710px;
-	border-radius: 10px;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-	margin: 5px 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  min-height: 710px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin: 5px 5px;
+  box-shadow: 0 0 10px var(--brand-transparent-black);
 }
 
 .item-card:hover {
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 16px var(--brand-transparent-black-hover);
 }
 
 .service-icon {
-	display: block;
-	margin: 25px auto 0px auto;
-	height: 80px;
+  display: block;
+  margin: 25px auto 0px auto;
+  height: 80px;
 }
 
 .service-box {
-	padding: 15px 25px;
-	height: 100%;
+  padding: 15px 25px;
+  height: 100%;
 }
 
 .service-box > * {
-	margin-bottom: 20px;
-	text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .service-box img {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .item-card:hover {
-	background-color: #fff;
-	color: #1e1e1e;
+  background-color: white;
+  color: black;
 }
 
 /* Custom carousel indicators */
 .custom-carousel-indicators-1,
 .custom-carousel-indicators-2 {
-	display: flex;
-	justify-content: center;
-	margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .carousel-indicator {
-	width: 10px;
-	height: 10px;
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 50%;
-	margin: 0 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-ellipse);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .carousel-indicator.active {
-	background-color: #ca0000;
+  background-color: var(--brand-dark-red);
 }
 
 .carousel-indicator {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: #d9d9d9;
-	margin: 0 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .stripes-border {
-	background-color: pink;
-	margin: auto;
-	padding: 10px 10px;
-	background-image: linear-gradient(
-		135deg,
-		#ff0000 25%,
-		#ffffff 25%,
-		#ffffff 50%,
-		#ff0000 50%,
-		#ff0000 75%,
-		#ffffff 75%,
-		#ffffff 100%
-	);
-	background-size: 56.57px 56.57px;
+  background-color: pink;
+  margin: auto;
+  padding: 10px 10px;
+  background-image: linear-gradient(
+    135deg,
+    #ff0000 25%,
+    #ffffff 25%,
+    #ffffff 50%,
+    #ff0000 50%,
+    #ff0000 75%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  background-size: 56.57px 56.57px;
 }
 
 .white-box {
-	margin: 10px;
-	padding: 10px;
-	background-color: white;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
 }
 
 .more {
-	padding: 0 27px;
+  padding: 0 27px;
 }
 
 .team-member {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-member .logo {
-	background-color: #ff701f;
-	color: white;
-	border-radius: 50%;
-	width: 110px;
-	height: 110px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 46px;
-	font-weight: bold;
+  background-color: var(--brand-orange);
+  color: white;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+  font-weight: bold;
 }
 
 .team-member .position {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 .team-member .name {
-	margin-top: 5px;
-	padding: 10px 0;
-	background-color: lightgray;
-	border-radius: 5px;
-	font-weight: bold;
-	width: 75%;
+  margin-top: 5px;
+  padding: 10px 0;
+  background-color: lightgray;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 75%;
 }
 
 .team-member .name:hover {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .team-member .logo:hover {
-	scale: 1.05;
-	box-shadow: 0 0 10px #ff701f;
+  scale: 1.05;
+  box-shadow: 0 0 10px var(--brand-orange);
 }
 
 .custom-carousel-indicators-3 {
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .custom-carousel-indicators-3 .carousel-indicator {
-	width: 10px;
-	height: 10px;
-	background-color: #d9d9d9;
-	border-radius: 50%;
-	margin: 0 5px;
-	cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
 .custom-carousel-indicators-3 .carousel-indicator.active {
-	background-color: #ca0000;
+  background-color: #ca0000;
 }
 
 .team-data {
-	padding: 0;
-	margin-bottom: 0;
-	min-height: 280px;
+  padding: 0;
+  margin-bottom: 0;
+  min-height: 280px;
 }

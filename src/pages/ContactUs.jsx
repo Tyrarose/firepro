@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import PhoneInput from "react-phone-number-input";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "react-phone-number-input/style.css";
-import "../styles/Header.css";
+import "../styles/ContactUs.css";
 
 const ContactUs = () => {
 	const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ const ContactUs = () => {
 	};
 
 	const sendTelegramMessage = async (telegramMessage, chatID) => {
-		const botToken = process.env.REACT_APP_BOT_TOKEN;
+		const botToken = import.meta.env.VITE_BOT_TOKEN;
 		const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
 		const payload = {
@@ -81,9 +81,9 @@ const ContactUs = () => {
 
 		const { name, contact, preferredTime, preferredComm } = formData;
 
-		// Validate phone number
-		if (!isValidPhoneNumber(contact)) {
-			toast.error("Please enter a valid phone number.");
+		// Basic check to ensure contact field is not empty
+		if (!contact || contact.trim() === "") {
+			toast.error("Please enter a contact number.");
 			setIsLoading(false);
 			return;
 		}
@@ -94,10 +94,10 @@ const ContactUs = () => {
 			currentHour < 12
 				? "Good morning"
 				: currentHour < 17
-				? "Good afternoon"
-				: currentHour < 21
-				? "Good evening"
-				: "Good night";
+					? "Good afternoon"
+					: currentHour < 21
+						? "Good evening"
+						: "Good night";
 
 		const telegramMessage =
 			`${greeting}, Gary Shrik! 🎉 You have a new order request:\n\n` +
@@ -107,12 +107,17 @@ const ContactUs = () => {
 			`⏰ Preferred Time for a talk: ${preferredTime ? preferredTime : "not specified"}\n\n` +
 			`Please reach out to **${formattedName}** as soon as possible! 😊💖\n\nThank you for your wonderful service! 🥳`;
 
-		const channelID = process.env.REACT_APP_CHANNEL_ID;
+		const channelID = import.meta.env.VITE_CHANNEL_ID;
 
 		// Send the message to Telegram channel
-		const channelSuccess = await sendTelegramMessage(telegramMessage, channelID);
+		const channelSuccess = await sendTelegramMessage(
+			telegramMessage,
+			channelID
+		);
 		if (channelSuccess) {
-			toast.success(`Thanks, ${formattedName}! We'll be in touch soon! 💖`);
+			toast.success(
+				`Thanks, ${formattedName}! We'll be in touch soon! 💖`
+			);
 			// Clear the form data after success
 			setFormData({
 				name: "",
@@ -133,25 +138,35 @@ const ContactUs = () => {
 	return (
 		<div className="contact-body">
 			<ToastContainer />
-			<div className={`page-container transition-fade ${isLoading ? "loading-cursor" : ""}`}>
+			<div
+				className={`page-container transition-fade ${isLoading ? "loading-cursor" : ""}`}
+			>
 				<div className="Ellipse1" />
 				<div className="Ellipse2" />
 				<div className="">
 					<div className="m-5">
 						<div className="col-12">
-							<h1 className="heading2">We'll Call You!</h1>
-							<p className="text-center m-3 p-3">
+							<h1 className="headings">We'll Call You!</h1>
+							<p className="lead text-center m-3">
 								Leave us your contact details, <br />
 								and we'll give you a call to help you with your
 								purchase.
 							</p>
 						</div>
 						<div className="contact-info text-center">
-							<form id="contactForm" onSubmit={handleSubmit} ref={formRef}>
+							<form
+								id="contactForm"
+								onSubmit={handleSubmit}
+								ref={formRef}
+							>
 								<div className="form-group">
-									<label htmlFor="name">Tell us your FIRST and LAST NAME</label>
+									<label htmlFor="name">
+										Tell us your FIRST and LAST NAME
+									</label>
 									<div className="input-container">
-										<i className={`fas fa-user ${hasText(formData.name) ? "icon-red" : ""}`}></i>
+										<i
+											className={`fas fa-user ${hasText(formData.name) ? "bg-brand-red" : ""}`}
+										></i>
 										<input
 											type="text"
 											id="name"
@@ -166,10 +181,15 @@ const ContactUs = () => {
 								<div className="form-group">
 									<label htmlFor="contact">
 										Your Contact Number
-										<span className="sample-number"> (format: +1 715 555 0199)</span>
+										<span className="sample-number">
+											{" "}
+											(format: +1 715 555 0199)
+										</span>
 									</label>
 									<div className="input-container">
-										<i className={`fas fa-phone-alt ${hasText(formData.contact) ? "icon-red" : ""}`}></i>
+										<i
+											className={`fas fa-phone-alt ${hasText(formData.contact) ? "bg-brand-red" : ""}`}
+										></i>
 										<PhoneInput
 											international
 											defaultCountry="US"
@@ -181,19 +201,27 @@ const ContactUs = () => {
 									</div>
 								</div>
 								<div className="form-group">
-									<label>Preferred Means of Communication:</label>
+									<label>
+										Preferred Means of Communication:
+									</label>
 									<div className="chip-container">
 										<div
 											className={`chip ${formData.preferredComm === "call" ? "chip-selected" : ""}`}
-											onClick={() => handleCommSelect("call")}
+											onClick={() =>
+												handleCommSelect("call")
+											}
 										>
-											<i className="fas fa-phone"></i> Call
+											<i className="fas fa-phone"></i>{" "}
+											Call
 										</div>
 										<div
 											className={`chip ${formData.preferredComm === "text" ? "chip-selected" : ""}`}
-											onClick={() => handleCommSelect("text")}
+											onClick={() =>
+												handleCommSelect("text")
+											}
 										>
-											<i className="fas fa-message"></i> Text
+											<i className="fas fa-message"></i>{" "}
+											Text
 										</div>
 									</div>
 								</div>
@@ -202,21 +230,30 @@ const ContactUs = () => {
 									<div className="chip-container">
 										<div
 											className={`chip ${formData.preferredTime === "morning" ? "chip-selected" : ""}`}
-											onClick={() => handleTimeSelect("morning")}
+											onClick={() =>
+												handleTimeSelect("morning")
+											}
 										>
-											<i className="fas fa-sun"></i> Morning (9 AM - 12 PM)
+											<i className="fas fa-sun"></i>{" "}
+											Morning (9 AM - 12 PM)
 										</div>
 										<div
 											className={`chip ${formData.preferredTime === "afternoon" ? "chip-selected" : ""}`}
-											onClick={() => handleTimeSelect("afternoon")}
+											onClick={() =>
+												handleTimeSelect("afternoon")
+											}
 										>
-											<i className="fas fa-cloud-sun"></i> Afternoon (12 PM - 3 PM)
+											<i className="fas fa-cloud-sun"></i>{" "}
+											Afternoon (12 PM - 3 PM)
 										</div>
 										<div
 											className={`chip ${formData.preferredTime === "evening" ? "chip-selected" : ""}`}
-											onClick={() => handleTimeSelect("evening")}
+											onClick={() =>
+												handleTimeSelect("evening")
+											}
 										>
-											<i className="fas fa-cloud-moon"></i> Evening (3 PM - 6 PM)
+											<i className="fas fa-cloud-moon"></i>{" "}
+											Evening (3 PM - 6 PM)
 										</div>
 									</div>
 								</div>
@@ -227,11 +264,13 @@ const ContactUs = () => {
 								>
 									{isLoading ? (
 										<>
-											<i className="fas fa-spinner fa-spin"></i> Processing...
+											<i className="fas fa-spinner fa-spin"></i>{" "}
+											Processing...
 										</>
 									) : (
 										<>
-											<i className="fas fa-paper-plane"></i> Request a Call
+											<i className="fas fa-paper-plane"></i>{" "}
+											Request a Call
 										</>
 									)}
 								</button>

@@ -3,291 +3,276 @@ import { useParams, useNavigate } from "react-router-dom";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/ProductShop.css"; // Reuse the same styles
-
+import "../styles/ProductShop.css";
 import productsData from "../data/products.json";
 
 export default function ProductDetailsPage() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [showScrollButton, setShowScrollButton] = useState(false);
-  const [magnifiedImage, setMagnifiedImage] = useState({});
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const [activeImage, setActiveImage] = useState('');
+	const [showZoom, setShowZoom] = useState(false);
+	const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
+	const [showScrollButton, setShowScrollButton] = useState(false);
 
-  const product = productsData.find(p => String(p.id) === id);
+	const product = productsData.find((p) => String(p.id) === id);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollButton(window.scrollY > 100);
-    };
+	useEffect(() => {
+		if (product) {
+			setActiveImage(product.imageUrl);
+		}
+	}, [product]);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+	useEffect(() => {
+		const handleScroll = () => {
+			setShowScrollButton(window.scrollY > 100);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
-  useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}, []);
 
-  const handleMouseOver = (productId, imageId) => {
-    setMagnifiedImage({ productId, imageId });
-  };
+	const handleMouseMove = (e) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		const x = ((e.clientX - rect.left) / rect.width) * 100;
+		const y = ((e.clientY - rect.top) / rect.height) * 100;
+		
+		setZoomPosition({ x, y });
+	};
 
-  const handleMouseLeave = () => {
-    setMagnifiedImage({});
-  };
+	const handleTouchMove = (e) => {
+		e.preventDefault();
+		const touch = e.touches[0];
+		const rect = e.currentTarget.getBoundingClientRect();
+		const x = ((touch.clientX - rect.left) / rect.width) * 100;
+		const y = ((touch.clientY - rect.top) / rect.height) * 100;
+		
+		setZoomPosition({ x, y });
+	};
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+	const handleMouseEnter = () => {
+		setShowZoom(true);
+	};
 
-  const navigateBackToShop = () => {
-    // Use navigate(-1) to go back in history, maintaining scroll position
-    navigate(-1);
-  };
+	const handleMouseLeave = () => {
+		setShowZoom(false);
+	};
 
-  if (!product) {
-    return (
-      <div className="container mt-5">
-        <div className="text-center">
-          <h2>Product Not Found</h2>
-          <button 
-            className="btn btn-primary mt-3"
-            onClick={navigateBackToShop}
-          >
-            Back to Shop
-          </button>
-        </div>
-      </div>
-    );
-  }
+	const handleImageClick = () => {
+		// Toggle zoom on mobile/tablet
+		setShowZoom(!showZoom);
+	};
 
-  return (
-    <div >
-      <main className="container transition-fade">
-        {/* Back Button */}
-        <div className="row mt-4">
-          <div className="col-12">
-            <button
-              className="btn btn-outline-secondary mb-4"
-              onClick={navigateBackToShop}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
-              <ArrowBackIcon /> Back to Shop
-            </button>
-          </div>
-        </div>
+	const handleZoomClose = (e) => {
+		// Close zoom when clicking on the backdrop or close button
+		if (e.target === e.currentTarget || e.target.classList.contains('zoom-close')) {
+			setShowZoom(false);
+		}
+	};
 
-        {/* Product Details */}
-        <div className="row product_card">
-          <div className="col-md-6 picture text-center">
-            <div className="minis d-flex justify-content-center mb-3">
-              {product.mini1 && (
-                <img
-                  className="minified1 me-2"
-                  src={`${process.env.PUBLIC_URL}/${product.mini1}`}
-                  alt={product.name}
-                  loading="lazy"
-                  onMouseOver={() => handleMouseOver(product.id, "enlarged1")}
-                  onMouseLeave={handleMouseLeave}
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    objectFit: 'cover',
-                    border: '2px solid #ddd',
-                    borderRadius: '8px',
-                    cursor: 'pointer'
-                  }}
-                />
-              )}
-              {product.mini2 && (
-                <img
-                  className="minified2 me-2"
-                  src={`${process.env.PUBLIC_URL}/${product.mini2}`}
-                  alt={product.name}
-                  loading="lazy"
-                  onMouseOver={() => handleMouseOver(product.id, "enlarged2")}
-                  onMouseLeave={handleMouseLeave}
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    objectFit: 'cover',
-                    border: '2px solid #ddd',
-                    borderRadius: '8px',
-                    cursor: 'pointer'
-                  }}
-                />
-              )}
-              {product.mini3 && (
-                <img
-                  className="minified3"
-                  src={`${process.env.PUBLIC_URL}/${product.mini3}`}
-                  alt={product.name}
-                  loading="lazy"
-                  onMouseOver={() => handleMouseOver(product.id, "enlarged3")}
-                  onMouseLeave={handleMouseLeave}
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    objectFit: 'cover',
-                    border: '2px solid #ddd',
-                    borderRadius: '8px',
-                    cursor: 'pointer'
-                  }}
-                />
-              )}
-            </div>
+	const handleThumbnailClick = (imageUrl) => {
+		setActiveImage(imageUrl);
+	};
 
-            {/* Main Product Image */}
-            <img
-              src={`${process.env.PUBLIC_URL}/${product.imageUrl}`}
-              alt={product.name}
-              loading="lazy"
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-                borderRadius: '12px',
-                display: magnifiedImage.productId === product.id ? "none" : "block"
-              }}
-            />
+	const handleBuyNowClick = () => {
+		navigate("/contact-us");
+	};
 
-            {/* Enlarged Images */}
-            <img
-              className="enlarged1"
-              src={`${process.env.PUBLIC_URL}/${product.mini1}`}
-              alt={product.name}
-              loading="lazy"
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-                borderRadius: '12px',
-                display: magnifiedImage.productId === product.id && magnifiedImage.imageId === "enlarged1" ? "block" : "none"
-              }}
-            />
-            <img
-              className="enlarged2"
-              src={`${process.env.PUBLIC_URL}/${product.mini2}`}
-              alt={product.name}
-              loading="lazy"
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-                borderRadius: '12px',
-                display: magnifiedImage.productId === product.id && magnifiedImage.imageId === "enlarged2" ? "block" : "none"
-              }}
-            />
-            <img
-              className="enlarged3"
-              src={`${process.env.PUBLIC_URL}/${product.mini3}`}
-              alt={product.name}
-              loading="lazy"
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-                borderRadius: '12px',
-                display: magnifiedImage.productId === product.id && magnifiedImage.imageId === "enlarged3" ? "block" : "none"
-              }}
-            />
-          </div>
+	const navigateBackToShop = () => {
+		navigate(-1);
+	};
 
-          <div className="col-md-6 d-flex justify-content-center align-items-start">
-            <div className="productdeets">
-              <h1 className="product-name mb-4">{product.name}</h1>
-              
-              <div 
-                className="product-description mb-4"
-                dangerouslySetInnerHTML={{ __html: product.description }}
-                style={{ fontSize: '16px', lineHeight: '1.6' }}
-              />
+	if (!product) {
+		return (
+			<div className="container mt-5">
+				<div className="text-center">
+					<h2>Product Not Found</h2>
+					<button
+						className="btn btn-primary mt-3"
+						onClick={navigateBackToShop}
+					>
+						Back to Shop
+					</button>
+				</div>
+			</div>
+		);
+	}
 
-              {/* Additional product details */}
-              {product.feature && (
-                <div className="mb-3">
-                  <h5>Features:</h5>
-                  <p dangerouslySetInnerHTML={{ __html: product.feature }} />
-                </div>
-              )}
+	return (
+		<div>
+			<main className="container transition-fade">
+				{/* Back Button */}
+				<div className="row mt-4">
+					<div className="col-12">
+						<button
+							className="btn-back mb-4"
+							onClick={navigateBackToShop}
+						>
+							<ArrowBackIcon /> Back to Shop
+						</button>
+					</div>
+				</div>
 
-              {product.feature2 && (
-                <div className="mb-3">
-                  <p dangerouslySetInnerHTML={{ __html: product.feature2 }} />
-                </div>
-              )}
+				{/* Product Details */}
+				<div className="row product_card p-3">
+					<div className="col-12 col-lg-6 picture">
+						<div className="image-gallery">
+							{/* Thumbnail Images */}
+							<div className="thumbnail-container">
+								<img
+									className={`thumbnail ${activeImage === product.imageUrl ? 'active' : ''}`}
+									src={`/${product.imageUrl}`}
+									alt={product.name}
+									loading="lazy"
+									onClick={() => handleThumbnailClick(product.imageUrl)}
+								/>
+								{product.mini1 && (
+									<img
+										className={`thumbnail ${activeImage === product.mini1 ? 'active' : ''}`}
+										src={`/${product.mini1}`}
+										alt={product.name}
+										loading="lazy"
+										onClick={() => handleThumbnailClick(product.mini1)}
+									/>
+								)}
+								{product.mini2 && (
+									<img
+										className={`thumbnail ${activeImage === product.mini2 ? 'active' : ''}`}
+										src={`/${product.mini2}`}
+										alt={product.name}
+										loading="lazy"
+										onClick={() => handleThumbnailClick(product.mini2)}
+									/>
+								)}
+								{product.mini3 && (
+									<img
+										className={`thumbnail ${activeImage === product.mini3 ? 'active' : ''}`}
+										src={`/${product.mini3}`}
+										alt={product.name}
+										loading="lazy"
+										onClick={() => handleThumbnailClick(product.mini3)}
+									/>
+								)}
+							</div>
 
-              <div className="row bottomers mt-4">
-                <div className="col-12">
-                  <p className="prices mb-3" style={{ fontSize: '24px', fontWeight: 'bold' }}>
-                    <span style={{ color: "black" }}>Price: </span>
-                    <span style={{ color: "--brand-red" }}>
-                      ${product.price.toFixed(2)}
-                    </span>
-                  </p>
-                  
-                  <div className="d-flex gap-3">
-                    <button
-                      className="btn buy_now"
-                      style={{
-                        background: "--brand-red",
-                        color: "white",
-                        padding: "12px 24px",
-                        fontSize: "16px",
-                        border: "none",
-                        borderRadius: "6px"
-                      }}
-                    >
-                      Buy Now
-                    </button>
-                    
-                    <button
-                      className="btn btn-outline-secondary"
-                      onClick={navigateBackToShop}
-                      style={{ padding: "12px 24px", fontSize: "16px" }}
-                    >
-                      Continue Shopping
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+							{/* Main Image Container */}
+							<div className="main-image-container">
+								<div 
+									className="image-wrapper"
+									onMouseMove={handleMouseMove}
+									onMouseEnter={handleMouseEnter}
+									onMouseLeave={handleMouseLeave}
+									onTouchMove={handleTouchMove}
+									onTouchStart={() => setShowZoom(true)}
+									onTouchEnd={() => setTimeout(() => setShowZoom(false), 100)}
+									onClick={handleImageClick}
+								>
+									<img
+										src={`/${activeImage}`}
+										alt={product.name}
+										loading="lazy"
+										className="main-product-image"
+									/>
+									
+									{/* Zoom Lens */}
+									{showZoom && (
+										<div 
+											className="zoom-lens"
+											style={{
+												left: `${zoomPosition.x}%`,
+												top: `${zoomPosition.y}%`,
+											}}
+										/>
+									)}
+								</div>
 
-      {/* Scroll to Top Button */}
-      {showScrollButton && (
-        <button
-          className="scroll-to-top-btn"
-          onClick={scrollToTop}
-          aria-label="Scroll to Top"
-          style={{
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            background: '--brand-red',
-            color: 'white',
-            border: 'none',
-            borderRadius: '50%',
-            width: '50px',
-            height: '50px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-            zIndex: 1000
-          }}
-        >
-          <ArrowUpwardIcon />
-        </button>
-      )}
-    </div>
-  );
+								{/* Magnified Image */}
+								{showZoom && (
+									<div 
+										className="zoom-container"
+										onClick={handleZoomClose}
+									>
+										<div 
+											className="zoomed-image"
+											style={{
+												backgroundImage: `url(/${activeImage})`,
+												backgroundPosition: `${zoomPosition.x}% ${zoomPosition.y}%`,
+											}}
+										/>
+									</div>
+								)}
+							</div>
+						</div>
+					</div>
+
+					{/* Product Details */}
+					<div className="col-lg-6">
+						<div className="p-3">
+							<h1 className="product-name mb-4">
+								{product.name}
+							</h1>
+							<div
+								className="lead product-description mb-4"
+								dangerouslySetInnerHTML={{
+									__html: product.description,
+								}}
+							/>
+							{product.feature && product.feature.length > 0 && (
+								<div className="mb-3">
+									<h5 className="lead fw-bold">Features:</h5>
+									<ul className="list-unstyled">
+										{product.feature.map((item, index) => (
+											<li
+												key={index}
+												className="mb-2"
+												dangerouslySetInnerHTML={{
+													__html: item,
+												}}
+											/>
+										))}
+									</ul>
+								</div>
+							)}
+							<div className="col-12 d-flex flex-column justify-content-between align-items-center gap-3">
+								<p className="prices m-0">
+									<span style={{ color: "black" }}>
+										Price:{" "}
+									</span>
+									<span style={{ color: "var(--brand-red)" }}>
+										${product.price.toFixed(2)}
+									</span>
+								</p>
+								<div className="d-flex flex-col flex-md-row gap-3 justify-content-between align-items-center">
+									<button
+										className="buy-now"
+										onClick={handleBuyNowClick}
+									>
+										Inquire Now
+									</button>
+									<button
+										className="btn-back"
+										onClick={navigateBackToShop}
+									>
+										Continue Shopping
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+
+			{/* Scroll to Top Button */}
+			{showScrollButton && (
+				<button
+					className="scroll-to-top"
+					onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+				>
+					<ArrowUpwardIcon />
+				</button>
+			)}
+		</div>
+	);
 }

@@ -31,25 +31,25 @@ export default function Tyra() {
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-3xl mx-auto rounded-lg p-8">
                 {/* About the Developer */}
-                <h1 className="text-4xl font-bold text-[--brand-red] mb-6">About the Developer</h1>
+                <h1 className="text-4xl font-bold text-brand-red mb-6">About the Developer</h1>
                 <p className="mb-6 text-gray-700 text-lg leading-relaxed">
-                    Hi, I'm <strong className="text-[--brand-red]">Tyra Clemente</strong>, the developer behind <span className="font-semibold">FlameOutSolutions</span>.
+                    Hi, I'm <strong className="text-brand-red">Tyra Clemente</strong>, the developer behind <span className="font-semibold">FlameOutSolutions</span>.
                     As a passionate and detail-oriented freelance developer, I specialize in crafting fast, 
                     scalable, and user-friendly web applications. My goal is to create digital experiences that 
                     not only function seamlessly but also deliver value to users.
                 </p>
 
                 {/* Company Feedback */}
-                <h2 className="text-3xl font-semibold text-[--brand-red] mt-8 mb-4">Company Feedback</h2>
+                <h2 className="text-3xl font-semibold text-brand-red mt-8 mb-4">Company Feedback</h2>
                 <blockquote className="text-gray-700 text-lg italic border-l-4 border-[--brand-red] pl-4 mb-6">
-                    "<strong className="text-[--brand-red]">Tyra Clemente</strong> has been instrumental in bringing our vision to life. 
+                    "<strong className="text-brand-red">Tyra Clemente</strong> has been instrumental in bringing our vision to life. 
                     Her dedication to crafting a seamless user experience and ensuring our website runs efficiently has been invaluable.
                     We appreciate her expertise, responsiveness, and innovative approach in making 
                     FlameOutSolutions a trusted platform for fire safety solutions."
                 </blockquote>
 
                 {/* Developer Experience */}
-                <h2 className="text-3xl font-semibold text-[--brand-red] mt-8 mb-4">Developer Experience</h2>
+                <h2 className="text-3xl font-semibold text-brand-red mt-8 mb-4">Developer Experience</h2>
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     Working with <span className="font-semibold">FlameOutSolutions</span> has been an incredible experience. Their commitment to fire safety 
                     solutions and innovation made this project a rewarding challenge. I'm grateful for the opportunity 
@@ -57,7 +57,7 @@ export default function Tyra() {
                 </p>
 
                 {/* Collaboration Section */}
-                <h2 className="text-3xl font-semibold text-[--brand-red] mt-8 mb-4">Let's Build Something Great</h2>
+                <h2 className="text-3xl font-semibold text-brand-red mt-8 mb-4">Let's Build Something Great</h2>
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     I'm always open to new projects and collaborations. If you're looking for a skilled and dedicated 
                     developer for your next idea, feel free to reach out!
@@ -79,7 +79,7 @@ export default function Tyra() {
 
 
                 {/* Quick Email Contact */}
-                <h2 className="text-3xl font-semibold text-[--brand-red] mt-8 mb-4">Quick Contact</h2>
+                <h2 className="text-3xl font-semibold text-brand-red mt-8 mb-4">Quick Contact</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label className="form-label fw-semibold">Email Address</label>
