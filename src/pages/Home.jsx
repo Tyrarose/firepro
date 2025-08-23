@@ -49,8 +49,9 @@ function Home() {
 				<title>FirePro - Fire Extinguishers</title>
 				<meta
 					name="description"
-					content="FirePro provides next-generation fire extinguishers to protect your home and business. Stay safe with our high-quality fire safety solutions."
+					content="FirePro provides next-generation fire extinguishers and fire safety equipment to protect your home, business, and workplace. Stay safe with our high-quality, reliable fire protection solutions designed to save lives and property."
 				/>
+
 				<meta
 					property="og:title"
 					content="FirePro - Fire Safety Solutions"
