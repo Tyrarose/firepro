@@ -9,23 +9,21 @@ import aboutUsData from "../data/aboutUs.json";
 import historyData from "../data/history.json";
 import teamData from "../data/team.json";
 
-
 export default function AboutUs() {
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [loading, setLoading] = useState(true);
 
-
 	useEffect(() => {
 		const handleScroll = () => {
-		setShowScrollButton(window.scrollY > 100);
+			setShowScrollButton(window.scrollY > 100);
 		};
 
 		window.addEventListener("scroll", handleScroll);
 		const loadingTimer = setTimeout(() => setLoading(false), 50);
 
 		return () => {
-		window.removeEventListener("scroll", handleScroll);
-		clearTimeout(loadingTimer);
+			window.removeEventListener("scroll", handleScroll);
+			clearTimeout(loadingTimer);
 		};
 	}, []);
 
@@ -38,11 +36,10 @@ export default function AboutUs() {
 
 	const [activeIndex2, setActiveIndex2] = useState(0);
 	const handleSelect2 = (selectedIndex) => setActiveIndex2(selectedIndex);
-  
+
 	const [activeIndex3, setActiveIndex3] = useState(0);
 	const handleSelect3 = (selectedIndex) => setActiveIndex3(selectedIndex);
 
-	
 	// Function to check if a string ends with .png
 	function isPngImage(string) {
 		return string.endsWith("png");
@@ -61,6 +58,9 @@ export default function AboutUs() {
 						<h1 className="headings">
 							Mission, Vision & Core Values
 						</h1>
+						<h6 className="lead">
+							Aligning Our Core Values with Your Needs
+						</h6>
 						<div className="d-none d-md-block">
 							<div className="row services-list justify-content-center">
 								{aboutUsData.map((item, index) => (
@@ -304,7 +304,6 @@ export default function AboutUs() {
 						</button>
 					)}
 				</main>
-				
 			)}
 		</div>
 	);

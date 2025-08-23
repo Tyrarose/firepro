@@ -16,6 +16,8 @@ import TestimoniesAndFacts from "./pages/TestimoniesFacts";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Tyra from "./pages/Tyra";
+import NotFound from "./pages/NotFound";
+
 
 function App() {
 	return (
@@ -32,7 +34,7 @@ function App() {
 					<Route path="/about-us" element={<AboutUs />} />
 					<Route path="/tyra-clemente" element={<Tyra />} />
 					{/* Optional: catch-all route */}
-					<Route path="*" element={<Home />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 				<Footer />
 			</Router>

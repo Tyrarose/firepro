@@ -45,6 +45,9 @@ const TestimoniesFacts = () => {
 					<section className="container">
 						<header className="second-section">
 							<h1 className="headings mt-5">Testimonies and Facts</h1>
+							<h6 className="lead text-center">
+								Discover Why Our Customers Trust Us
+							</h6>
 						</header>
 						<article className="text-center testimonies">
 							<section className="featured-testimony">

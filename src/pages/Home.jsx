@@ -117,25 +117,25 @@ function Home() {
 									/>
 								</div>
 							</div>
-							{/* <div className="well">
-								<div className="home-title">
+							<div className="well">
+								<h1 className="home-title">
 									<strong>
 										The next generation in fire fighting
 									</strong>
-								</div>
-							</div> */}
+								</h1>
+							</div>
 
 							<div className="well">
-								<p className="home-subtitle">
+								<h2 className="home-subtitle">
 									Approximately 80% of fires attacked with
 									extinguishers are successfully defeated.
 									Fire extinguishers save lives!
-								</p>
-								<p className="home-subtitle fw-bold mt-3">
+								</h2>
+								<h3 className="home-subtitle fw-bold mt-3">
 									In the event of a fire, FirePro fire
 									extinguishers are your first line of
 									defense.
-								</p>
+								</h3>
 							</div>
 
 							<div className="well">
