@@ -46,7 +46,7 @@ function Home() {
 	return (
 		<>
 			<Helmet>
-				<title>FirePro - Next-Gen Fire Extinguishers</title>
+				<title>FirePro - Fire Extinguishers</title>
 				<meta
 					name="description"
 					content="FirePro provides next-generation fire extinguishers to protect your home and business. Stay safe with our high-quality fire safety solutions."
