@@ -158,9 +158,7 @@ function Home() {
 								<span className="brand-text-red">Showcase</span>
 							</h2>
 							<p className="lead mb-4">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Assumenda ut, beatae, sequi
-								sed consequatur repudiandae placeat quos quae ex
+								Fire Pro extinguishers are built from stainless steel, designed to be reusable, and self-refillable by the user. Powered with Cold Fire® — a non-toxic, fast-cooling formula — they deliver up to 40 feet of spray distance and stop hot fires where others fail. With glow-in-the-dark labels and reflective strips, Fire Pro remains visible, always ready.
 							</p>
 						</div>
 						<Flickity
@@ -193,12 +191,7 @@ function Home() {
 								<span className="brand-text-red">FirePro?</span>
 							</h2>
 							<p className="lead mb-4 sm:text-sm">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Assumenda ut, beatae, sequi
-								sed consequatur repudiandae placeat quos quae
-								ex, nemo et tempora molestiae sapiente nulla
-								dolore? <strong>Officiis consectetur</strong>{" "}
-								nobis tenetur.
+								Fire Pro extinguishers aren’t disposable. They’re stainless steel, reusable, and refillable by you! Powered by the famous Cold Fire suppressant, Fire Pro knock fires down quickly, and rapidly cools hot surfaces, and helps prevent re-ignition. Trusted and used  by families, farmers, and businesses all across America.
 							</p>
 							<button
 								className="fw-bold shadow-sm next-btn"

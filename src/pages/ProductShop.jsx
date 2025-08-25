@@ -101,13 +101,7 @@ const ProductDetails = ({ product, handleReadMoreClick }) => (
 				className="product-description"
 				dangerouslySetInnerHTML={{ __html: product.description }}
 			/>
-			<div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
-				<p className="prices mb-0">
-					<span style={{ color: "black" }}>Price</span>{" "}
-					<span style={{ color: "--brand-red" }}>
-						${product.price.toFixed(2)}
-					</span>
-				</p>
+			<div className="col-12 d-flex flex-column flex-md-row align-items-center justify-content-end">
 				<button
 					className="buy-now"
 					onClick={() => handleReadMoreClick(product)}

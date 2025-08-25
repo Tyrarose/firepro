@@ -226,23 +226,29 @@ export default function ProductDetailsPage() {
 					{/* Product Details */}
 					<div className="col-lg-6">
 						<div className="p-3">
-							<h1 className="product-name mb-4">
+							{/* Product Name */}
+							<h1 className="product-name mb-4 fs-3 fs-md-2 fs-lg-1">
 								{product.name}
 							</h1>
+
+							{/* Product Description */}
 							<div
-								className="mb-4 text-md md:text-base lg:text-lg"
+								className="mb-4 fs-6 fs-md-5 fs-lg-4"
 								dangerouslySetInnerHTML={{
 									__html: product.description,
 								}}
 							/>
+
 							<hr />
+
+							{/* Features */}
 							{product.feature && product.feature.length > 0 && (
 								<div className="mb-3">
 									<ul className="list-unstyled">
 										{product.feature.map((item, index) => (
 											<li
 												key={index}
-												className="mb-2 text-md md:text-base lg:text-lg"
+												className="mb-2 fs-6 fs-md-5 fs-lg-4"
 												dangerouslySetInnerHTML={{
 													__html: item,
 												}}

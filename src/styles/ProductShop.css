@@ -74,6 +74,7 @@ h1 {
 	border-radius: 10px;
 	padding: 10px;
 	transition: all 0.3s;
+	min-height: 60px;
 }
 .buy-now:hover {
 	background-color: white;
@@ -90,6 +91,7 @@ h1 {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	min-height: 60px;
 }
 .btn-back:hover {
 	border: 1px solid var(--brand-red);
