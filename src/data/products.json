@@ -112,7 +112,7 @@
 			"<strong>Certified Safety</strong> – Manufactured to meet EN1869 standards for fire blankets.",
 			"Compact and lightweight, this blanket comes in a protective red pouch for wall mounting or storage, making it an essential fire safety item for homes, kitchens, workshops, and vehicles!"
 		],
-		"price": 38.50,
+		"price": 38.5,
 		"mini1": "images/productsMore/product7-1.webp",
 		"mini2": "images/productsMore/product7-2.webp",
 		"mini3": "images/productsMore/product7-3.webp"
@@ -133,5 +133,64 @@
 		"mini1": "images/productsMore/product8-1.webp",
 		"mini2": "images/productsMore/product8-2.webp",
 		"mini3": "images/productsMore/product8-3.webp"
+	},
+	{
+		"id": 9,
+		"name": "Cold Fire",
+		"imageUrl": "images/productsImage/product9.webp",
+		"description": "COLD FIRE® is mixed with water, at given percentages, depending on the combustible type. COLD FIRE® becomes 6x thinner than water.",
+		"feature": [
+			"This enables the suppressant to fully penetrate the fuel source and attack the heat on contact, immediately ooling down the surface.",
+			"COLD FIRE® acts like a magnet to pull the heat out from the source. Water alone cannot act as effectively, instead it bounces back & turns to steam. It acts the same when reducing hydrocarbons in the smoke.",
+			"COLD FIRE® attracts and draws in the smoke; thereby encapsulating it & breaking down the hydrocarbon molecules, resulting in better visibility."
+		],
+		"price": 0.0,
+		"mini1": "images/mainImages/flameout_logo.png",
+		"mini2": "images/mainImages/flameout_logo.png",
+		"mini3": "images/mainImages/flameout_logo.png"
+	},
+	{
+		"id": 10,
+		"name": "Odor Sealer",
+		"imageUrl": "images/productsImage/product10.webp",
+		"description": "ODOR SEAL/OS/JG-200 is an environment friendly odor eliminator that gets rid of tough odors quickly, safely, and effectively without the use of masking agents or perfumes.",
+		"feature": [
+			"ODOR SEAL destroys odors naturally by encapsulating the odor producing source, eliminating the odor almost immediately.",
+			"ODOR SEAL/OS/JG-200 is listed on the SNAP program vendor list. It’s USDA Class C recognized, safe, easy to use, and does not stain."
+		],
+		"price": 0.0,
+		"mini1": "images/mainImages/flameout_logo.png",
+		"mini2": "images/mainImages/flameout_logo.png",
+		"mini3": "images/mainImages/flameout_logo.png"
+	},
+	{
+		"id": 11,
+		"name": "Fire Block",
+		"imageUrl": "images/productsImage/product11.webp",
+		"description": "FIRE BLOCK is a specially formulated product which is used to retard fire in all Class A materials. FIRE BLOCK is a revolutionary product which works to form its own thermal insulation barrier to prevent dangerous flames from spreading.",
+		"feature": [
+			"spreading. It also inhibits the development of toxic hydrocarbon smoke.",
+			"It can also be mixed with latex paint and applied to surfaces to protect them from flames.",
+			"FIRE BLOCK has been tested to be compliant with NFPA 225 and ASTM-E84 tests for flame spread and smoke development values by SGS US testing for Class A materials. It is also tested to be compliant to NFPA701 for textile fabrics."
+		],
+		"price": 0.0,
+		"mini1": "images/mainImages/flameout_logo.png",
+		"mini2": "images/mainImages/flameout_logo.png",
+		"mini3": "images/mainImages/flameout_logo.png"
+	},
+	{
+		"id": 12,
+		"name": "Motor Max",
+		"imageUrl": "images/productsImage/product12.webp",
+		"description": "One of the most neglected parts in today’s modern and advanced engines is the cooling system.",
+		"feature": [
+			"Most engine operators do not pay enough attention to the temperature at which their engines run.",
+			"High heat not only causes poor performance and inefficiency, but can lead to catastrophic engine failure",
+			"MOTOR MAX used in a 1:15 ratio, with any engine coolant, dramatically improves the cooling system performance. Keeping your engines temperature in check not only extends the life of the engine and cuts down on maintenance, but also dramatically improves its performance and cuts down on overall emissions."
+		],
+		"price": 0.0,
+		"mini1": "images/mainImages/flameout_logo.png",
+		"mini2": "images/mainImages/flameout_logo.png",
+		"mini3": "images/mainImages/flameout_logo.png"
 	}
 ]
